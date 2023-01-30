@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/vr-training/static/css/main.073c9b0a.css",
+    "main.js": "/vr-training/static/js/main.86be35e3.js",
+    "static/js/787.959220f7.chunk.js": "/vr-training/static/js/787.959220f7.chunk.js",
+    "static/media/logo.svg": "/vr-training/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/vr-training/index.html",
+    "main.073c9b0a.css.map": "/vr-training/static/css/main.073c9b0a.css.map",
+    "main.86be35e3.js.map": "/vr-training/static/js/main.86be35e3.js.map",
+    "787.959220f7.chunk.js.map": "/vr-training/static/js/787.959220f7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.86be35e3.js"
+  ]
+}
