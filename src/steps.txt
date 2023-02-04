@@ -1,0 +1,16 @@
+Steps
+
+- npm install firebase
+- firebase config add 
+- better to add env file as api keys shouldnt be public
+- whenever we are making api call, we want asynch wait, 
+- promise data needs to be resolved
+
+
+firebase db
+- collection like table and document like entries/rows 
+
+
+
+user: example3@gmail.com
+password: hello1
