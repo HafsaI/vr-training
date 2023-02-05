@@ -38,16 +38,12 @@ function SignIn(){
         });
     }
 
-
-
     return (
         <div className = "bg">
-            <div className="center">
+            <div className="center signinBox">
             {/* <form id="signin"> */}
-                <label for="email">Email </label>
-                <input type = "email" name="email" onChange={(e) => {setEmail(e.target.value)}}/>
-                <label for="password">Password </label>
-                <input type = "password" name="password" onChange={(e) => {setPassword(e.target.value)}}/>
+                <input type = "email" placeholder='Email' name="email" onChange={(e) => {setEmail(e.target.value)}}/>
+                <input id="password" placeholder='Password' type = "password" name="password" onChange={(e) => {setPassword(e.target.value)}}/>
                 {/* <input type="submit"/> */}
                 <button className="loginBtn" onClick={signup}> Create Account</button>
                 <button className="loginBtn" onClick={signin} > Login</button>

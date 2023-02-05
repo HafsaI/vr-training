@@ -51,14 +51,25 @@ li {
 
 .center input, label, button {
   display: block;
-  border-radius: 5%;
+  text-align: center;
 }
 
 .center button {
   width: 100%;
   margin-top: 5%;
-
+  background-color: #282c34;
+  color: white;
+  border: solid #282c34;
+  border-radius: 8px;
 }
+
+.center input {
+  width: 100%;
+  border: none;
+  border-bottom: solid 1px; 
+  background-color: transparent;
+}
+
 
 .bg {
   background-image:url(bg.jpg);
@@ -71,7 +82,8 @@ li {
 
 .nab{
   text-align: right;
-  padding-top:2%;
+  padding-top:0.5%;
+  padding-bottom: 0.5%;
 }
 
 .nab a{
@@ -82,4 +94,95 @@ li {
 
 .linkLogin {
   margin-right: 2%;
+}
+
+.signinBox {
+  background-color: whitesmoke;
+  padding: 2%;
+  width: 300px;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  border-radius: 8px;
+}
+
+#password {
+  margin-top: 5%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  max-width: 50rem;
+  width: 100%;
+  margin: 0 auto;
+}
+.tabs {
+  position: relative;
+  margin: 3rem 0;
+  background: whitesmoke;
+  height: 14.75rem;
+  border-radius: 8px;
+}
+.tabs::before,
+.tabs::after {
+  content: "";
+  display: table;
+}
+.tabs::after {
+  clear: both;
+}
+.tab {
+  float: left;
+}
+.tab-switch {
+  display: none;
+}
+.tab-label {
+  position: relative;
+  display: block;
+  line-height: 2.75em;
+  height: 3em;
+  padding: 0 1.618em;
+  background:#282c34;
+  color: #fff;
+  cursor: pointer;
+  top: 0;
+  transition: all 0.25s;
+}
+.tab-label:hover {
+  top: -0.25rem;
+  transition: top 0.25s;
+}
+.tab-content {
+  height: 12rem;
+  position: absolute;
+  z-index: 1;
+  top: 2.75em;
+  left: 0;
+  padding: 1.618rem;
+  background: whitesmoke;
+  color: #2c3e50;
+  opacity: 0;
+  transition: all 0.35s;
+  width:100%;
+  border-radius: 0 0 8px 8px;
+}
+.tab-switch:checked + .tab-label {
+  background: whitesmoke;
+  color: #2c3e50;
+  border-bottom: 0;
+  transition: all 0.35s;
+  z-index: 1;
+  top: -0.0625rem;
+}
+.tab-switch:checked + label + .tab-content {
+  z-index: 2;
+  opacity: 1;
+  transition: all 0.35s;
+}
+
+#divTab1 label {
+  border-top-left-radius: 8px;
 }
