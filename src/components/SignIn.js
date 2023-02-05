@@ -2,7 +2,7 @@ import { useState } from "react";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import app from '../firebaseconfig'
 
-function Signin(){
+function SignIn(){
 
     const auth = getAuth(app);
     const [email, setEmail] = useState("");
@@ -41,19 +41,21 @@ function Signin(){
 
 
     return (
-        <div>
-        {/* <form id="signin"> */}
-            <label for="email">Email: </label>
-            <input type = "email" name="email" onChange={(e) => {setEmail(e.target.value)}}/>
-            <label for="password">Password: </label>
-            <input type = "password" name="password" onChange={(e) => {setPassword(e.target.value)}}/>
-            {/* <input type="submit"/> */}
-            <button onClick={signup}> Create Account</button>
-            <button onClick={signin} > Signin</button>
-        {/* </form> */}
+        <div className = "bg">
+            <div className="center">
+            {/* <form id="signin"> */}
+                <label for="email">Email </label>
+                <input type = "email" name="email" onChange={(e) => {setEmail(e.target.value)}}/>
+                <label for="password">Password </label>
+                <input type = "password" name="password" onChange={(e) => {setPassword(e.target.value)}}/>
+                {/* <input type="submit"/> */}
+                <button className="loginBtn" onClick={signup}> Create Account</button>
+                <button className="loginBtn" onClick={signin} > Login</button>
+            {/* </form> */}
+            </div>
       </div>
     )
 }
 
-export default Signin
+export default SignIn
 

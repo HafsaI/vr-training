@@ -2,21 +2,21 @@ import React from 'react'
 import {BrowserRouter, Routes, Route, Redirect, Link } from "react-router-dom";
 import History from './History'
 import Home from './Home'
-import Signin from './Signin'
+import SignIn from './SignIn'
 
 function Navbar(){    
   return (
     <div>
       <BrowserRouter>
-          <nav className="navbar">
+          <nav className="nab">
               <a><Link to='/' target='_self'>Home</Link></a>
-              <a><Link to='/history' target='_self'>History</Link></a>
-              <a><Link to='/login' target='_self'>Login</Link></a>
+              <a className ="linkHistory"><Link to='/history' target='_self'>History</Link></a>
+              <a className="linkLogin"><Link to='/login' target='_self'>Login</Link></a>
           </nav>
           <Routes>
               <Route exact path='/' element={<Home/>}></Route>
               <Route exact path='/history' element={<History/>}></Route>
-              <Route exact path='/login' element={<Signin/>}></Route>
+              <Route exact path='/login' element={<SignIn/>}></Route>
           </Routes>
       </BrowserRouter>
     </div>

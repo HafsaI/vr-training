@@ -40,3 +40,46 @@
 li {
   list-style-type:none;
 }
+
+.center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.center input, label, button {
+  display: block;
+  border-radius: 5%;
+}
+
+.center button {
+  width: 100%;
+  margin-top: 5%;
+
+}
+
+.bg {
+  background-image:url(bg.jpg);
+  background-color: #282c34;
+}
+
+.loginBtn {
+  border-radius: 5%;
+}
+
+.nab{
+  text-align: right;
+  padding-top:2%;
+}
+
+.nab a{
+  margin-left: 2%;
+  text-decoration: none;
+  color: black;
+}
+
+.linkLogin {
+  margin-right: 2%;
+}
