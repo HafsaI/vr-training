@@ -1,25 +1,29 @@
-import { useState } from "react";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
-// import db from '../firebaseconfig'
+import { useContext, useState } from "react";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged,  signOut} from "firebase/auth";
 import app from "../firebaseconfig";
-
+import { LoginContext
+ } from "../AppContext/Context";
 function SignIn(){
-
     const auth = getAuth(app);
+    const {user,setUser} = useContext(LoginContext);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+
+
+    onAuthStateChanged(auth, (currentUser) => {
+        setUser(currentUser);
+    });
+
+    // const isLoggedIn = auth.currentUser ? true:false
 
     const signup = () =>{
         createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
-            // Signed in 
             const user = userCredential.user;
-            console.log(user);
             alert("Successful signup")
         })
         .catch((error) => {
             const errorCode = error.code;
-            // const errorMessage = error.message;
             alert(errorCode)
         });
     }
@@ -30,6 +34,7 @@ function SignIn(){
         signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             const user = userCredential.user;
+            // console.log(user);
             alert("Sucessfully signed in")
         })
         .catch((error) => {
@@ -38,6 +43,11 @@ function SignIn(){
 
         });
     }
+
+    const signout = async () => {
+        await signOut(auth);
+        alert("Successful signout")
+    };
 
     return (
         <div className = "bg">
@@ -48,8 +58,11 @@ function SignIn(){
                 {/* <input type="submit"/> */}
                 <button className="loginBtn" onClick={signup}> Create Account</button>
                 <button className="loginBtn" onClick={signin} > Login</button>
+                <button className="loginBtn" onClick={signout} > SignOut</button>
             {/* </form> */}
             </div>
+         {console.log('a',user?.uid)}
+
       </div>
     )
 }

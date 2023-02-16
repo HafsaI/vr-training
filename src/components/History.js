@@ -1,38 +1,31 @@
 import React from 'react'
-import { useState, useEffect } from "react";
+import { useState, useEffect , useContext} from "react";
 import app from "../firebaseconfig";
 import { getFirestore } from "@firebase/firestore";
-
 import {
-  collection, getDocs,
-} from "firebase/firestore";
+  collection, getDocs,} from "firebase/firestore";
+import { LoginContext} from "../AppContext/Context";
+
 
 
 function History(){
-  const db = getFirestore(app);
-
-
-  const [users, setUsers] = useState([]);
+  const {user} = useContext(LoginContext);
   const [userSession, setUserSessionScores] = useState([]);
-  const usersCollectionRef = collection(db, "users");
-  const scoresCollectionRef = collection(db, "training_sessions");
-
 
   useEffect(() => {
-    const getUsers = async () => {
-      const data = await getDocs(usersCollectionRef);
-      setUsers(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-    };
-
+    const db = getFirestore(app);
+    const scoresCollectionRef = collection(db, "training_sessions");
     const getUserSessionScores = async () => {
-      const data = await getDocs(scoresCollectionRef);
-      setUserSessionScores(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    const data = await getDocs(scoresCollectionRef);
+    setUserSessionScores(data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))); 
     };
-
-    getUsers();
+    
     getUserSessionScores();
+
   }, []);
 
+
+  
   return (
     <div class="wrapper">
       <div class="tabs">
@@ -48,31 +41,28 @@ function History(){
           <label for="tab-2" class="tab-label">Overall Progress Report</label>
           <div class="tab-content">
             <h4>Listenability</h4>
-            {users.map((user) => {
-              return (
-              
+            {userSession.map((session) => {
+              return ( 
+
+              session.user_id === user?.uid?
+
+              // batool put all scores in a component and call a component here that does all this and give key to component to solve the warning error 
               <div> 
-               <p> Name: {user.username}</p>
-               <p> User ID: {user.id}</p>
-              
-              </div>
+              <p> Clarity: {session.clarity_score}</p>
+              <p> Pauses: {session.pauses_score}</p>
+              <p> Pronunciation: {session.pronunciation_score}</p>
+              <p> SpeakingRate: {session.speakingrate_score}</p>
+              <p> Listenability: {session.listenability_score}</p>
+              <p> Posture: {session.posture_score}</p>
+              <p> Gesture: {session.gesture_score}</p>
+              <p> Movement: {session.movement_score}</p>
+              <p> Nervousness: {session.nervousness_score}</p>
+             
+             </div>
+              : null
               )
+
             })}
-             {userSession.map((session) => {
-              return (
-              
-              <div> 
-               <p> Clarity: {session.clarity_score}</p>
-               <p>Speaking rate: {session.speaking_rate_score}</p>
-              
-              </div>
-              )
-            })}
-
-
-
-
-
           </div>
         </div>
       </div>
@@ -82,3 +72,10 @@ function History(){
 
 
 export default History
+
+
+
+
+
+
+
