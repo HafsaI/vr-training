@@ -14,3 +14,29 @@ firebase db
 
 user: example3@gmail.com
 password: hello1
+
+
+
+
+// getSpeechScoresById(speechid).then((value) => console.log(value))
+// {users.map((user) => {
+//   return (
+  
+//   <div> 
+//    <p> Name: {user.username}</p>
+//    <p> User ID: {user.id}</p>
+  
+//   </div>
+//   )
+// })} 
+
+
+
+-- to get users
+// const [users, setUsers] = useState([]);
+// const usersCollectionRef = collection(db, "users");
+// const getUsers = async () => {
+//   const data = await getDocs(usersCollectionRef);
+//   setUsers(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+// };
+    // getUsers();
