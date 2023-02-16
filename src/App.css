@@ -156,7 +156,7 @@ li {
   transition: top 0.25s;
 }
 .tab-content {
-  height: 12rem;
+  height: auto;
   position: absolute;
   z-index: 1;
   top: 2.75em;
