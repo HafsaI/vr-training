@@ -5,6 +5,7 @@ import { getFirestore } from "@firebase/firestore";
 import {
   collection, getDocs,} from "firebase/firestore";
 import { LoginContext} from "../AppContext/Context";
+import bg from '../bg.jpg'
 
 
 

@@ -103,6 +103,7 @@ li {
   padding-top: 3%;
   padding-bottom: 3%;
   border-radius: 8px;
+  opacity: 80%;
 }
 
 #password {
@@ -125,6 +126,7 @@ li {
   height: 14.75rem;
   border-radius: 8px;
 }
+
 .tabs::before,
 .tabs::after {
   content: "";
@@ -200,4 +202,8 @@ li {
 
 .analysisType {
   padding-top: 25px;
+}
+
+.bg {
+  background-image: url('./bg.jpg');
 }

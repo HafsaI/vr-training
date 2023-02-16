@@ -4,7 +4,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { LoginContext } from './AppContext/Context';
 import { useState } from 'react';
 
-
 function App() {
   const [user, setUser] = useState({})
   return (
