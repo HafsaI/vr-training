@@ -40,7 +40,6 @@ function History(){
           <input type="radio" name="css-tabs" id="tab-2" class="tab-switch"/>
           <label for="tab-2" class="tab-label">Last Session Report</label>
           <div class="tab-content">
-            <h4>Listenability</h4>
             {userSession.map((session) => {
               return ( 
 
@@ -48,15 +47,28 @@ function History(){
 
               // batool put all scores in a component and call a component here that does all this and give key to component to solve the warning error 
               <div> 
-              <p> Clarity: {session.clarity_score}</p>
-              <p> Pauses: {session.pauses_score}</p>
-              <p> Pronunciation: {session.pronunciation_score}</p>
-              <p> SpeakingRate: {session.speakingrate_score}</p>
-              <p> Listenability: {session.listenability_score}</p>
-              <p> Posture: {session.posture_score}</p>
-              <p> Gesture: {session.gesture_score}</p>
-              <p> Movement: {session.movement_score}</p>
-              <p> Nervousness: {session.nervousness_score}</p>
+              <h5>Speech Analysis</h5>
+              <hr/>
+              <p> Clarity: <span className='rightAlign'>{session.clarity_score}/10</span></p>
+              <hr/>
+              <p> Pauses: <span className='rightAlign'>{session.pauses_score}/10</span></p>
+              <hr/>
+              <p> Pronunciation: <span className='rightAlign'>{session.pronunciation_score}/10</span></p>
+              <hr/>
+              <p> SpeakingRate: <span className='rightAlign'>{session.speakingrate_score}/10</span></p>
+              <hr/>
+              <p> Listenability: <span className='rightAlign'>{session.listenability_score}/10</span></p>
+              <hr/>
+              <h5 className='analysisType'>Body Language Analysis</h5>
+              <hr/>
+              <p> Posture: <span className='rightAlign'>{session.posture_score}/10</span></p>
+              <hr/>
+              <p> Gesture: <span className='rightAlign'>{session.gesture_score}/10</span></p>
+              <hr/>
+              <p> Movement: <span className='rightAlign'>{session.movement_score}/10</span></p>
+              <h5 className='analysisType'>Nervousness Analysis</h5>
+              <hr/>
+              <p> Nervousness: <span className='rightAlign'>{session.nervousness_score}/10</span></p>
              
              </div>
               : null

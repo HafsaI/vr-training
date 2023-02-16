@@ -186,3 +186,18 @@ li {
 #divTab1 label {
   border-top-left-radius: 8px;
 }
+
+.grayBox {
+  background-color:#282c34;
+  color: white;
+  padding:2px 6px 2px 6px;
+  border-radius: 6px;
+}
+
+.rightAlign {
+  float: right;
+}
+
+.analysisType {
+  padding-top: 25px;
+}
