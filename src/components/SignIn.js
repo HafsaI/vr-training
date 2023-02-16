@@ -5,7 +5,7 @@ import { LoginContext
  } from "../AppContext/Context";
 
  import bg from '../bg.jpg'
- 
+
 function SignIn(){
     const auth = getAuth(app);
     const {user,setUser} = useContext(LoginContext);
@@ -54,7 +54,6 @@ function SignIn(){
 
     return (
         <div className = "bg">
-            <img src={bg} height="900px"/>
             <div className="center signinBox">
             {/* <form id="signin"> */}
                 <input type = "email" placeholder='Email' name="email" onChange={(e) => {setEmail(e.target.value)}}/>
