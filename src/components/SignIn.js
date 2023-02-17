@@ -33,7 +33,6 @@ function SignIn(){
 
     const signin = () => {
 
-        const auth = getAuth();
         signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             const user = userCredential.user;
