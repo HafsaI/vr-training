@@ -4,8 +4,6 @@ import app from "../firebaseconfig";
 import { LoginContext
  } from "../AppContext/Context";
 
- import bg from '../bg.jpg'
-
 function SignIn(){
     const auth = getAuth(app);
     const {user,setUser} = useContext(LoginContext);

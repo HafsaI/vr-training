@@ -207,3 +207,20 @@ li {
 .bg {
   background-image: url('./bg.jpg');
 }
+
+.btnLogin {
+  display: inline;
+  margin-left: 3%;
+  border-radius: 20px;
+  padding: 10px;
+  border: none;
+}
+
+.usernameDisplay {
+  display: inline;
+}
+
+
+.linkHistory {
+  margin-right: 3%;
+}
