@@ -1,18 +1,21 @@
 import { useContext, useState } from "react";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged,  signOut} from "firebase/auth";
 import app from "../firebaseconfig";
-import { LoginContext
- } from "../AppContext/Context";
+import { LoginContext} from "../AppContext/Context";
+import { getFirestore,doc, updateDoc, setDoc} from "@firebase/firestore";
+
 
 function SignIn(){
     const auth = getAuth(app);
     const {user,setUser} = useContext(LoginContext);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-
+    const db = getFirestore(app);
 
     onAuthStateChanged(auth, (currentUser) => {
         setUser(currentUser);
+        console.log('currentuser', currentUser);
+        
     });
 
     // const isLoggedIn = auth.currentUser ? true:false
@@ -22,6 +25,11 @@ function SignIn(){
         .then((userCredential) => {
             const user = userCredential.user;
             alert("Successful signup")
+            setDoc(doc(db, "users", auth.currentUser.uid), {
+                isWebsiteLogin: false,
+                isVRLogin: false
+              });
+
         })
         .catch((error) => {
             const errorCode = error.code;
@@ -35,6 +43,14 @@ function SignIn(){
         .then((userCredential) => {
             const user = userCredential.user;
             // console.log(user);
+            let docRef = doc(db, "users", user?.uid);
+            updateDoc(docRef,{
+                isWebsiteLogin:true
+            } ).then(response => {
+                console.log("signinupdated")
+            }).catch(error =>{
+                console.log(error.message)
+            })
             alert("Sucessfully signed in")
         })
         .catch((error) => {
@@ -45,6 +61,17 @@ function SignIn(){
     }
 
     const signout = async () => {
+        let docRef;
+        docRef = doc(db, "users", user?.uid)
+        await updateDoc(docRef,{
+            isWebsiteLogin:false
+          } ).then(response => {
+            console.log("signoutupdated")
+          }).catch(error =>{
+            console.log(error.message)
+          })
+        
+          
         await signOut(auth);
         alert("Successful signout")
     };
@@ -55,7 +82,6 @@ function SignIn(){
             {/* <form id="signin"> */}
                 <input type = "email" placeholder='Email' name="email" onChange={(e) => {setEmail(e.target.value)}}/>
                 <input id="password" placeholder='Password' type = "password" name="password" onChange={(e) => {setPassword(e.target.value)}}/>
-                {/* <input type="submit"/> */}
                 <button className="loginBtn" onClick={signup}> Create Account</button>
                 <button className="loginBtn" onClick={signin} > Login</button>
                 <button className="loginBtn" onClick={signout} > SignOut</button>

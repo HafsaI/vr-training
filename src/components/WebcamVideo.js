@@ -2,6 +2,7 @@ import React, { useCallback, useRef, useState } from "react";
 import Webcam from "react-webcam";
 
 export default function WebcamVideo() {
+  const [videoUpload, setVideoUpload] = useState(null);
   const webcamRef = useRef(null);
   const mediaRecorderRef = useRef(null);
   const [capturing, setCapturing] = useState(false);
