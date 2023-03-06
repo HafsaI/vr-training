@@ -1,3 +1,4 @@
+
 .App {
   text-align: center;
 }
@@ -57,10 +58,10 @@ li {
 .center button {
   width: 100%;
   margin-top: 5%;
-  background-color: #282c34;
+  background-color: purple;
   color: white;
-  border: solid #282c34;
-  border-radius: 8px;
+  border: solid purple;
+  border-radius: 60px;
 }
 
 .center input {
@@ -68,16 +69,6 @@ li {
   border: none;
   border-bottom: solid 1px; 
   background-color: transparent;
-}
-
-
-.bg {
-  background-image:url(bg.jpg);
-  background-color: #282c34;
-}
-
-.loginBtn {
-  border-radius: 5%;
 }
 
 .nab{
@@ -97,13 +88,22 @@ li {
 }
 
 .signinBox {
-  background-color: whitesmoke;
   padding: 2%;
   width: 300px;
   padding-top: 3%;
   padding-bottom: 3%;
-  border-radius: 8px;
+  border-radius: 2%;
   opacity: 80%;
+}
+
+
+.centerText {
+  text-align: center;
+}
+
+
+#signinField {
+  margin-bottom: 3%;
 }
 
 #password {
@@ -147,7 +147,7 @@ li {
   line-height: 2.75em;
   height: 3em;
   padding: 0 1.618em;
-  background:#282c34;
+  background:purple;
   color: #fff;
   cursor: pointer;
   top: 0;
@@ -208,19 +208,49 @@ li {
   background-image: url('./bg.jpg');
 }
 
-.btnLogin {
+.btnLogin{
   display: inline;
   margin-left: 3%;
   border-radius: 20px;
-  padding: 10px;
+  padding-right: 2%;
+  padding-left: 2%;
+  padding-top: 5px;
+  padding-bottom: 5px;
   border: none;
+  background-color: purple;
+  color:white;
+}
+
+.loginLink{
+  color: white;
+}
+
+.purple {
+  color:purple;
+}
+
+.white {
+  color:white;
 }
 
 .usernameDisplay {
   display: inline;
+  margin-right: 1%;
 }
 
 
 .linkHistory {
   margin-right: 3%;
+}
+
+.linkLogout {
+  margin-right:3%;
+}
+
+.white {
+  color: white !important;
+}
+
+.inline {
+  display: inline;
 }
