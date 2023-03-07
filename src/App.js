@@ -9,8 +9,7 @@ function App() {
   return (
     // <div className="App">
     <LoginContext.Provider value={{user, setUser}} className="App" >
-      {console.log(user)}
-      <Navbar user={user}/>
+      <Navbar />
     </LoginContext.Provider>
     // </div>
 

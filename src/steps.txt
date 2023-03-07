@@ -40,3 +40,14 @@ password: hello1
 //   setUsers(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
 // };
     // getUsers();
+
+
+
+
+// onAuthStateChanged(auth, (currentUser) => {
+//     setUser(currentUser);
+//     console.log('currentuser2', currentUser);
+    
+// });
+
+// const isLoggedIn = auth.currentUser ? true:false

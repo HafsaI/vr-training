@@ -7,7 +7,7 @@ import {
 import { LoginContext} from "../AppContext/Context";
 import LineChart from './LineChart';
 
-
+// TODO: rename everything of 'history' to report
 
 function History(){
   const {user} = useContext(LoginContext);

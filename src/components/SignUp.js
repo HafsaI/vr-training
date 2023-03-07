@@ -1,9 +1,12 @@
 import React from 'react'
 import { useContext, useState } from "react";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged,  signOut} from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword} from "firebase/auth";
 import app from "../firebaseconfig";
 import { LoginContext} from "../AppContext/Context";
-import { getFirestore,doc, updateDoc, setDoc} from "@firebase/firestore";
+import { getFirestore,doc, setDoc} from "@firebase/firestore";
+
+// signup page that allows you to create new account and creates a new collection in users document in db
+// and adds default false values for isLogin fields
 
 function SignUp() {
     const auth = getAuth(app);
@@ -12,23 +15,18 @@ function SignUp() {
     const [password, setPassword] = useState("");
     const db = getFirestore(app);
 
-    onAuthStateChanged(auth, (currentUser) => {
-        setUser(currentUser);
-        console.log('currentuser', currentUser);
-        
-    });
-
-    // const isLoggedIn = auth.currentUser ? true:false
-
     const signup = () =>{
         createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             const user = userCredential.user;
+            // setUser(auth.currentUser);
             alert("Successful signup")
             setDoc(doc(db, "users", auth.currentUser.uid), {
                 isWebsiteLogin: false,
                 isVRLogin: false
-              });
+              });   
+            
+            // TODO:navigate to login page on signup so that user logs in and then abto to view
 
         })
         .catch((error) => {
@@ -40,13 +38,12 @@ function SignUp() {
     return (
         <div className = "bg">
             <div className="center signinBox">
-            {/* <form id="signin"> */}
                 <h1 className="centerText">VocalizeX</h1>
                 {/*<input id ="signinField" type = "text" placeholder='Username' name="username" onChange={(e) => {setUsername(e.target.value)}}/> */}
                 <input id ="signinField" type = "email" placeholder='Email' name="email" onChange={(e) => {setEmail(e.target.value)}}/>
                 <input id="password signinField" placeholder='Password' type = "password" name="password" onChange={(e) => {setPassword(e.target.value)}}/>
                 <button className="loginBtn" onClick={signup}> Create Account</button>
-            {/* </form> */}
+                {console.log('singupuser', user)}
             </div>
       </div>
     )
