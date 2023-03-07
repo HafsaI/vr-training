@@ -147,8 +147,8 @@ li {
   line-height: 2.75em;
   height: 3em;
   padding: 0 1.618em;
-  background:purple;
-  color: #fff;
+  background: whitesmoke;
+  color: #2c3e50;
   cursor: pointer;
   top: 0;
   transition: all 0.25s;
@@ -172,8 +172,8 @@ li {
   border-radius: 0 0 8px 8px;
 }
 .tab-switch:checked + .tab-label {
-  background: whitesmoke;
-  color: #2c3e50;
+  background: purple;
+  color: whitesmoke;
   border-bottom: 0;
   transition: all 0.35s;
   z-index: 1;
@@ -202,10 +202,6 @@ li {
 
 .analysisType {
   padding-top: 25px;
-}
-
-.bg {
-  background-image: url('./bg.jpg');
 }
 
 .btnLogin{
