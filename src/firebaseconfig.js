@@ -1,4 +1,3 @@
-
 // creates connection
 import { initializeApp } from "firebase/app";
 
