@@ -23,10 +23,12 @@ function SignOut(){
             console.log(error.message)
           })
 
-          console.log("signoutuser", user);
-          setUser(auth.currentUser)
+         
+         
           
         await signOut(auth);
+        setUser(auth.currentUser)
+        console.log("signoutuser", user);
         alert("Successful signout")
         // TODO:navigate to login page on signout
     };
@@ -35,6 +37,7 @@ function SignOut(){
         <>
             {/* <p className='usernameDisplay'>Hi, props.user.username</p>  */}
             <button className="btnLogin linkLogout" onClick={signout}><Link to='/login' target='_self' className='white'>Logout</Link></button> 
+            {console.log("Signoutuser", user)}
         </>
     )
 }

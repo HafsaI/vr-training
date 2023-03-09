@@ -51,3 +51,12 @@ password: hello1
 // });
 
 // const isLoggedIn = auth.currentUser ? true:false
+
+
+
+
+// // saves video to db only when a video has stopped recording
+  // useEffect(() => {
+  //   return <SaveVideoToDB videoFile={video}/>
+  //   // console.log("here2")
+  // }, [video]); 

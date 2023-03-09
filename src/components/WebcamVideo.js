@@ -1,25 +1,30 @@
-import React, { useState, useEffect , useContext, useCallback, useRef} from "react";
-import app from "../firebaseconfig";
-import { getFirestore } from "@firebase/firestore";
-import { collection, getDocs} from "firebase/firestore";
-import { LoginContext} from "../AppContext/Context";
+import React, { useCallback, useEffect, useRef, useState, useContext } from "react";
 import Webcam from "react-webcam";
+import {ref,uploadBytes,getDownloadURL,} from "firebase/storage";
+import { getStorage } from "firebase/storage";
+import app from "../firebaseconfig";
+import { v4 } from "uuid";
+import { LoginContext} from "../AppContext/Context";
+import { getFirestore } from "@firebase/firestore";
+import { collection, getDocs, updateDoc,doc} from "firebase/firestore";
 
 export default function WebcamVideo() {
   const webcamRef = useRef(null);
   const mediaRecorderRef = useRef(null);
   const [capturing, setCapturing] = useState(false);
   const [recordedChunks, setRecordedChunks] = useState([]);
-
-  const {user} = useContext(LoginContext);
+  const storage = getStorage(app);
+  const {user,setUser} = useContext(LoginContext);
   const [userSession, setUserSessionScores] = useState([]);
+  const db = getFirestore(app);
+
 
   useEffect(() => {
     const db = getFirestore(app);
     const scoresCollectionRef = collection(db, "training_sessions");
     const getUserSessionScores = async () => {
-    const data = await getDocs(scoresCollectionRef);
-    setUserSessionScores(data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))); 
+      const data = await getDocs(scoresCollectionRef);
+      setUserSessionScores(data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))); 
     };
     
     getUserSessionScores();
@@ -37,6 +42,7 @@ export default function WebcamVideo() {
 
   const handleStartCaptureClick = useCallback(() => {
     setCapturing(true);
+    console.log('start');
     mediaRecorderRef.current = new MediaRecorder(webcamRef.current.stream, {
       mimeType: "video/webm",
     });
@@ -47,22 +53,57 @@ export default function WebcamVideo() {
     mediaRecorderRef.current.start();
   }, [webcamRef, setCapturing, mediaRecorderRef, handleDataAvailable]);
 
+
+  // func to generate video and save to fb storage and main db
   const handleStopCaptureClick = useCallback(() => {
     mediaRecorderRef.current.stop();
     setCapturing(false); 
     /* Downloading */
     const blob = new Blob(recordedChunks, {
-        type: "video/webm",
+      type: "video/mp4",
+    });
+
+    ////////////////    saving video in DB    /////////////////////////////////
+    console.log('stop');
+    console.log("videouser", user);
+    // generating filename ie user + random
+    const videoRef = ref(storage, `videos/${user?.uid + v4()}`);
+    // uploads to fb storage
+    uploadBytes(videoRef, blob).then((snapshot) => {
+      // uploads to specific user session into fb collection
+      getDownloadURL(snapshot.ref).then((url) => {
+        {userSession.map((session) => {
+        
+          console.log("video saved = url",url)
+          return ( 
+          session.user_id === user?.uid?
+            updateDoc(doc(db, "training_sessions", session.id),{
+              video_recording: url.toString()
+            }).then(response => {
+              console.log("video added")
+            }).catch(error =>{
+              console.log(error.message)
+            })
+            
+          : null)
+          
+    
+        })}
       });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      document.body.appendChild(a);
-      a.style = "display: none";
-      a.href = url;
-      a.download = "react-webcam-stream-capture.webm";
-      a.click();
-      window.URL.revokeObjectURL(url);
-      setRecordedChunks([]);
+      alert("video saved")
+      
+    })
+
+    ////////////////////////////////////////////////////////////////////
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    document.body.appendChild(a);
+    a.style = "display: none";
+    a.href = url;
+    a.download = "react-webcam-stream-capture.mp4";
+    a.click();
+    window.URL.revokeObjectURL(url);
+    setRecordedChunks([]);
   }, [mediaRecorderRef, setCapturing, recordedChunks]);
 
   const videoConstraints = {
@@ -84,11 +125,11 @@ export default function WebcamVideo() {
       ) : (
         <button onClick={handleStartCaptureClick}>Start Capture</button>
       )}
-                  {userSession.map((session) => {
-              if (session.user_id === user?.uid && session.session == true) {
-                console.log(session.session)
-              }
-          })}
+      
     </div>
   );
 }
+
+
+// console.log("gd", getDownloadURL(snapshot.ref))
+// console.log("vri", "gs://" + videoRef._location.bucket + "/" + videoRef._location._path )

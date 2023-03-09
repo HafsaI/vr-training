@@ -26,8 +26,8 @@ function Navbar(){
               <a><Link to='/' target='_self'>Home</Link></a>
               { JSON.stringify(user) !== '{}' && user != null && <a><Link to='/record' target='_self'>Record</Link></a>}
               { JSON.stringify(user) !== '{}' && user != null && <a><Link to='/history' target='_self'>History</Link></a>}
-              {console.log("navbaruser", user)}
-              {console.log(" JSON.stringify(user) === '{}",  JSON.stringify(user) === '{}')}
+              { console.log("navbaruser", user)}
+              { console.log(" JSON.stringify(user) === '{}",  JSON.stringify(user) === '{}')}
               { JSON.stringify(user) === '{}' || user == null || user === Object? LoginBtn:<SignOut/> }
               
           </nav>
