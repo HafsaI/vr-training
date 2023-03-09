@@ -1,4 +1,8 @@
-import React, { useCallback, useRef, useState } from "react";
+import React, { useState, useEffect , useContext, useCallback, useRef} from "react";
+import app from "../firebaseconfig";
+import { getFirestore } from "@firebase/firestore";
+import { collection, getDocs} from "firebase/firestore";
+import { LoginContext} from "../AppContext/Context";
 import Webcam from "react-webcam";
 
 export default function WebcamVideo() {
@@ -6,6 +10,21 @@ export default function WebcamVideo() {
   const mediaRecorderRef = useRef(null);
   const [capturing, setCapturing] = useState(false);
   const [recordedChunks, setRecordedChunks] = useState([]);
+
+  const {user} = useContext(LoginContext);
+  const [userSession, setUserSessionScores] = useState([]);
+
+  useEffect(() => {
+    const db = getFirestore(app);
+    const scoresCollectionRef = collection(db, "training_sessions");
+    const getUserSessionScores = async () => {
+    const data = await getDocs(scoresCollectionRef);
+    setUserSessionScores(data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))); 
+    };
+    
+    getUserSessionScores();
+
+  }, []);
 
   const handleDataAvailable = useCallback(
     ({ data }) => {
@@ -65,6 +84,11 @@ export default function WebcamVideo() {
       ) : (
         <button onClick={handleStartCaptureClick}>Start Capture</button>
       )}
+                  {userSession.map((session) => {
+              if (session.user_id === user?.uid && session.session == true) {
+                console.log(session.session)
+              }
+          })}
     </div>
   );
 }

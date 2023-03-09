@@ -11,7 +11,7 @@ function Scores({session}) {
         <hr/>
         <p> Pronunciation <span className='rightAlign'>{session.pronunciation_score}/10</span></p>
         <hr/>
-        <p> SpeakingRate <span className='rightAlign'>{session.speakingrate_score}/10</span></p>
+        <p> Speaking Rate <span className='rightAlign'>{session.speakingrate_score}/10</span></p>
         <hr/>
         <p> Listenability <span className='rightAlign'>{session.listenability_score}/10</span></p>
         <hr/>
