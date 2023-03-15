@@ -30,7 +30,7 @@ function SignOut(){
         setUser(auth.currentUser)
         console.log("signoutuser", user);
         alert("Successful signout")
-        // TODO:navigate to login page on signout
+        // TODO: [Batool] navigate to login page on signout
     };
 
     return (

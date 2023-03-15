@@ -17,8 +17,8 @@ function Navbar(){
     <button className="btnLogin linkLogin"><Link to='/login' target='_self' className='white'>Login</Link></button>
   )
   
-  // TODO: add profile icon if user is logged in
-  // TODO: add VocalizeX on left hand side of navbar
+  // TODO: [Batool] add profile icon if user is logged in
+  // TODO: [Batool] add Empowered on left hand side of navbar and change VocalizeX to Empowered everywhere else
   return (
     <div>
       <BrowserRouter>

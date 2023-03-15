@@ -30,7 +30,7 @@ function SignIn(){
             })
             setUser(auth.currentUser);
             alert("Sucessfully signed in")
-            // TODO:navigate to home page on login so that login page is no longer visible now
+            // TODO: [Batool] navigate to home page on login so that login page is no longer visible now
         })
         .catch((error) => {
             const errorCode = error.code;

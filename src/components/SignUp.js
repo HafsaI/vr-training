@@ -26,7 +26,7 @@ function SignUp() {
                 isVRLogin: false
               });   
             
-            // TODO:navigate to login page on signup so that user logs in and then abto to view
+            // TODO: [Batool] navigate to login page on signup so that user logs in and then abto to view
 
         })
         .catch((error) => {
