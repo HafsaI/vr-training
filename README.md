@@ -25,18 +25,6 @@ Project is created with:
 - Callback and Arrow functions
 - Conditional Rendering
 
-#### Advanced React Practises
-
-- React Fragments
-
-- Usage of React Hooks: useState, useEffect, useContext, useRef
-
-- Advanced State Management of the entire application using React Context API
-
-- Usage of react-hot-toast for notifications and react-icons for icons
-
-- Callback and Arrow functions
-
 #### Firebase
 
 - Cloud Firestore Database
