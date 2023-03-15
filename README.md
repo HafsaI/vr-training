@@ -16,6 +16,39 @@ Project is created with:
 - Bootstrap: 5.2.3
 - Firebase: 9.17.1
 
+## Components
+
+#### React.js Practises
+
+- React Fragments
+- Usage of React Hooks: useState, useEffect, useContext
+- Callback and Arrow functions
+- Conditional Rendering
+
+#### Advanced React Practises
+
+- React Fragments
+
+- Usage of React Hooks: useState, useEffect, useContext, useRef
+
+- Advanced State Management of the entire application using React Context API
+
+- Usage of react-hot-toast for notifications and react-icons for icons
+
+- Callback and Arrow functions
+
+#### Firebase
+
+- Cloud Firestore Database
+- Firestore Authentication
+- Saving audio and video files in Firebase Storage
+- Get realtime updates with Cloud Firestore with the onSnapshot() method
+- Reading & Writing Data into database
+
+#### Styling in CSS
+
+- Animations, transitions, flexbox and other basic CSS
+
 ## Setup
 
 To run this project, clone the project locally:
