@@ -93,3 +93,30 @@ password: hello1
 
     //   // perform desired operations ...
     // });
+
+
+
+// old history
+// {userSession.map((session) => {
+//   return ( 
+//   session.user_id === user?.uid?
+//   liveSession === false?
+//   <Scores session = {session}/>
+//   : null : null
+
+//   )
+
+// })}
+
+
+
+
+//on signin removed
+ let docRef = doc(db, "users", user?.uid);
+            updateDoc(docRef,{
+                isWebsiteLogin:true
+            } ).then(response => {
+                console.log("signinupdated")
+            }).catch(error =>{
+                console.log(error.message)
+            })
