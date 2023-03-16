@@ -22,11 +22,10 @@ function SignUp() {
             // setUser(auth.currentUser);
             alert("Successful signup")
             setDoc(doc(db, "users", auth.currentUser.uid), {
-                isWebsiteLogin: false,
-                isVRLogin: false
+                currSessionId: ""
               });   
             
-            // TODO:navigate to login page on signup so that user logs in and then abto to view
+            // TODO: [Batool] navigate to login page on signup so that user logs in and then abto to view
 
         })
         .catch((error) => {

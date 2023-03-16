@@ -60,3 +60,63 @@ password: hello1
   //   return <SaveVideoToDB videoFile={video}/>
   //   // console.log("here2")
   // }, [video]); 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  cloud firestore func
+
+  // exports.updateUser = functions.firestore
+    // .document('training_sessions/{id6}')
+    // .onUpdate((change, context) => {
+    //   // Get an object representing the document
+    //   // e.g. {'name': 'Marie', 'age': 66}
+    //   const newValue = change.after.data();
+
+    //   // ...or the previous value before this update
+    //   const previousValue = change.before.data();
+
+    //   // access a particular field as you would any JS property
+    //   const sess = newValue.session;
+    //   console.log("session", sess)
+
+    //   // perform desired operations ...
+    // });
+
+
+
+// old history
+// {userSession.map((session) => {
+//   return ( 
+//   session.user_id === user?.uid?
+//   liveSession === false?
+//   <Scores session = {session}/>
+//   : null : null
+
+//   )
+
+// })}
+
+
+
+
+//on signin removed
+ let docRef = doc(db, "users", user?.uid);
+            updateDoc(docRef,{
+                isWebsiteLogin:true
+            } ).then(response => {
+                console.log("signinupdated")
+            }).catch(error =>{
+                console.log(error.message)
+            })

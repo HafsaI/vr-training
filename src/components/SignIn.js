@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged} from "firebase/auth";
 import app from "../firebaseconfig";
 import { LoginContext} from "../AppContext/Context";
-import { getFirestore,doc, updateDoc} from "@firebase/firestore";
+// import { getFirestore,doc, updateDoc} from "@firebase/firestore";
 import { Link } from "react-router-dom";
 
 
@@ -12,7 +12,7 @@ function SignIn(){
     const {user,setUser} = useContext(LoginContext);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const db = getFirestore(app);
+    // const db = getFirestore(app);
 
     const signin = () => {
 
@@ -20,17 +20,9 @@ function SignIn(){
         .then((userCredential) => {
             const user = userCredential.user;
             // console.log(user);
-            let docRef = doc(db, "users", user?.uid);
-            updateDoc(docRef,{
-                isWebsiteLogin:true
-            } ).then(response => {
-                console.log("signinupdated")
-            }).catch(error =>{
-                console.log(error.message)
-            })
             setUser(auth.currentUser);
             alert("Sucessfully signed in")
-            // TODO:navigate to home page on login so that login page is no longer visible now
+            // TODO: [Batool] navigate to home page on login so that login page is no longer visible now
         })
         .catch((error) => {
             const errorCode = error.code;

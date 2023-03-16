@@ -6,7 +6,8 @@ import app from "../firebaseconfig";
 import { v4 } from "uuid";
 import { LoginContext} from "../AppContext/Context";
 import { getFirestore } from "@firebase/firestore";
-import { collection, getDocs, updateDoc,doc} from "firebase/firestore";
+import { collection, getDocs, updateDoc,doc, onSnapshot} from "firebase/firestore";
+
 
 export default function WebcamVideo() {
   const webcamRef = useRef(null);
@@ -17,6 +18,7 @@ export default function WebcamVideo() {
   const {user,setUser} = useContext(LoginContext);
   const [userSession, setUserSessionScores] = useState([]);
   const db = getFirestore(app);
+  const [liveSession, setliveSession] = useState([])
 
 
   useEffect(() => {
@@ -28,6 +30,11 @@ export default function WebcamVideo() {
     };
     
     getUserSessionScores();
+
+    const unsub = onSnapshot(doc(db, "training_sessions", "id6"), (doc) => {
+      console.log("Current data: ", doc.data().session);
+      setliveSession(doc.data().session);
+  });
 
   }, []);
 
@@ -64,6 +71,9 @@ export default function WebcamVideo() {
     });
 
     ////////////////    saving video in DB    /////////////////////////////////
+    
+    // TODO: [Hafsa] Solve the issue of saving incorrect video in DB
+
     console.log('stop');
     console.log("videouser", user);
     // generating filename ie user + random
