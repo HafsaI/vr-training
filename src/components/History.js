@@ -42,7 +42,7 @@ function History(){
     
     // console.log("currSessId", currSessId);
     // console.log("json", JSON.stringify(currSessId) !== '[]')
-    // console.log("currSessId != false: ",  currSessId != false)
+    console.log("currSessId != false: ",  currSessId != false)
 
     if (JSON.stringify(currSessId) !== '[]' && currSessId != false ){
 

@@ -120,3 +120,13 @@ password: hello1
             }).catch(error =>{
                 console.log(error.message)
             })
+
+// on signout removed let docRef;
+        docRef = doc(db, "users", user?.uid)
+        await updateDoc(docRef,{
+            isWebsiteLogin:false
+          } ).then(response => {
+            console.log("signoutupdated")
+          }).catch(error =>{
+            console.log(error.message)
+          })
