@@ -26,17 +26,14 @@ function History(){
       setUserSessionScores(data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))); 
     };
     getUserSessionScores();
-
-    console.log("[Histor] userid", user?.uid);  
+    console.log("[History] userid", user?.uid);  
 
     }, []);
 
     // TODO: [Hafsa] see if any loopholes in here when you check with pc proj
 
-    // Getting latest training session id
     useEffect(() => {
-
-    //get logged in user doc
+    //gets data of user that is logged in and latest training session id
     const docRef = doc(db, "users", user?.uid)
     getDoc(docRef)
     .then((doc) => {
@@ -45,8 +42,9 @@ function History(){
     
     // console.log("currSessId", currSessId);
     // console.log("json", JSON.stringify(currSessId) !== '[]')
+    // console.log("currSessId != false: ",  currSessId != false)
 
-    if (JSON.stringify(currSessId) !== '[]' ){
+    if (JSON.stringify(currSessId) !== '[]' && currSessId != false ){
 
       const unsub = onSnapshot(doc(db, "training_sessions", currSessId), (doc) => {
         console.log("[History] Session Value: ", doc.data().session)
@@ -57,11 +55,6 @@ function History(){
 
     }, [currSessId, liveSession]);
 
-    
-
-
-  /* TODO: [Batool] Write the clear format of data you want here for a particular graph
-            for example what format do you want of all pauses score of that user */
   return (
     <div class="wrapper">
       <div class="tabs">
@@ -78,10 +71,11 @@ function History(){
           <div class="tab-content">
             
             {/* // Displaying directly latest session scores  */}
-           
-            { lastSession?
+            {(JSON.stringify(currSessId) !== '[]' && currSessId != false)?
+            lastSession?
               liveSession === false?
               <Scores session = {lastSession}/> : null : null 
+            : null
             }
           </div>
         </div>
