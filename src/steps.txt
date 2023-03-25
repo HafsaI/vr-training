@@ -132,3 +132,50 @@ password: hello1
           })
 
 {/* {setUserSessions([...arr]) } */}
+
+
+////////////////    saving video in DB    /////////////////////////////////
+    
+    // TODO: [Hafsa] Solve the issue of saving incorrect video in DB
+
+    console.log('stop');
+    console.log("videouser", user);
+    // generating filename ie user + random
+    const videoRef = ref(storage, `videos/${user?.uid + v4()}`);
+    // uploads to fb storage
+    console.log("here1");
+    uploadBytes(videoRef, blob).then((snapshot) => {
+      // uploads to specific user session into fb collection
+      console.log("here2", snapshot)
+      getDownloadURL(snapshot.ref).then((url) => {
+        console.log("last", lastSession)
+        {lastSession.map((session) => {
+        
+          console.log("video saved = url",url)
+          return ( 
+          session.user_id === user?.uid?
+            updateDoc(doc(db, "training_sessions", session.id),{
+              video_recording: url.toString()
+            }).then(response => {
+              console.log("video added")
+            }).catch(error =>{
+              console.log(error.message)
+            })
+            
+          : null)
+          
+    
+        })}
+      });
+      alert("video saved")
+      
+    })
+
+    ////////////////////////////////////////////////////////////////////
+
+
+    // from webcam video use useEffect
+    // const unsub = onSnapshot(doc(db, "training_sessions", "id6"), (doc) => {
+    //   console.log("Current data: ", doc.data().session);
+    //   setliveSession(doc.data().session);
+    // });
