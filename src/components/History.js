@@ -7,25 +7,25 @@ import { LoginContext} from "../AppContext/Context";
 import LineChart from './LineChart';
 import Scores from './Scores';
 // import { toDimension } from 'chart.js/dist/helpers/helpers.core';
-
 // TODO: [Batool] rename everything of 'history' to report
 
 function History(){
   const {user} = useContext(LoginContext);
-  const [userSession, setUserSessionScores] = useState([]);
+  const [allSession, setAllSessionScores] = useState([]);
   const [liveSession, setliveSession] = useState([])
   const [currSessId, setcurrSessId] = useState([])
   const [lastSession, setlastSession] = useState([])
   const db = getFirestore(app);
+  const userSessions = []
 
   useEffect(() => {
     const db = getFirestore(app);
     const scoresCollectionRef = collection(db, "training_sessions");
-    const getUserSessionScores = async () => {
+    const getAllSessionScores = async () => {
       const data = await getDocs(scoresCollectionRef);
-      setUserSessionScores(data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))); 
+      setAllSessionScores(data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))); 
     };
-    getUserSessionScores();
+    getAllSessionScores();
     console.log("[History] userid", user?.uid);  
 
     }, []);
@@ -62,6 +62,19 @@ function History(){
           <input type="radio" name="css-tabs" id="tab-1" class="tab-switch"/>
           <label for="tab-1" class="tab-label">Overall Progress Report</label>
           <div class="tab-content">
+
+            {allSession.map((session) => {
+              return ( 
+              session.user_id === user?.uid?
+              // only those sessions which have finished
+              session.session != true? userSessions.push( session): null
+              : null
+              )
+            })}
+            
+            {/* // TODO: [Batool] userSessions var has all sessions of that particular user which you can use for graphs */}
+            { console.log("[History] All Sessions of current user", userSessions)}
+           
             <LineChart/>
           </div>
         </div>
@@ -77,6 +90,7 @@ function History(){
               <Scores session = {lastSession}/> : null : null 
             : null
             }
+            
           </div>
         </div>
       </div>
