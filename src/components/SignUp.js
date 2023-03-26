@@ -13,6 +13,7 @@ function SignUp() {
     const {user,setUser} = useContext(LoginContext);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [fullname, setFullName] = useState("");
     const db = getFirestore(app);
 
     const signup = () =>{
@@ -22,7 +23,8 @@ function SignUp() {
             // setUser(auth.currentUser);
             alert("Successful signup")
             setDoc(doc(db, "users", auth.currentUser.uid), {
-                currSessionId: ""
+                currSessionId: "",
+                name: fullname
               });   
             
             // TODO: [Batool] navigate to login page on signup so that user logs in and then abto to view
@@ -41,8 +43,9 @@ function SignUp() {
                 {/*<input id ="signinField" type = "text" placeholder='Username' name="username" onChange={(e) => {setUsername(e.target.value)}}/> */}
                 <input id ="signinField" type = "email" placeholder='Email' name="email" onChange={(e) => {setEmail(e.target.value)}}/>
                 <input id="password signinField" placeholder='Password' type = "password" name="password" onChange={(e) => {setPassword(e.target.value)}}/>
+                <input id="namefield" placeholder='Name' type = "text"  onChange={(e) => {setFullName(e.target.value)}}/>
                 <button className="loginBtn" onClick={signup}> Create Account</button>
-                {console.log('singupuser', user)}
+                {console.log('[Singup] user: ', user)}
             </div>
       </div>
     )
