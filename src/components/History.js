@@ -4,8 +4,8 @@ import app from "../firebaseconfig";
 import { getFirestore } from "@firebase/firestore";
 import { collection, getDocs, getDoc, doc, onSnapshot} from "firebase/firestore";
 import { LoginContext} from "../AppContext/Context";
-import LineChart from './LineChart';
 import Scores from './Scores';
+import Graphs from './Graphs'
 // import { toDimension } from 'chart.js/dist/helpers/helpers.core';
 // TODO: [Batool] rename everything of 'history' to report
 
@@ -73,9 +73,9 @@ function History(){
             })}
             
             {/* // TODO: [Batool] userSessions var has all sessions of that particular user which you can use for graphs */}
-            { console.log("[History] All Sessions of current user", userSessions)}
-           
-            <LineChart/>
+            {/* { console.log("[History] All Sessions of current user", userSessions)} */}
+            
+            <Graphs history={userSessions}/>
           </div>
         </div>
         <div class="tab">
