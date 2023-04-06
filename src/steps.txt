@@ -179,3 +179,41 @@ password: hello1
     //   console.log("Current data: ", doc.data().session);
     //   setliveSession(doc.data().session);
     // });
+
+
+
+
+     {/* {capturing ? (
+        <button onClick={handleStopCaptureClick}>Stop Capture</button>
+      ) : (
+        <button onClick={handleStartCaptureClick}>Start Capture</button>
+      )} */}
+
+
+
+
+
+    // Haania code commented
+      // useEffect(()=>{
+  //   console.log("liveSession", liveSession)
+  //   if(liveSession==false){
+  //     // fetch("http://127.0.0.1:5001/data/")
+  //     //         .then((response) => response.json())
+  //     //         .then((data) => {
+  //     //           // Do something with the response data here
+  //     //           console.log(data);
+  //     //         });
+  //     fetch("http://127.0.0.1:5001/data/", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json"
+  //       },
+  //       body: JSON.stringify({ value: currSessidRef.current.currSessId })
+  //     });
+  //       // .then((response) => response.json())
+  //       // .then((data) => {
+  //       //   // Do something with the response data here
+  //       //   console.log(data);
+  //       // });
+  //   }
+  //  }, [liveSession]);
