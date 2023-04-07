@@ -8,6 +8,7 @@ import WebcamVideo from './WebcamVideo';
 import SignUp from './SignUp';
 import { LoginContext,  UserContext} from "../AppContext/Context";
 import SignOut from './SignOut'
+import Webcam2 from './Webcam2'
 
 function Navbar(){
   const {user,setUser} = useContext(LoginContext); 
@@ -33,6 +34,7 @@ function Navbar(){
           <Routes>
               <Route exact path='/' element={<Home/>}></Route>
               <Route exact path='/record' element={<WebcamVideo/>}></Route>
+              {/* <Route exact path='/record' element={<Webcam2/>}></Route> */}
               <Route exact path='/history' element={<History/>}></Route>
               <Route exact path='/login' element={<SignIn/>}></Route>
               <Route exact path='/signup' element={<SignUp/>}></Route>

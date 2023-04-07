@@ -21,6 +21,18 @@ function Graphs({ history }) {
     pausesScores.push(history[i].pauses_score)
   }
 
+  var speakingRateScores = []
+
+  for (var i = 0; i < history.length; i++){
+    speakingRateScores.push(history[i].speakingrate_score)
+  }
+  
+  var postureScores = []
+
+  for (var i = 0; i < history.length; i++){
+    postureScores.push(history[i].posture_score)
+  }
+
   return (
     <div>
         <h4>Speech Analysis Scores</h4>
@@ -29,9 +41,12 @@ function Graphs({ history }) {
         <LineChart className='lineChart' x={sessionNos} y={clarityScores} label='Clarity Scores'/>
         <h5>Pauses</h5>
         <LineChart x={sessionNos} y={pausesScores} label='Pauses Scores'/>
+        <h5>Speaking Rate</h5>
+        <LineChart x={sessionNos} y={speakingRateScores} label='Speaking Rate Scores'/>
         <h4 className='analysisType'>Body Language Analysis Scores</h4>
         <hr/>
         <h5>Posture</h5>
+        <LineChart x={sessionNos} y={postureScores} label='Pauses Scores'/>
     </div>
   );    
 }
