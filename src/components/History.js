@@ -62,12 +62,22 @@ function History(){
           <input type="radio" name="css-tabs" id="tab-1" class="tab-switch"/>
           <label for="tab-1" class="tab-label">Overall Progress Report</label>
           <div class="tab-content">
+            {allSession.map((session) => {
+              if (session.user_id === user?.uid && session.session !== true) {
+                userSessions.push(session);
+              }
+              return null;
+            })}
+            <Graphs history={userSessions} />
+          </div>
+
+          {/* <div class="tab-content">
 
             {allSession.map((session) => {
               return ( 
-              session.user_id === user?.uid?
+              session.user_id === user?.uid? 
               // only those sessions which have finished
-              session.session != true? userSessions.push( session): null
+              session.session != true? userSessions.push(session): null
               : null
               )
             })}
@@ -75,8 +85,8 @@ function History(){
             {/* // TODO: [Batool] userSessions var has all sessions of that particular user which you can use for graphs */}
             {/* { console.log("[History] All Sessions of current user", userSessions)} */}
             
-            <Graphs history={userSessions}/>
-          </div>
+             {/* <Graphs history={userSessions}/> */}
+          {/* </div> */} */
         </div>
         <div class="tab">
           <input type="radio" name="css-tabs" id="tab-2" checked class="tab-switch"/>
