@@ -46,7 +46,7 @@ function Graphs({ history }) {
         <h4 className='analysisType'>Body Language Analysis Scores</h4>
         <hr/>
         <h5>Posture</h5>
-        <LineChart x={sessionNos} y={postureScores} label='Pauses Scores'/>
+        <LineChart x={sessionNos} y={postureScores} label='Posture Scores'/>
     </div>
   );    
 }
