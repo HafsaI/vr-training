@@ -8,7 +8,9 @@ import WebcamVideo from './WebcamVideo';
 import SignUp from './SignUp';
 import { LoginContext,  UserContext} from "../AppContext/Context";
 import SignOut from './SignOut'
-import Webcam2 from './Webcam2'
+
+import profilePic from '../../src/images/profile_default.png'
+
 
 function Navbar(){
   const {user,setUser} = useContext(LoginContext); 
@@ -29,7 +31,14 @@ function Navbar(){
               {/* { console.log("[Navbar] user: ", user)} */}
               {/* { console.log(" JSON.stringify(user) === '{}",  JSON.stringify(user) === '{}')} */}
               { JSON.stringify(user) === '{}' || user == null || user === Object? LoginBtn:<SignOut/> }
-              
+              <img src={profilePic} className='profilePic'/>
+              <div className='sub-menu-wrap'>
+                <div className='sub-menu'>
+                  <div className='user-info'>
+                    <img src="profile_default.png"/>
+                  </div>
+                </div>
+              </div>
           </nav>
           <Routes>
               <Route exact path='/' element={<Home/>}></Route>
