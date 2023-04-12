@@ -7,9 +7,8 @@ import { LoginContext} from "../AppContext/Context";
 import Scores from './Scores';
 import Graphs from './Graphs'
 // import { toDimension } from 'chart.js/dist/helpers/helpers.core';
-// TODO: [Batool] rename everything of 'history' to report
 
-function History(){
+function Report(){
   const {user} = useContext(LoginContext);
   const [allSession, setAllSessionScores] = useState([]);
   const [liveSession, setliveSession] = useState([])
@@ -29,8 +28,6 @@ function History(){
     console.log("[History] userid", user?.uid);  
 
     }, []);
-
-    // TODO: [Hafsa] see if any loopholes in here when you check with pc proj
 
     useEffect(() => {
     //gets data of user that is logged in and latest training session id
@@ -60,7 +57,7 @@ function History(){
       <div class="tabs">
         <div class="tab" id='divTab1'>
           <input type="radio" name="css-tabs" id="tab-1" class="tab-switch"/>
-          <label for="tab-1" class="tab-label">Overall Progress Report</label>
+          <label for="tab-1" class="tab-label">Analytics</label>
           <div class="tab-content">
             {allSession.map((session) => {
               if (session.user_id === user?.uid && session.session !== true) {
@@ -82,7 +79,6 @@ function History(){
               )
             })}
             
-            {/* // TODO: [Batool] userSessions var has all sessions of that particular user which you can use for graphs */}
             {/* { console.log("[History] All Sessions of current user", userSessions)} */}
             
              {/* <Graphs history={userSessions}/> */}
@@ -90,7 +86,7 @@ function History(){
         </div>
         <div class="tab">
           <input type="radio" name="css-tabs" id="tab-2" checked class="tab-switch"/>
-          <label for="tab-2" class="tab-label">Last Session Report</label>
+          <label for="tab-2" class="tab-label">Last Session</label>
           <div class="tab-content">
             
             {/* // Displaying directly latest session scores  */}
@@ -109,5 +105,5 @@ function History(){
 }
 
 
-export default History
+export default Report
 
