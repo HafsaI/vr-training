@@ -19,8 +19,9 @@ export default function WebcamVideo() {
   const db = getFirestore(app);
   const [allSession, setAllSessionScores] = useState([]);
   const [liveSession, setliveSession] = useState([])
+  // const [lastSession, setlastSession] = useState([])
   const currSessidRef = useRef({currSessId: ''});
-
+   
 
   const handleDataAvailable = useCallback(
     ({ data}) => {
@@ -55,12 +56,61 @@ export default function WebcamVideo() {
     /* Downloading */
     console.log('recordedChunks:', recordedChunks);
 
+    // const blob = new Blob(recordedChunks, {
+    //   type: "video/mp4",
+    // });
+
+    // ////////////////    saving video in DB    /////////////////////////////////
+    
+    // // TODO: [Hafsa] Solve the issue of saving incorrect video in DB
+
+    // console.log('stop');
+    // console.log("videouser", user);
+    // // generating filename ie user + random
+    // const videoRef = storageRef(storage, `videos/${user?.uid + v4()}`);
+    // // uploads to fb storage
+    // uploadBytes(videoRef, blob).then((snapshot) => {
+    //   // uploads to specific user session into fb collection
+    //   getDownloadURL(snapshot.ref).then((url) => {        
+    //       console.log("video saved = url",url)
+    //       return ( 
+    //         updateDoc(doc(db, "training_sessions", currSessidRef.current.currSessId),{
+    //           video_recording: url.toString()
+    //         }).then(response => {
+    //           console.log("video added")
+    //         }).catch(error =>{
+    //           console.log(error.message)
+    //         })  
+    //       )
+          
+    //   });
+    //   alert("video saved")
+      
+    // })
+
+    // ////////////////////////////////////////////////////////////////////
+    // const url = URL.createObjectURL(blob);
+    // const a = document.createElement("a");
+    // document.body.appendChild(a);
+    // a.style = "display: none";
+    // a.href = url;
+    // a.download = "react-webcam-stream-capture.mp4";
+    // a.click();
+    // window.URL.revokeObjectURL(url);
+    // setRecordedChunks([]);
+  }, [mediaRecorderRef, setCapturing, recordedChunks]);
+
+
+  useEffect(()=>{
+    if (recordedChunks.length > 0){
     const blob = new Blob(recordedChunks, {
       type: "video/mp4",
     });
 
     ////////////////    saving video in DB    /////////////////////////////////
     
+    // TODO: [Hafsa] Solve the issue of saving incorrect video in DB
+
     console.log('stop');
     console.log("videouser", user);
     // generating filename ie user + random
@@ -94,8 +144,8 @@ export default function WebcamVideo() {
     a.download = "react-webcam-stream-capture.mp4";
     a.click();
     window.URL.revokeObjectURL(url);
-    setRecordedChunks([]);
-  }, [mediaRecorderRef, setCapturing, recordedChunks]);
+    setRecordedChunks([]);}
+  }, [recordedChunks]);
 
 
 
@@ -105,6 +155,42 @@ export default function WebcamVideo() {
     height: 300,
     facingMode: "user",
   };
+  // useEffect(()=>{
+  //   console.log("liveSession", liveSession)
+  //   if(liveSession==false){
+  //     // fetch("http://127.0.0.1:5001/data/")
+  //     //         .then((response) => response.json())
+  //     //         .then((data) => {
+  //     //           // Do something with the response data here
+  //     //           console.log(data);
+  //     //         });
+  //     fetch("http://127.0.0.1:5001/data/", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json"
+  //       },
+  //       body: JSON.stringify({ value: currSessidRef.current.currSessId, user: user?.uid })
+  //     });
+  //       // .then((response) => response.json())
+  //       // .then((data) => {
+  //       //   // Do something with the response data here
+  //       //   console.log(data);
+  //       // });
+  //   }
+  //  }, [liveSession]);
+  useEffect(() => {
+    const db = getFirestore(app);
+    const scoresCollectionRef = collection(db, "training_sessions");
+    const getAllSessionScores = async () => {
+      const data = await getDocs(scoresCollectionRef);
+
+      setAllSessionScores(data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))); 
+    };
+    
+    getAllSessionScores();
+    
+  }, []);
+
 
   useEffect(() => {
     //gets data of user that is logged in and latest training session id
@@ -121,25 +207,36 @@ export default function WebcamVideo() {
         const unsub = onSnapshot(doc(db, "training_sessions", currSessidRef.current.currSessId), (doc) => {
           console.log("[Record] Current Session Value: ", doc.data().session)
           setliveSession(doc.data().session)
+          // console.log("A", doc.data().session)
+          // setlastSession(doc.data())
         }) 
       }
     })
     }, [currSessidRef.current.currSessId, liveSession]);
 
-  useEffect(() => {
+
+
+
+
+
+
+  
+  
+  
+
+useEffect(() => {
       console.log("LIVESESSION", liveSession)
       if (liveSession && !capturing && webcamRef.current.stream) {
-        console.log("Recording Started.")
-        {<p> Recording started! </p>     }
         handleStartCaptureClick();
       } else if (!liveSession && capturing) {
-        console.log("Recording Stopped.")
+        console.log("here")
         handleStopCaptureClick();
-        {<p> Recording stopped! </p>     }
       }
     }, [webcamRef, liveSession, handleStartCaptureClick, handleStopCaptureClick]);
-   
 
+  
+
+  
 
   return (
     <div className="Container centerText">
@@ -149,9 +246,16 @@ export default function WebcamVideo() {
         ref={webcamRef}
         videoConstraints={videoConstraints}
       />
-     
+      {/* liveSession variable stores session value for the current training Sess that is going on */}
+      {/* {capturing ? (
+        <button onClick={handleStopCaptureClick}>Stop Capture</button>
+      ) : (
+        <button onClick={handleStartCaptureClick}>Start Capture</button>
+      )} */}
       
     </div>
   );
 }
+
+
 
