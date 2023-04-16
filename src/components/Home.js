@@ -9,6 +9,7 @@ function Home() {
     <div style={{ position: 'relative' }}>
       <div className='home-top-div' style={{ zIndex: -3 }}>
         <div className='home-top-left'>
+          <h1>Empowered</h1>
           <p>About The projectdjjsdjsmd,skdmsd Download our public speaking guide and practise.</p>
           <button className='home-download'>Download</button>
         </div>
