@@ -48,7 +48,7 @@ function Navbar() {
               <>
                 <img src={profilePic} alt="Profile" className='imgSmall marginProfile' onClick={toggleMenu} />
 
-                <div className='sub-menu-wrap' id="subMenu">
+                <div className='sub-menu-wrap' id="subMenu" style={{zIndex:4}}>
                   <div className='sub-menu'>
                     <div className='user-info'>
                       <h5>{userdoc.name}</h5>
