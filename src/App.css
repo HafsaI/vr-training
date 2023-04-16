@@ -609,3 +609,7 @@ li:last-child {
 .notBold {
   font-weight: 300;
 }
+
+.analyzeBtn {
+  padding : 5% 70% 5% 70%;
+}

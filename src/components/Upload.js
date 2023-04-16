@@ -15,6 +15,11 @@ function Upload() {
           <label>Upload <span className='purple bold'>Video</span>:</label><span> </span> 
           <input type="file" id="video" name="video"/>
         </div>
+        <div className='paddingFile' style={{paddingRight : '13%'}}>
+          <button className='centerText heartrateBtn analyzeBtn'>Analyze</button>
+        </div>
+
+
       </form>
     </div>
   )
