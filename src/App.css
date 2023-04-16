@@ -370,14 +370,17 @@ li {
 
 .home-bottom-div {
   display: 'flex';
+  justify-content: space-between;
 }
 
 .home-bottom-left {
-  flex: 1;
+  flex-basis: 50%;
 }
 
 .home-bottom-right {
-  flex : 1;
+  flex-basis: 50%;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .home-bottom-div {
