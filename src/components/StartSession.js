@@ -11,10 +11,15 @@ function StartSession() {
       </div>
       <br/>
       <br/>
-      <br/>
       <div>
         <p>Start Recording:</p>
         <button className='heartrateBtn noLine'><Link to='/record' target='_self' className=' heartrateBtn noLine'>Open Webcam</Link></button>
+      </div>
+      <br/>
+      <br/>
+      <div>
+        <p>Upload Slides:</p>
+        <input type="file"/>
       </div>
     </div>
   )
