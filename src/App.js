@@ -1,5 +1,6 @@
 import './App.css';
-import Navbar from './components/Navbar'
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { LoginContext } from './AppContext/Context';
 import { UserContext } from './AppContext/Context';
@@ -16,6 +17,7 @@ function App() {
     <UserContext.Provider value={{userdoc,setUserDoc}}  >
     <LoginContext.Provider value={{user, setUser}}  className="App">
       <Navbar />
+      <Footer/>
     </LoginContext.Provider>
     </UserContext.Provider>
     // </UserContext.Provider>

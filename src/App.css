@@ -58,10 +58,11 @@ li {
 .center button {
   width: 100%;
   margin-top: 5%;
-  background-color: purple;
+  background-color: #8C8FFC;
   color: white;
-  border: solid purple;
+  border: solid #8C8FFC;
   border-radius: 60px;
+  font-weight: 600;
 }
 
 .center input {
@@ -209,7 +210,7 @@ li {
   padding-top: 5px;
   padding-bottom: 5px;
   border: none;
-  background-color: purple;
+  background-color: #8C8FFC;
   color:white;
 }
 
@@ -218,7 +219,7 @@ li {
 }
 
 .purple {
-  color:purple;
+  color: #8C8FFC;
 }
 
 .white {
@@ -314,39 +315,20 @@ li {
 }
 
 .nab a :focus {
-  color : purple;
+  font-weight: 700;
 }
 
-/* .navbar-wrapper{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-} */
-
-/* .icon img {
-  display: none;
-  float : left;
-} */
-
-/* @media screen and (max-width: 600px) {
-  .nab .nab-item {display: none;}
-  .nab img {
-    float: right;
-    display: block;
-  }
-} */
-
 .home-top-div {
-  /* background-color: black; */
-  background: linear-gradient(to bottom, #8C8FFC , white);
+  background-color: #8C8FFC;
+  /* background: linear-gradient(to bottom, #8C8FFC , white); */
   /* color : white; */
   color : black;
   padding : 5%;
 }
 
 .home-download {
-  background-color: #8C8FFC;
-  color : white;
+  background-color: white;
+  color : black;
   border-radius: 60px;
   padding : 10px 40px 10px 40px;
 }
@@ -430,4 +412,39 @@ li {
   margin-right: 20px;
 }
 
+/* .navbar-wrapper {
+  box-shadow: 0px 0 20px 0 rgba(0, 0, 0, 0.12);
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+} */
 
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+#footer {
+  background: #fff;
+  padding: 24px 0;
+  font-size: 14px;
+  box-shadow: 0px 0 20px 0 rgba(0, 0, 0, 0.12);
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.centerText {
+  text-align: center;
+}
+
+#footer .copyright {
+  text-align: center;
+}
+
+#footer .credits {
+  padding-top: 8px;
+  text-align: center;
+  font-size: 13px;
+}

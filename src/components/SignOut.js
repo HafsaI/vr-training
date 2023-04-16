@@ -24,9 +24,7 @@ function SignOut(){
 
     return (
         <>
-            {/* <p className='usernameDisplay'>Hi, props.user.username</p>  */}
             <a onClick={signout} ><Link to='/login' target='_self' className="linkLogout">Logout<img src={arrow} className="imgSmall"/></Link></a> 
-            {console.log("[SignedOutUser] user: ", user)}
         </>
     )
 }
