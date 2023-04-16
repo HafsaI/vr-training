@@ -33,7 +33,7 @@ function Home() {
         </div>
         <div  className='features'>
           {features.map(feature => (
-            <Feature key={feature.id} img={feature.img}  className='feature' />
+            <Feature key={feature.id} img={feature.img} title={feature.title} className='feature' />
          ))}
         </div>
 

@@ -5,7 +5,7 @@ function Feature({ img, title, description }) {
     <div className='feature'>
       <img src={img} className='feature-img' width="400px"/>
       <div className='feature-overlay'>
-        <h6>{title}</h6>
+        <h4>{title}</h4>
         <p>{description}</p>
       </div>
     </div>
