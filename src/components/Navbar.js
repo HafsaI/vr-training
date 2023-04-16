@@ -35,11 +35,10 @@ function Navbar() {
             <span className='navbar-heading'>Empowered</span>
           </div>
           <div className="nab-right">
-            <a className='nab-item'><Link to='/' target='_self'>Home</Link></a>
             {JSON.stringify(user) !== '{}' && user != null && <a className='nab-item'><Link to='/record' target='_self'>Record</Link></a>}
-            {JSON.stringify(user) !== '{}' && user != null && <a className='nab-item'><Link to='/report' target='_self'>Report</Link></a>}
+            <a className='nab-item'><Link to='/' target='_self'>Home</Link></a>
             {JSON.stringify(user) === '{}' || user == null || user === Object ? LoginBtn : null}
-
+            {JSON.stringify(user) !== '{}' && user != null && <a className='nab-item'><Link to='/report' target='_self'>Report</Link></a>}
             {JSON.stringify(user) === '{}' || user == null || user === Object ? null :
               <>
                 <img src={profilePic} alt="Profile" className='imgSmall marginProfile' onClick={toggleMenu} />

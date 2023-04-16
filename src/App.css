@@ -83,10 +83,6 @@ li {
   color: black;
 }
 
-.linkLogin {
-  margin-right: 50%;
-}
-
 .signinBox {
   padding: 2%;
   width: 300px;
@@ -306,8 +302,15 @@ li {
 }
 
 .marginProfile {
-  margin-right: 10px;
-  margin-left: 40px;
+  margin-right: 10%;
+}
+
+.nab-right {
+  margin-right : 5%;
+}
+
+.nab-left {
+  margin-left: 5%;
 }
 
 .nab a :focus {
@@ -411,4 +414,20 @@ li {
   max-width: 800px;
   margin: 0 auto;
 }
+
+.login-btn-wrapper {
+  display: inline-block;
+  margin-top: 1.25rem;
+}
+
+.login-btn-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.btnLogin {
+  margin-left: auto;
+  margin-right: 20px;
+}
+
 
