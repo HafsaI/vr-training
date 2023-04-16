@@ -11,7 +11,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Scores from './Scores';
-import axios from 'axios';
+// import axios from 'axios';
 
 export default function ShowSpeechScores(){
     

@@ -333,5 +333,53 @@ li {
   }
 } */
 
+.home-top-div {
+  /* background-color: black; */
+  background: linear-gradient(to bottom, #8C8FFC , white);
+  /* color : white; */
+  color : black;
+  padding : 5%;
+}
 
+.home-download {
+  background-color: #8C8FFC;
+  color : white;
+  border-radius: 60px;
+  padding : 10px 40px 10px 40px;
+}
 
+.home-top-div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.home-top-left {
+  flex-basis: 50%;
+}
+
+.home-top-right {
+  flex-basis: 50%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.home-img {
+  border-radius: 50px;
+}
+
+.home-bottom-div {
+  display: 'flex';
+}
+
+.home-bottom-left {
+  flex: 1;
+}
+
+.home-bottom-right {
+  flex : 1;
+}
+
+.home-bottom-div {
+  padding : 5%;
+}
