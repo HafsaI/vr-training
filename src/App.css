@@ -571,3 +571,25 @@ li:last-child {
   overflow-x: auto;
   white-space: nowrap;
 }
+
+.feature {
+  position: relative;
+  display: inline-block;
+}
+
+.feature .feature-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity .5s;
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  padding: 20px;
+}
+
+.feature:hover .feature-overlay {
+  opacity: 1;
+}
