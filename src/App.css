@@ -84,7 +84,7 @@ li {
 }
 
 .linkLogin {
-  margin-right: 2%;
+  margin-right: 50%;
 }
 
 .signinBox {
@@ -208,8 +208,8 @@ li {
   display: inline;
   margin-left: 3%;
   border-radius: 20px;
-  padding-right: 2%;
-  padding-left: 2%;
+  padding-right: 20%;
+  padding-left: 20%;
   padding-top: 5px;
   padding-bottom: 5px;
   border: none;
@@ -365,7 +365,7 @@ li {
 }
 
 .home-img {
-  border-radius: 50px;
+  border-radius: 15%;
 }
 
 .home-bottom-div {
@@ -386,3 +386,29 @@ li {
 .home-bottom-div {
   padding : 5%;
 }
+
+.nab {
+  display : flex;
+  justify-content: space-between;
+}
+
+.nab-right {
+  display: flex;
+  align-items: center;
+}
+
+.nab-item {
+  margin-right: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  .nab-item {
+    margin-right: 10px;
+  }
+}
+
+.nab-items-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
