@@ -8,6 +8,7 @@ function Home() {
   return (
     <div style={{ position: 'relative' }}>
       
+      <div className='purpleLinear'>
       <div className='home-top-div' style={{ zIndex: -3 }}>
         <div className='home-top-left'>
           <h1>Empowered</h1>
@@ -25,16 +26,19 @@ function Home() {
         </div>
       </div>
 
-      <div className='centerText home-features purpleLinear'>
+      <div className='centerText home-features'>
         <div className=' home-features-text'>
           <h1>Features</h1>
           <h4>Here are the features of our app</h4>
         </div>
-        <div style={{ display: 'flex' }}>
+        <div  className='features'>
           {features.map(feature => (
-            <Feature key={feature.id} img={feature.img} style={{ display: 'inline-block', margin: '0 10px' }} />
+            <Feature key={feature.id} img={feature.img}  className='feature' />
          ))}
         </div>
+
+
+      </div>
 
       </div>
 

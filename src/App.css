@@ -319,7 +319,7 @@ li {
 }
 
 .home-top-div {
-  background-color: #8C8FFC;
+  /* background-color: #8C8FFC; */
   /* background: linear-gradient(to bottom, #8C8FFC , white); */
   /* color : white; */
   color : black;
@@ -564,4 +564,10 @@ li:last-child {
 
 .purpleLinear {
   background: linear-gradient(to bottom, #8C8FFC, white);
+}
+
+.features {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
 }

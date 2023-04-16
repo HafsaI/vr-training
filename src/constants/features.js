@@ -17,6 +17,10 @@ const features = [
         title : "Nervousness Analysis",
         img : vr
     },
+    {
+        title : "Comparison Graphs",
+        img : vr
+    }
 ];
 
 export default features;
