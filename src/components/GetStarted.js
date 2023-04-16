@@ -33,8 +33,7 @@ function GetStarted() {
                 <li>Congratulations! Your session has begun! Start speaking</li>
                 <li>After you are done with your session, press 'Stop session' and remove your headset</li>
                 <li>Open the reports tab on your pc or phone and view your session analysis</li>
-                <li>You can also view all of your session's combined analytics in the 'Analytics tab'</li>
-
+                <li>You can also view all of your session's combined analytics in the 'Analytics' tab</li>
             </ol>
         </div>
     </form>

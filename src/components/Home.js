@@ -1,19 +1,25 @@
 import React from 'react';
 import pic from '../images/homeTop.jpg';
+import diagonal from '../images/diagonal.png';
 import Feature from './Feature';
 import features from '../constants/features';
 
 function Home() {
   return (
-    <div>
-      <div className='home-top-div'>
+    <div style={{ position: 'relative' }}>
+      <div className='home-top-div' style={{ zIndex: -3 }}>
         <div className='home-top-left'>
-          <p>About The projectdjjsdjsmd,skdmsd
-Download our public speaking guide and practise.</p>
+          <p>About The projectdjjsdjsmd,skdmsd Download our public speaking guide and practise.</p>
           <button className='home-download'>Download</button>
         </div>
-        <div className='home-top-right'>
-          <img className='home-img' src={pic} width="70%"/>
+        <div className='home-top-right' style={{ position: 'relative' }}>
+          <img className='home-img' src={pic} width="70%" style={{ zIndex: 2 }}/>
+          <img
+            className='home-img'
+            src={diagonal}
+            width="70%"
+            style={{ position: 'absolute', top: '20px', right: '20px', zIndex: 1, borderColor: 'black', borderWidth : '100px' }}
+          />
         </div>
       </div>
 
@@ -42,7 +48,6 @@ Download our public speaking guide and practise.</p>
           <h4>Sadaf Shaikh</h4>
         </div>
       </div>
-
     </div>
   );
 }
