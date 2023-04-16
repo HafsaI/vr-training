@@ -434,6 +434,7 @@ li {
   bottom: 0;
   width: 100%;
   text-align: center;
+  z-index : 6;
 }
 
 .centerText {
@@ -555,4 +556,12 @@ li:last-child {
 
 .bold {
   font-weight: bold;
+}
+
+.home-features-text {
+  padding:5% 0 5% 0;
+}
+
+.purpleLinear {
+  background: linear-gradient(to bottom, #8C8FFC, white);
 }
