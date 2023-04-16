@@ -25,11 +25,11 @@ function GetStarted() {
 
   return (
     <div className="margin-bottom padding-horizontal centerText">
-      <h2>Get started on your experience of a lifetime!</h2>
+      <h2 className='padding-getstarted'><span className='purple'>Get started</span> on your experience of a lifetime!</h2>
       <form>
-        <h4>Do you just want to upload audio and/or video and get feedback?</h4>
+        <h4>Do you just want to <span className='purple'>upload audio and/or video</span> and get feedback?</h4>
         <input type="radio" id="yes-one" name="one" value="yes-one" onChange={handleRadioOneChange}/>
-        <label htmlFor="yes-one">Yes</label>
+        <label htmlFor="yes-one">Yes</label> <span> </span>
         <input type="radio" id="no-one" name="one" value="no-one" onChange={handleRadioOneChange}/>
         <label htmlFor="no-one">No</label><br></br>
         <hr/>
@@ -48,9 +48,9 @@ function GetStarted() {
           </div>
         )}
 
-        <h4>Do you want to get the complete experience with vr headset?</h4>
+        <h4>Do you want to get the complete experience with <span className='purple'>vr headset</span>?</h4>
         <input type="radio" id="yes-two" name="two" value="yes-two" onChange={handleRadioTwoChange}/>
-        <label htmlFor="yes-two">Yes</label>
+        <label htmlFor="yes-two">Yes</label> <span> </span>
         <input type="radio" id="no-two" name="two" value="no-two" onChange={handleRadioTwoChange}/>
         <label htmlFor="no-two">No</label>
         <hr/>

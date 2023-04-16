@@ -542,3 +542,17 @@ li:last-child {
   border-bottom-right-radius:0;
   border-bottom-left-radius:0;
 }
+
+.padding-getstarted {
+  padding-top: 10%;
+  padding-bottom: 5%;
+}
+
+.paddingFile {
+  padding-left : 5%;
+  padding-top : 1%;
+}
+
+.bold {
+  font-weight: bold;
+}
