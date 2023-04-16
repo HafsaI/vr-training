@@ -169,7 +169,7 @@ li {
   border-radius: 0 0 8px 8px;
 }
 .tab-switch:checked + .tab-label {
-  background: purple;
+  background: #8C8FFC;
   color: whitesmoke;
   border-bottom: 0;
   transition: all 0.35s;

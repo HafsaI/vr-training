@@ -21,7 +21,7 @@ function Home() {
             className='home-img'
             src={diagonal}
             width="70%"
-            style={{ position: 'absolute', top: '20px', right: '20px', zIndex: 1, borderColor: 'black', borderWidth : '100px' }}
+            style={{ position: 'absolute', top: '30px', right: '20px', zIndex: 1, borderColor: 'black', borderWidth : '100px' }}
           />
         </div>
       </div>
