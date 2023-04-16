@@ -56,7 +56,7 @@ function Navbar() {
                     </div>
                     <hr />
                     <SignOut />
-                    <a><Link to='/getstarted' target='_self'>Get Started<img src={arrow} className="imgSmall"/></Link></a>
+                    <a><Link to='/getstarted' target='_self' className='linkLogout'>Get Started<img src={arrow} className="imgSmall"/></Link></a>
                   </div>
                 </div>
               </>

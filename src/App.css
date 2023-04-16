@@ -245,7 +245,7 @@ li {
 }
 
 .linkLogout:hover {
-  color : purple;
+  color : #8C8FFC;
 }
 
 .white {
@@ -262,8 +262,8 @@ li {
 
 .sub-menu-wrap {
   position: absolute;
-  top : 8%;
-  right : 0.5%;
+  top : 5.5%;
+  right : 2%;
   width: 200px;
   max-height: 0px;
   overflow : hidden;
@@ -278,6 +278,8 @@ li {
   background-color: white;
   padding: 20px;
   margin: 10px;
+  border-radius: 10%;
+  border: 2px solid black;
 }
 
 .user-info {
@@ -296,10 +298,8 @@ li {
 }
 
 .sub-menu hr {
-  border-width: 0;
   height : 1px;
   width : 100%;
-  background-color: purple;
 }
 
 .marginProfile {
@@ -421,6 +421,7 @@ li {
   width: 100%;
 } */
 
+
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
@@ -458,7 +459,7 @@ ol {
 
 li {
   border-top: 2px dashed;
-  border-color: blue !important;
+  border-color: #8C8FFC !important;
   margin:0; padding: 30px;
   counter-increment: section;
   position: relative;
@@ -592,4 +593,15 @@ li:last-child {
 
 .feature:hover .feature-overlay {
   opacity: 1;
+}
+
+
+
+.linkLogout {
+  display: inline-flex;
+  align-items: center;
+}
+
+.linkLogout img {
+  margin-left: 5px;
 }
