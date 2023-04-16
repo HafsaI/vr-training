@@ -44,6 +44,7 @@ function Navbar() {
             {JSON.stringify(user) === '{}' || user == null || user === Object ? LoginBtn : null}
             {JSON.stringify(user) !== '{}' && user != null && <a className='nab-item'><Link to='/report' target='_self'>Report</Link></a>}
             {JSON.stringify(user) !== '{}' && user != null && <a className='nab-item'><Link to='/upload' target='_self'>Upload</Link></a>}
+            {JSON.stringify(user) !== '{}' && user != null && <a className='nab-item'><Link to='/startsession' target='_self'>Start</Link></a>}
             {JSON.stringify(user) === '{}' || user == null || user === Object ? null :
               <>
                 <img src={profilePic} alt="Profile" className='imgSmall marginProfile' onClick={toggleMenu} />
@@ -56,7 +57,6 @@ function Navbar() {
                     <hr />
                     <SignOut />
                     <a><Link to='/getstarted' target='_self'>Get Started<img src={arrow} className="imgSmall"/></Link></a>
-                    <a><Link to='/startsession' target='_self'>Start<img src={arrow} className="imgSmall"/></Link></a>
                   </div>
                 </div>
               </>
