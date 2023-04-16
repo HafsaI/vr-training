@@ -504,6 +504,16 @@ li:nth-child(odd):before {
   padding-top : 4px;
 }
 
+.heartrateBtn {
+  border-radius: 60px;
+  background-color: #8C8FFC;
+  color : white !important;
+}
+
+.noLine {
+  text-decoration: none;
+}
+
 
 
 li:nth-child(even) {

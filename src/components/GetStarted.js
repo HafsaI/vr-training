@@ -33,13 +33,14 @@ function GetStarted() {
         <input type="radio" id="no-one" name="one" value="no-one" onChange={handleRadioOneChange}/>
         <label htmlFor="no-one">No</label><br></br>
         <hr/>
+
         {showOneSteps && (
           <div className='one-steps'>
             <ol className='steps'>
                 <li>Record video and/or audio</li>
                 <li>Open website on any device</li>
                 <li>Sign up using username, name and password if you don't have an account already</li>
-                <li>Login using usernam and password</li>
+                <li>Login using username and password</li>
                 <li>Open 'Upload' tab</li>
                 <li>Upload video and/or audio using the the upload buttons</li>
                 <li>View the scores</li>
