@@ -12,7 +12,7 @@ function Home() {
       <div className='home-top-div' style={{ zIndex: -3 }}>
         <div className='home-top-left'>
           <h1>Empowered</h1>
-          <p>About The projectdjjsdjsmd,skdmsd Download our public speaking guide and practise.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus erat id erat tempus porta vitae non diam. Fusce a lorem cursus, accumsan leo sed, dictum leo. Nulla purus sem, consectetur nec magna eu, luctus aliquet metus. Integer lorem orci, efficitur vel ipsum id, eleifend sodales arcu. Mauris a quam finibus, vestibulum arcu non, aliquam eros. Donec posuere convallis mi, a bibendum lacus lobortis quis. Morbi pellentesque nibh ac commodo finibus. Suspendisse viverra dui congue lectus commodo, nec venenatis nulla ultricies. Morbi aliquet gravida est, non auctor augue maximus eu.</p>
           <button className='home-download'>Download</button>
         </div>
         <div className='home-top-right' style={{ position: 'relative' }}>
