@@ -1,4 +1,8 @@
-import vr from '../images/homeTop.jpg';
+import vr from '../images/vr.jpg';
+import speech from '../images/speech.jpg'
+import body from '../images/body.jpg'
+import heart from '../images/heart.jpg'
+import graphs from '../images/graphs.jpg'
 
 const features = [
     {
@@ -7,18 +11,22 @@ const features = [
     },
     {
         title : "Speech Analyis",
-        img : vr
+        img : speech
     },
     {
         title : "Body Language Analysis",
-        img : vr
+        img : body
     },
     {
         title : "Nervousness Analysis",
-        img : vr
+        img : heart
     },
     {
         title : "Comparison Graphs",
+        img : graphs
+    },
+    {
+        title : "Realistic Environment",
         img : vr
     }
 ];

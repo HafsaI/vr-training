@@ -36,6 +36,7 @@ function Navbar() {
         <nav className="nab">
           <div className="nab-left">
             <img src={profilePic} alt="Logo" className="imgSmall" />
+            <span>  </span>
             <span className='navbar-heading'>Empowered</span>
           </div>
           <div className="nab-right">

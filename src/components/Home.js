@@ -29,7 +29,7 @@ function Home() {
       <div className='centerText home-features'>
         <div className=' home-features-text'>
           <h1>Features</h1>
-          <h4>Here are the features of our app</h4>
+          <h4 className='notBold'>Our app has multiple unique features. Here are some of them</h4>
         </div>
         <div  className='features'>
           {features.map(feature => (

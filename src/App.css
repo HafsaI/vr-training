@@ -560,7 +560,7 @@ li:last-child {
 }
 
 .home-features-text {
-  padding:5% 0 5% 0;
+  padding:5% 0 3% 0;
 }
 
 .purpleLinear {
@@ -604,4 +604,8 @@ li:last-child {
 
 .linkLogout img {
   margin-left: 5px;
+}
+
+.notBold {
+  font-weight: 300;
 }
