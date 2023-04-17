@@ -8,6 +8,7 @@ import { v4 } from "uuid";
 import { LoginContext} from "../AppContext/Context";
 import { getFirestore } from "@firebase/firestore";
 import {  collection, getDocs, getDoc, updateDoc,doc, onSnapshot} from "firebase/firestore";
+import axios from 'axios';
 
 export default function WebcamVideo() {
   const webcamRef = useRef(null);
@@ -110,32 +111,45 @@ export default function WebcamVideo() {
 
 
   
-  useEffect(()=>{
-    console.log("liveSession", liveSession)
-    if(liveSession==false){
-      // fetch("http://127.0.0.1:5001/data/")
-      //         .then((response) => response.json())
-      //         .then((data) => {
-      //           // Do something with the response data here
-      //           console.log(data);
-      //         });
-      fetch("http://127.0.0.1:5001/data/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ value: currSessidRef.current.currSessId, user: user?.uid })
-      });
-        // .then((response) => response.json())
-        // .then((data) => {
-        //   // Do something with the response data here
-        //   console.log(data);
-        // });
-    }
-   }, [liveSession]);
+  // useEffect(()=>{
+  //   console.log("liveSession", liveSession)
+  //   if(liveSession==false){
+  //     // fetch("http://127.0.0.1:5001/data/")
+  //     //         .then((response) => response.json())
+  //     //         .then((data) => {
+  //     //           // Do something with the response data here
+  //     //           console.log(data);
+  //     //         });
+  //     fetch("http://127.0.0.1:5001/data/", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json"
+  //       },
+  //       body: JSON.stringify({ value: currSessidRef.current.currSessId, user: user?.uid })
+  //     });
+  //       // .then((response) => response.json())
+  //       // .then((data) => {
+  //       //   // Do something with the response data here
+  //       //   console.log(data);
+  //       // });
+  //   }
+  //  }, [liveSession]);
 
   /* sends user and sess id to backend */
-
+  // useEffect(()=>{
+  //   if(liveSession==false){
+  //     axios.post('http://127.0.0.1:5001/data/', {
+  //       sessID: currSessidRef.current.currSessId,
+  //       userID: user?.uid
+  //     })
+  //     .then(function(response) {
+  //       console.log('resp',response);
+  //     })
+  //     .catch(function(error) {
+  //       console.log('error',error);
+  //     });
+  //   }
+  //  }, [liveSession]);
 
   /*  Gets current user's doc - gets latest training sess id from it - 
   constantly listens for session value in that sess doc  */
