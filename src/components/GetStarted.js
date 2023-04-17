@@ -63,6 +63,7 @@ function GetStarted() {
               <li>Login using username and password</li>
               <li>Click on 'Start Session' tab</li>
               <li>Press 'Get Heart rate'</li>
+              <li>Upload slides if you have any</li>
               <li>Open website on mobile phone</li>
               <li>Click on 'Open Video Recoder'</li>
               <li>Place your phone such that your whole body is visible</li>
