@@ -8,7 +8,7 @@ import { v4 } from "uuid";
 import { LoginContext} from "../AppContext/Context";
 import { getFirestore } from "@firebase/firestore";
 import {  collection, getDocs, getDoc, updateDoc,doc, onSnapshot} from "firebase/firestore";
-import axios from 'axios';
+// import axios from 'axios';
 
 export default function WebcamVideo() {
   const webcamRef = useRef(null);
