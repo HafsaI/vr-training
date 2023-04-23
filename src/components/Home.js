@@ -1,8 +1,6 @@
 import React from 'react';
 import pic from '../images/homeTop.jpg';
-// import oculus from '../images/oculus2.png'
-// find white picture
-import oculus from '../images/oculus.png'
+import oculus from '../images/oculus2.png'
 import diagonal from '../images/diagonal.png';
 import Feature from './Feature';
 import TeamMember from './TeamMember';
@@ -20,7 +18,7 @@ function Home() {
           <h1 data-aos="fade-up">(Slogan)</h1>
           <h2 data-aos="fade-up" data-aos-delay="400">Download our public speaking guide here</h2>
           <div data-aos="fade-up" data-aos-delay="800">
-            <a href="#about" className="btn-get-started scrollto" style={{textDecoration:"none"}}>Download</a>
+            <a className="btn-get-started scrollto" style={{textDecoration:"none"}}>Download</a>
           </div>
         </div>
         <div className="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left" data-aos-delay="200">
@@ -43,8 +41,7 @@ function Home() {
         <div className="row content">
           <div className="col-lg-12" data-aos="fade-up" data-aos-delay="150">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
+              (Who are we?What is our product about?Team link)
             </p>
           </div>
 
@@ -64,7 +61,7 @@ function Home() {
 
         <div className="row" >
         {features.map(feature => (
-          <Feature key={feature.id} title={feature.title}/>
+          <Feature key={feature.id} title={feature.title} icon='bx bx-dribble'/>
        ))}
 
         </div>

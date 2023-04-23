@@ -7,11 +7,13 @@ import graphs from '../images/graphs.jpg'
 const features = [
     {
         title : "Virtual Reality",
-        img : vr
+        img : vr,
+        icon : 'bx bx-dribble'
     },
     {
         title : "Speech Analyis",
-        img : speech
+        img : speech,
+        icon : 'bx bx-dribble'
     },
     {
         title : "Body Language Analysis",

@@ -619,12 +619,12 @@ li:last-child {
 }
 
 a {
-  color: #3498db;
+  color: #8C8FFC;
   text-decoration: none;
 }
 
 a:hover {
-  color: #5faee3;
+  color: #8C8FFC;
   text-decoration: none;
 }
 
@@ -985,8 +985,8 @@ h6 {
   padding: 10px 30px;
   border-radius: 50px;
   transition: 0.5s;
-  color: #3498db;
-  border: 2px solid #3498db;
+  color: #8C8FFC;
+  border: 2px solid #8C8FFC;
 }
 
 #hero .btn-get-started:hover {
@@ -1089,7 +1089,7 @@ section {
   content: "";
   width: 50px;
   height: 2px;
-  background: #3498db;
+  background: #8C8FFC;
   display: inline-block;
 }
 
@@ -1311,7 +1311,7 @@ section {
 }
 
 .services .icon-box:hover::before {
-  background: #3498db;
+  background: #8C8FFC;
   right: 0;
   top: 0;
   width: 100%;
@@ -1327,7 +1327,7 @@ section {
   border-radius: 50%;
   width: 60px;
   height: 60px;
-  background: #3498db;
+  background: #8C8FFC;
   transition: all 0.3s ease-in-out;
 }
 
