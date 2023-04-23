@@ -1,60 +1,98 @@
 import React from 'react';
 import pic from '../images/homeTop.jpg';
+// import oculus from '../images/oculus2.png'
+// find white picture
+import oculus from '../images/oculus.png'
 import diagonal from '../images/diagonal.png';
 import Feature from './Feature';
+import TeamMember from './TeamMember';
 import features from '../constants/features';
 
 function Home() {
   return (
-    <div style={{ position: 'relative' }}>
-      
-      <div className='purpleLinear'>
-      <div className='home-top-div' style={{ zIndex: -3 }}>
-        <div className='home-top-left'>
-          <h1>Empowered</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus erat id erat tempus porta vitae non diam. Fusce a lorem cursus, accumsan leo sed, dictum leo. Nulla purus sem, consectetur nec magna eu, luctus aliquet metus. Integer lorem orci, efficitur vel ipsum id, eleifend sodales arcu. Mauris a quam finibus, vestibulum arcu non, aliquam eros. Donec posuere convallis mi, a bibendum lacus lobortis quis. Morbi pellentesque nibh ac commodo finibus. Suspendisse viverra dui congue lectus commodo, nec venenatis nulla ultricies. Morbi aliquet gravida est, non auctor augue maximus eu.</p>
-          <button className='home-download'>Download</button>
+    <div>
+          
+  <section id="hero" className="d-flex align-items-center">
+
+    <div className="container">
+      <div className="row">
+        <div className="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
+          <h1 data-aos="fade-up">(Slogan)</h1>
+          <h2 data-aos="fade-up" data-aos-delay="400">Download our public speaking guide here</h2>
+          <div data-aos="fade-up" data-aos-delay="800">
+            <a href="#about" className="btn-get-started scrollto" style={{textDecoration:"none"}}>Download</a>
+          </div>
         </div>
-        <div className='home-top-right' style={{ position: 'relative' }}>
-          <img className='home-img' src={pic} width="70%" style={{ zIndex: 2 }}/>
-          <img
-            className='home-img'
-            src={diagonal}
-            width="70%"
-            style={{ position: 'absolute', top: '30px', right: '20px', zIndex: 1, borderColor: 'black', borderWidth : '100px' }}
-          />
+        <div className="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left" data-aos-delay="200">
+          <img src={oculus} className="img-fluid animated" alt=""/>
         </div>
       </div>
+    </div>
 
-      <div className='centerText home-features'>
-        <div className=' home-features-text'>
-          <h1>Features</h1>
-          <h4 className='notBold'>Our app has multiple unique features. Here are some of them</h4>
-        </div>
-        <div  className='features'>
-          {features.map(feature => (
-            <Feature key={feature.id} img={feature.img} title={feature.title} className='feature' />
-         ))}
+  </section>
+
+  <main id="main">
+
+    <section id="about" className="about">
+      <div className="container">
+
+        <div className="section-title" data-aos="fade-up">
+          <h2>About Us</h2>
         </div>
 
+        <div className="row content">
+          <div className="col-lg-12" data-aos="fade-up" data-aos-delay="150">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+              magna aliqua.
+            </p>
+          </div>
+
+        </div>
 
       </div>
+    </section>
+
+    
+    <section id="services" className="services">
+      <div className="container">
+
+        <div className="section-title" data-aos="fade-up">
+          <h2>Features</h2>
+          <p>Magnam dolores commodi suscipit eius consequatur ex aliquid fug</p>
+        </div>
+
+        <div className="row" >
+        {features.map(feature => (
+          <Feature key={feature.id} title={feature.title}/>
+       ))}
+
+        </div>
 
       </div>
+    </section>
 
-      <div className='home-bottom-div' style={{ display: 'flex' }}>
-        <div className='home-bottom-left' style={{ flex: 1 }}>
-          <img className='home-img' src={pic} width="70%"/>
+    <section id="team" className="team section-bg">
+      <div className="container">
+
+        <div className="section-title" data-aos="fade-up">
+          <h2>Team</h2>
+          <p>Here's the team that made it all possible</p>
         </div>
-        <div className='home-bottom-right' style={{ flex: 1 }}>
-          <h1>Team Members</h1>
-          <h4>Aliza Saleem Lakhani</h4>
-          <h4>Batool Ahmed</h4>
-          <h4>Haania Sidiqqui</h4>
-          <h4>Hafsa Irfan</h4>
-          <h4>Sadaf Shaikh</h4>
+
+        <div className="row" style = {{justifyContent:'center', paddingBottom:'5%'}}>
+          <TeamMember pic = {pic} name = 'Aliza Saleem Lakhani'/>
+          <TeamMember pic = {pic} name = 'Batool Ahmed'/>
+          <TeamMember pic = {pic} name = 'Haania Siddiqui'/>
+          <TeamMember pic = {pic} name = 'Hafsa Irfan'/>
+          <TeamMember pic = {pic} name = 'Sadaf Shaikh' major = 'ECE'/>
         </div>
+
       </div>
+    </section>
+
+  </main>
+
     </div>
   );
 }

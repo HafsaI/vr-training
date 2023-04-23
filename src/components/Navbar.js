@@ -2,7 +2,6 @@ import React from 'react';
 import { useContext } from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Report from './Report';
-import Home from './Home';
 import SignIn from './SignIn';
 import WebcamVideo from './WebcamVideo';
 import SignUp from './SignUp';
@@ -14,7 +13,7 @@ import arrow from '../../src/images/arrow.png';
 import GetStarted from './GetStarted';
 import StartSession from './StartSession';
 import Upload from './Upload';
-import Home2 from './Home2';
+import Home from './Home';
 
 function Navbar() {
   const { user, setUser } = useContext(LoginContext);
@@ -66,8 +65,7 @@ function Navbar() {
           </div>
         </nav>
         <Routes>
-          {/* <Route exact path='/' element={<Home />} /> */}
-          <Route exact path='/' element={<Home2 />} />
+          <Route exact path='/' element={<Home />} />
           <Route exact path='/record' element={<WebcamVideo />} />
           <Route exact path='/report' element={<Report />} />
           <Route exact path='/login' element={<SignIn />} />
