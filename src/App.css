@@ -260,6 +260,10 @@ li {
   width : 35px;
 }
 
+.imgVSmall {
+  width : 25px;
+}
+
 .sub-menu-wrap {
   position: absolute;
   top : 5.5%;

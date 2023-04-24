@@ -9,6 +9,7 @@ import { LoginContext, UserContext } from "../AppContext/Context";
 import SignOut from './SignOut';
 
 import profilePic from '../../src/images/profile_default.png';
+import darrow from '../../src/images/down-arrow.png'
 import arrow from '../../src/images/arrow.png';
 import GetStarted from './GetStarted';
 import StartSession from './StartSession';
@@ -40,15 +41,15 @@ function Navbar() {
             <span className='navbar-heading'>Empowered</span>
           </div>
           <div className="nab-right">
-            {/* {JSON.stringify(user) !== '{}' && user != null && <a className='nab-item'><Link to='/record' target='_self'>Record</Link></a>} */}
             <a className='nab-item'><Link to='/' target='_self'>Home</Link></a>
             {JSON.stringify(user) === '{}' || user == null || user === Object ? LoginBtn : null}
             {JSON.stringify(user) !== '{}' && user != null && <a className='nab-item'><Link to='/report' target='_self'>Report</Link></a>}
             {JSON.stringify(user) !== '{}' && user != null && <a className='nab-item'><Link to='/upload' target='_self'>Upload</Link></a>}
-            {JSON.stringify(user) !== '{}' && user != null && <a className='nab-item'><Link to='/startsession' target='_self'>Start</Link></a>}
+            {JSON.stringify(user) !== '{}' && user != null && <a className='nab-item'><Link to='/startsession' target='_self'>Start Session</Link></a>}
             {JSON.stringify(user) === '{}' || user == null || user === Object ? null :
               <>
-                <img src={profilePic} alt="Profile" className='imgSmall marginProfile' onClick={toggleMenu} />
+                <img src={profilePic} alt="Profile" className='imgSmall'/>
+                <img src={darrow} className='imgVSmall marginProfile' onClick={toggleMenu} />
 
                 <div className='sub-menu-wrap' id="subMenu" style={{zIndex:4}}>
                   <div className='sub-menu'>
@@ -64,19 +65,18 @@ function Navbar() {
             }
           </div>
         </nav>
-        <Routes>
-          <Route exact path='/' element={<Home />} />
-          <Route exact path='/record' element={<WebcamVideo />} />
-          <Route exact path='/report' element={<Report />} />
-          <Route exact path='/login' element={<SignIn />} />
-          <Route exact path='/signup' element={<SignUp />} />
-          <Route exact path='/getstarted' element={<GetStarted/>} />
-          <Route exact path='/startsession' element={<StartSession/>} />
-          <Route exact path='/upload' element={<Upload/>} />
-        </Routes>
-      </BrowserRouter>
+          <Routes>
+            <Route exact path='/' element={<Home />} />
+            <Route exact path='/record' element={<WebcamVideo />} />
+            <Route exact path='/report' element={<Report />} />
+            <Route exact path='/login' element={<SignIn />} />
+            <Route exact path='/signup' element={<SignUp />} />
+            <Route exact path='/getstarted' element={<GetStarted/>} />
+            <Route exact path='/startsession' element={<StartSession/>} />
+            <Route exact path='/upload' element={<Upload/>} />
+          </Routes>
+        </BrowserRouter>
     </div>
   )
 }
-
 export default Navbar;

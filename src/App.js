@@ -8,21 +8,27 @@ import { UserContext } from './AppContext/Context';
 
 import { useState } from 'react';
 
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import Report from './components/Report';
+import SignIn from './components/SignIn';
+import WebcamVideo from './components/WebcamVideo';
+import SignUp from './components/SignUp';
+import GetStarted from './components/GetStarted';
+import StartSession from './components/StartSession';
+import Upload from './components/Upload';
+import Home from './components/Home';
+
 
 function App() {
   const [user, setUser] = useState({})
   const [userdoc,setUserDoc] = useState({})
   return (
-    // <div className="App">
-    // <UserContext.Provider value={{user, setUser}} className="App" >
     <UserContext.Provider value={{userdoc,setUserDoc}}  >
-    <LoginContext.Provider value={{user, setUser}}  className="App">
-      <Navbar />
-      <Footer/>
-    </LoginContext.Provider>
+      <LoginContext.Provider value={{user, setUser}}  className="App">
+        <Navbar />
+        <Footer/>
+      </LoginContext.Provider>
     </UserContext.Provider>
-    // </UserContext.Provider>
-    // </div>
 
   );
 }
