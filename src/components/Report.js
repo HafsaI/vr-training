@@ -67,22 +67,6 @@ function Report(){
             })}
             <Graphs history={userSessions} />
           </div>
-
-          {/* <div class="tab-content">
-
-            {allSession.map((session) => {
-              return ( 
-              session.user_id === user?.uid? 
-              // only those sessions which have finished
-              session.session != true? userSessions.push(session): null
-              : null
-              )
-            })}
-            
-            {/* { console.log("[History] All Sessions of current user", userSessions)} */}
-            
-             {/* <Graphs history={userSessions}/> */}
-          {/* </div> */} */
         </div>
         <div class="tab">
           <input type="radio" name="css-tabs" id="tab-2" checked class="tab-switch"/>

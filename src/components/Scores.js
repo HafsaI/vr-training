@@ -1,31 +1,30 @@
 import React from 'react'
+import Score from './Score'
 
 function Scores({session}) {
   return (
     <div> 
         <h5>Speech Analysis</h5>
         <hr/>
-        <p> Clarity <span className='rightAlign'>{session.clarity_score}/10</span></p>
+        <Score score={session.clarity_score} title='Clarity'/>
         <hr/>
-        <p> Pauses <span className='rightAlign'>{session.pauses_score}/10</span></p>
+        <Score score={session.pauses_score} title='Pauses'/>
         <hr/>
-        <p> Pronunciation <span className='rightAlign'>{session.pronunciation_score}/10</span></p>
+        <Score score={session.pronunciation_score} title='Pronunciation'/>
         <hr/>
-        <p> Speaking Rate <span className='rightAlign'>{session.speakingrate_score}/10</span></p>
+        <Score score={session.speakingrate_score} title='Speaking Rate'/>
         <hr/>
-        <p> Listenability <span className='rightAlign'>{session.listenability_score}/10</span></p>
-        <hr/>
+        <Score score={session.listenability_score} title='Listenability'/>
         <h5 className='analysisType'>Body Language Analysis</h5>
         <hr/>
-        <p> Posture <span className='rightAlign'>{session.posture_score}/10</span></p>
+        <Score score={session.posture_score} title='Posture'/>
         <hr/>
-        <p> Gesture <span className='rightAlign'>{session.gesture_score}/10</span></p>
+        <Score score={session.gesture_score} title='Gesture'/>
         <hr/>
-        <p> Movement <span className='rightAlign'>{session.movement_score}/10</span></p>
+        <Score score={session.movement_score} title='Movement'/>
         <h5 className='analysisType'>Nervousness Analysis</h5>
         <hr/>
-        <p> Nervousness <span className='rightAlign'>{session.nervousness_score}/10</span></p>
-             
+        <Score score={session.nervousness_score} title='Nervousness'/>             
     </div>
   )
 }
