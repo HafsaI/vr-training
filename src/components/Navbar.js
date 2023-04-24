@@ -7,7 +7,6 @@ import WebcamVideo from './WebcamVideo';
 import SignUp from './SignUp';
 import { LoginContext, UserContext } from "../AppContext/Context";
 import SignOut from './SignOut';
-
 import profilePic from '../../src/images/profile_default.png';
 import darrow from '../../src/images/down-arrow.png'
 import arrow from '../../src/images/arrow.png';
@@ -45,7 +44,7 @@ function Navbar() {
             {JSON.stringify(user) === '{}' || user == null || user === Object ? LoginBtn : null}
             {JSON.stringify(user) !== '{}' && user != null && <a className='nab-item'><Link to='/report' target='_self'>Report</Link></a>}
             {JSON.stringify(user) !== '{}' && user != null && <a className='nab-item'><Link to='/upload' target='_self'>Upload</Link></a>}
-            {JSON.stringify(user) !== '{}' && user != null && <a className='nab-item'><Link to='/startsession' target='_self'>Start Session</Link></a>}
+            {JSON.stringify(user) !== '{}' && user != null && <a className='nab-item'><Link to='/startsession' target='_self'>Start</Link></a>}
             {JSON.stringify(user) === '{}' || user == null || user === Object ? null :
               <>
                 <img src={profilePic} alt="Profile" className='imgSmall'/>
