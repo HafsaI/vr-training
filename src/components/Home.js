@@ -59,12 +59,12 @@ function Home() {
 
         <div className="section-title" data-aos="fade-up">
           <h2>Features</h2>
-          <p>Magnam dolores commodi suscipit eius consequatur ex aliquid fug</p>
+          <p>These are some of the features that make our app unique</p>
         </div>
 
         <div className="row" >
         {features.map(feature => (
-          <Feature key={feature.id} title={feature.title} icon='bx bx-dribble'/>
+          <Feature key={feature.id} title={feature.title} icon='bx bx-dribble' description={feature.description} isAnalysis = {feature.isAnalysis}/>
        ))}
 
         </div>
@@ -76,30 +76,40 @@ function Home() {
       <div className="container">
 
         <div className="section-title" data-aos="fade-up">
-          <h2>Team</h2>
-          <p>Here's the team that made it all possible</p>
+          <h2>More Details</h2>
+          <p>Here are the analysis criteria in depth</p>
         </div>
 
         <div className="row" style = {{justifyContent:'center', paddingBottom:'5%'}}>
 
-`        <div id="speech-detail" className="col-lg-12 col-md-6 d-flex align-items-stretch">
-          <div className="feature-detail" data-aos="fade-up" data-aos-delay="300">
-            <div className='detail-info'>
-              <h4>Speech Analyis</h4>
-              <h5>Pauses</h5>
-              <p>About</p>
-              <h5>Clarity</h5>
+          <div id="speech-detail" className="col-lg-12 col-md-6 d-flex align-items-stretch">
+            <div className="feature-detail" data-aos="fade-up" data-aos-delay="300">
+              <div className='detail-info'>
+                <h4>Speech Analyis</h4>
+                <h5 style={{textDecoration:'underline'}}>Pauses</h5>
+                <h6>About</h6>
+                <h5>Clarity</h5>
+              </div>
             </div>
           </div>
-        </div>`
 
-        <div id="body-detail" className="col-lg-12 col-md-6 d-flex align-items-stretch">
+          <div id="body-detail" className="col-lg-12 col-md-6 d-flex align-items-stretch">
+            <div className="feature-detail" data-aos="fade-up" data-aos-delay="300">
+              <div className='detail-info'>
+                <h4>Body Language Analyis</h4>
+                <h5 style={{textDecoration:'underline'}}>Pauses</h5>
+                <h6>About</h6>
+                <h5>Clarity</h5>
+              </div>
+            </div>
+          </div>`
+
+          <div id="nervoussnes-detail" className="col-lg-12 col-md-6 d-flex align-items-stretch">
           <div className="feature-detail" data-aos="fade-up" data-aos-delay="300">
             <div className='detail-info'>
-              <h4>Speech Analyis</h4>
-              <h5 style={{textDecoration:'underline'}}>Pauses</h5>
+              <h4>Nervousness Analyis</h4>
+              <h5 style={{textDecoration:'underline'}}>Heart rate</h5>
               <h6>About</h6>
-              <h5>Clarity</h5>
             </div>
           </div>
         </div>`
