@@ -2221,8 +2221,11 @@ section {
   overflow: hidden;
   border-radius: 5px;
   background: #fff;
-  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
   padding : 2%;
+}
+
+.feature-detail:hover {
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
 }
 
 .feature-detail .detail-info h4 {
