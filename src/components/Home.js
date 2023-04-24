@@ -44,7 +44,7 @@ function Home() {
               Our aim is to make sure that in every conversation, in every conference, in every interview, in every meeting, and in every speech, you manifest what you desired to.
               <br/>We've been there so we understand your anxiety. Hence, we want to help you prepare for your speeches so that you are able to give your best when you're on stage. 
               <br/><strong>Manifest</strong> is a public speaking training app that lets <strong>you</strong> practice and analyze your speeches. We are available both as a virtual reality app and a standalone analysis solution. In the VR app, you are placed in a conference room with audience and you can give your speech there. The system provides you with a fine-grained analysis of your speech, posture and nervousness.
-              <br/>Here is the <a>team</a> that made this possible for you.
+              <br/>Here is the <a style={{textDecoration:'underline'}}>team</a> that made this possible for you.
             </p>
           </div>
 

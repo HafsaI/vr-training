@@ -48,7 +48,7 @@ function Navbar() {
             {JSON.stringify(user) === '{}' || user == null || user === Object ? null :
               <>
                 <img src={profilePic} alt="Profile" className='imgSmall'/>
-                <img src={darrow} className='imgVSmall marginProfile' onClick={toggleMenu} />
+                <img src={darrow} className='imgVSmall marginProfile darrow' onClick={toggleMenu} />
 
                 <div className='sub-menu-wrap' id="subMenu" style={{zIndex:4}}>
                   <div className='sub-menu'>
