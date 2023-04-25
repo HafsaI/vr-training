@@ -66,6 +66,7 @@ function Navbar() {
         </nav>
           <Routes>
             <Route exact path='/' element={<Home />} />
+            <Route exact path='/vr-training/' element={<Home />} />
             <Route exact path='/record' element={<WebcamVideo />} />
             <Route exact path='/report' element={<Report />} />
             <Route exact path='/login' element={<SignIn />} />
