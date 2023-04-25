@@ -73,9 +73,9 @@ function Navbar() {
             </div>
           </div>
           
-          <div className="menu-icon" onClick={handleShowNavbar}>
+          {/* <div className="menu-icon" onClick={handleShowNavbar}>
             <img src={profilePic} className='imgSmall'/>
-          </div>
+          </div> */}
           
         </nav>
           <Routes>

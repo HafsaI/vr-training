@@ -2242,11 +2242,16 @@ a:hover, button:hover, .darrow:hover {
   cursor: pointer;
 }
 
-.menu-icon {
+/* .menu-icon {
   display: none;
 }
 
 @media (max-width: 600px) {
+
+  .profile {
+    display : hidden !important;
+  }
+
   .menu-icon {
     display: block;
     cursor: pointer;
@@ -2256,9 +2261,9 @@ a:hover, button:hover, .darrow:hover {
     position: absolute;
     right: 0;
     top: 60px;
-    background-color: #fef7e5;
+    background-color: white;
     width: 0px;
-    height: calc(100vh - 60px);
+    height: 100%;
     transition: all 0.3s ease-in;
     overflow: hidden;
   }
@@ -2274,6 +2279,6 @@ a:hover, button:hover, .darrow:hover {
 
   .nab-right .nab-right-inner a {
     margin-right: unset;
-    margin-top: 22px;
+    margin-top: 10px;
   }
-}
+} */
