@@ -2241,3 +2241,39 @@ section {
 a:hover, button:hover, .darrow:hover {
   cursor: pointer;
 }
+
+.menu-icon {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .menu-icon {
+    display: block;
+    cursor: pointer;
+  }
+
+  .nab-right {
+    position: absolute;
+    right: 0;
+    top: 60px;
+    background-color: #fef7e5;
+    width: 0px;
+    height: calc(100vh - 60px);
+    transition: all 0.3s ease-in;
+    overflow: hidden;
+  }
+
+  .nab-right.active {
+    width: 270px;
+  }
+
+  .nab-right .nab-right-inner {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nab-right .nab-right-inner a {
+    margin-right: unset;
+    margin-top: 22px;
+  }
+}
