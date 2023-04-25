@@ -82,34 +82,50 @@ function Home() {
 
         <div className="row" style = {{justifyContent:'center', paddingBottom:'5%'}}>
 
-          <div id="speech-detail" className="col-lg-12 col-md-6 d-flex align-items-stretch">
-            <div className="feature-detail" data-aos="fade-up" data-aos-delay="300">
-              <div className='detail-info'>
-                <h4>Speech Analyis</h4>
-                <h5 style={{textDecoration:'underline'}}>Pauses</h5>
-                <h6>About</h6>
-                <h5>Clarity</h5>
-              </div>
+        <div id="speech-detail" className="col-lg-12 col-md-6 d-flex align-items-stretch">
+          <div data-aos="fade-up" data-aos-delay="300">
+            <div className='detail-info'>
+              <h4 style={{textAlign:'center'}}>Speech Analysis</h4>
+              
+              <h5>Pauses</h5>
+              <div className="feature-detail" style={{width:'100%'}}><h6>The Number of Pauses is a metric that quantifies the number of pauses in an audio signal. This is determined by identifying periods of silence that exceed a certain threshold duration within the audio signal.</h6></div>
+            
+              <h5>Speaking Rate</h5>
+              <div className="feature-detail" style={{width:'100%'}}><h6>The Speaking Rate, or Speech Rate Score, is a measure of the number of syllables pronounced per second in an audio signal. This score provides insight into the pace at which speech is delivered.</h6></div>
+            
+              <h5>Clarity</h5>
+              <div className="feature-detail" style={{width:'100%'}}><h6>The Clarity Score is a measure of the articulation rate of an audio signal. It calculates the number of pronounced syllables per second, excluding pauses, in the audio signal. This score provides insight into the speaker's clarity of speech.</h6></div>
+            
+              <h5>Pronunciation</h5>
+              <div className="feature-detail" style={{width:'100%'}}><h6>The Pronunciation Score is a measure of the number of pronounced syllables in an audio signal. It is computed by detecting the number of vocalic segments in the audio signal.</h6></div>
+            
+              <h5>Listenability</h5>
+              <div className="feature-detail" style={{width:'100%'}}><h6>The Listenability Score provides an indication of the comprehensibility of speech. It uses the Flesch Reading Ease algorithm which determines whether the text is easy to read and comprehend.</h6></div>
+
             </div>
           </div>
+        </div>`
 
           <div id="body-detail" className="col-lg-12 col-md-6 d-flex align-items-stretch">
-            <div className="feature-detail" data-aos="fade-up" data-aos-delay="300">
-              <div className='detail-info'>
-                <h4>Body Language Analyis</h4>
-                <h5 style={{textDecoration:'underline'}}>Pauses</h5>
-                <h6>About</h6>
-                <h5>Clarity</h5>
-              </div>
+          <div data-aos="fade-up" data-aos-delay="300">
+            <div className='detail-info'>
+              <h4  style={{textAlign:'center'}}>Body Language Analysis</h4>
+              
+              <h5>Posture</h5>
+              <div className="feature-detail" style={{width:'100%'}}><h6>Our aim is to make sure that in every conversation, in every conference, in every interview, in every meeting, and in every speech, you manifest what you desired to.</h6></div>
+            
             </div>
-          </div>`
+          </div>
+        </div>`
 
           <div id="nervoussnes-detail" className="col-lg-12 col-md-6 d-flex align-items-stretch">
-          <div className="feature-detail" data-aos="fade-up" data-aos-delay="300">
+          <div data-aos="fade-up" data-aos-delay="300">
             <div className='detail-info'>
-              <h4>Nervousness Analyis</h4>
-              <h5 style={{textDecoration:'underline'}}>Heart rate</h5>
-              <h6>About</h6>
+              <h4  style={{textAlign:'center'}}>Nervousness Analysis</h4>
+              
+              <h5 >Heart rate</h5>
+              <div className="feature-detail" style={{width:'100%'}}><h6>Heart rate score is an indication of how much your heart rate increased or fluctuated throughout the session. Heart rate fluctuation is a measurement of the speaker's nervousness.</h6></div>
+            
             </div>
           </div>
         </div>`
