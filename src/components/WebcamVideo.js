@@ -196,6 +196,8 @@ export default function WebcamVideo() {
       ) : (
         <button onClick={handleStartCaptureClick}>Start Capture</button>
       )} */}
+
+      {capturing ? (<><p>Recording is going on</p></>) : null}
       
     </div>
   );
