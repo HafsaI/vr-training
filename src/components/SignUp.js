@@ -42,7 +42,7 @@ function SignUp() {
     createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
         const user = userCredential.user;
-        alert("Successful signup")
+        // alert("Successful signup")
         setDoc(doc(db, "users", auth.currentUser.uid), {
             currSessionId: "",
             name: fullname
@@ -51,7 +51,7 @@ function SignUp() {
         })
         .catch((error) => {
         const errorCode = error.code;
-        alert(errorCode)
+        // alert(errorCode)
         });
     }
 

@@ -22,7 +22,7 @@ function SignIn(){
         .then((userCredential) => {
             const user = userCredential.user;
             setUser(auth.currentUser);
-            alert("Sucessfully signed in")
+            // alert("Sucessfully signed in")
             const docRef = doc(db, "users", user?.uid)
             getDoc(docRef)
             .then((doc) => {
@@ -33,7 +33,7 @@ function SignIn(){
             })
         .catch((error) => {
             const errorCode = error.code;
-            alert(errorCode)
+            // alert(errorCode)
 
         });
     }

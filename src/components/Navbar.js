@@ -1,5 +1,6 @@
 import React from 'react';
-import { useContext } from "react";
+import { useContext} from "react";
+import { useState } from 'react';
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Report from './Report';
 import SignIn from './SignIn';
@@ -18,11 +19,16 @@ import Home from './Home';
 function Navbar() {
   const { user, setUser } = useContext(LoginContext);
   const { userdoc, setUserDoc } = useContext(UserContext);
+  const [showNavbar, setShowNavbar] = useState(false)
+
+  const handleShowNavbar = () => {
+    setShowNavbar(!showNavbar)
+  }
 
   const LoginBtn = (
-    <button className="btnLogin linkLogin">
+    <div className="linkLogin btnLogin">
       <Link to='/login' target='_self' className='white'>Login</Link>
-    </button>
+    </div>
   );
 
   const toggleMenu = () => {
@@ -37,35 +43,44 @@ function Navbar() {
           <div className="nab-left">
             <img src={profilePic} alt="Logo" className="imgSmall" />
             <span>  </span>
-            <span className='navbar-heading'>Empowered</span>
+            <span className='navbar-heading'>Manifest</span>
           </div>
-          <div className="nab-right">
-            <a className='nab-item'><Link to='/' target='_self'>Home</Link></a>
-            {JSON.stringify(user) === '{}' || user == null || user === Object ? LoginBtn : null}
-            {JSON.stringify(user) !== '{}' && user != null && <a className='nab-item'><Link to='/report' target='_self'>Report</Link></a>}
-            {JSON.stringify(user) !== '{}' && user != null && <a className='nab-item'><Link to='/upload' target='_self'>Upload</Link></a>}
-            {JSON.stringify(user) !== '{}' && user != null && <a className='nab-item'><Link to='/startsession' target='_self'>Start</Link></a>}
-            {JSON.stringify(user) === '{}' || user == null || user === Object ? null :
-              <>
-                <img src={profilePic} alt="Profile" className='imgSmall'/>
-                <img src={darrow} className='imgVSmall marginProfile darrow' onClick={toggleMenu} />
 
-                <div className='sub-menu-wrap' id="subMenu" style={{zIndex:4}}>
-                  <div className='sub-menu'>
-                    <div className='user-info'>
-                      <h5>{userdoc.name}</h5>
+          <div className={`nab-right  ${showNavbar && 'active'}`}>
+            <div className='nab-right-inner'  style={{ display: 'inline-flex' }}>
+              <a className='nab-item'><Link to='/' target='_self'>Home</Link></a>
+              {JSON.stringify(user) === '{}' || user == null || user === Object ? LoginBtn : null}
+              {JSON.stringify(user) !== '{}' && user != null && <a className='nab-item'><Link to='/report' target='_self'>Report</Link></a>}
+              {JSON.stringify(user) !== '{}' && user != null && <a className='nab-item'><Link to='/upload' target='_self'>Upload</Link></a>}
+              {JSON.stringify(user) !== '{}' && user != null && <a className='nab-item'><Link to='/startsession' target='_self'>Start</Link></a>}
+              {JSON.stringify(user) === '{}' || user == null || user === Object ? null :
+                <div  classname = "profile" style={{ display: "flex", alignItems: "center" }}>
+                  <img src={profilePic} alt="Profile" className='imgSmall profilePic' />
+                  <img src={darrow} className='imgVSmall marginProfile darrow' onClick={toggleMenu} />
+
+                  <div className='sub-menu-wrap' id="subMenu" style={{zIndex:4}}>
+                    <div className='sub-menu'>
+                      <div className='user-info'>
+                        <h5>{userdoc.name}</h5>
+                      </div>
+                      <hr />
+                      <SignOut />
+                      <a><Link to='/getstarted' target='_self' className='linkLogout'>Get Started<img src={arrow} className="imgSmall"/></Link></a>
                     </div>
-                    <hr />
-                    <SignOut />
-                    <a><Link to='/getstarted' target='_self' className='linkLogout'>Get Started<img src={arrow} className="imgSmall"/></Link></a>
                   </div>
                 </div>
-              </>
-            }
+              }
+            </div>
           </div>
+          
+          {/* <div className="menu-icon" onClick={handleShowNavbar}>
+            <img src={profilePic} className='imgSmall'/>
+          </div> */}
+          
         </nav>
           <Routes>
             <Route exact path='/' element={<Home />} />
+            <Route exact path='/vr-training/' element={<Home />} />
             <Route exact path='/record' element={<WebcamVideo />} />
             <Route exact path='/report' element={<Report />} />
             <Route exact path='/login' element={<SignIn />} />
