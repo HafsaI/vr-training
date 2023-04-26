@@ -558,6 +558,11 @@ li:last-child {
   padding-bottom: 5%;
 }
 
+.padding-analyze {
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
 .paddingFile {
   padding-left : 5%;
   padding-top : 1%;

@@ -47,7 +47,7 @@ function Upload() {
 
   return (
     <div className='padding-horizontal'>
-      <h2 className='padding-getstarted centerText'><span className='purple'>Analyze</span> your audio</h2>
+      <h2 className='padding-analyze centerText'><span className='purple'>Analyze</span> your audio</h2>
       <form className='centerText' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} onSubmit={handleSubmit}>
         <div className='paddingFile' style={{ marginRight: '1rem' }}>
           <label>Upload <span className='purple bold'>Audio</span>:</label><span> </span> 
@@ -71,7 +71,19 @@ function Upload() {
           </div>
         </div>
       </div>} */}
-      {showScores && <Score title ='Clarity' score={scores.clarity_comments}/>}
+      {showScores && 
+      <div style={{padding : '5% 15% 20% 15%'}}>
+        <h3 className='centerText'>Scores</h3>
+        <Score title ='Clarity' score={scores.clarity_comments} showArrow={false}/>
+        <hr/>
+        <Score title ='Speech Rate' score={scores.speechrate_comments} showArrow={false}/>
+        <hr/>
+        <Score title ='No. of Pauses' score={scores.pauses_score} showArrow={false}/>
+        <hr/>
+        <Score title ='Pronunciation' score={scores.pronunciation_score+'%'} showArrow={false}/>
+        <hr/>
+      </div>
+      }
     </div>
   )
 }
