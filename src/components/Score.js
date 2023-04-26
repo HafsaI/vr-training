@@ -11,7 +11,7 @@ function Score({ title, description, score}) {
 
   return (
     <div>
-        <p> {title} <span className='rightAlign'>{score}/10</span><img src={darrow} className='imgVvSmall marginProfile darrow' onClick={toggleDescription}/></p>
+        <p> {title} <span className='rightAlign'>{score}</span><img src={darrow} className='imgVvSmall marginProfile darrow' onClick={toggleDescription}/></p>
         {showDescription && <p>{description}</p>}
     </div>
   )
