@@ -78,7 +78,7 @@ function Upload() {
         <hr/>
         <Score title ='Speech Rate' score={scores.speechrate_comments} showArrow={false}/>
         <hr/>
-        <Score title ='No. of Pauses' score={scores.pauses_score} showArrow={false}/>
+        <Score title ='No. of Pauses taken' score={scores.pauses_score} showArrow={false}/>
         <hr/>
         <Score title ='Pronunciation' score={scores.pronunciation_score+'%'} showArrow={false}/>
         <hr/>
