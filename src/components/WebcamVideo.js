@@ -91,7 +91,7 @@ export default function WebcamVideo() {
           )
           
       });
-      alert("[Video] Video saved to DB")
+      // alert("[Video] Video saved to DB")
       
     })
 

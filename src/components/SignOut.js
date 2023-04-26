@@ -18,7 +18,7 @@ function SignOut(){
         await signOut(auth);
         setUser(auth.currentUser)
         console.log("signoutuser", user);
-        alert("Successful signout")
+        // alert("Successful signout")
         signin("/login"); // Navigate to the Home component            
     };
 
