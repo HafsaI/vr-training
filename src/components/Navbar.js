@@ -43,7 +43,7 @@ function Navbar() {
           <div className="nab-left">
             <img src={profilePic} alt="Logo" className="imgSmall" />
             <span>  </span>
-            <span className='navbar-heading'>Empowered</span>
+            <span className='navbar-heading'>Manifest</span>
           </div>
 
           <div className={`nab-right  ${showNavbar && 'active'}`}>
