@@ -20,9 +20,8 @@ function Upload() {
     formData.append('audFile', selectedAudio);
    
 
-    
-    // /* sending audio to backend */
-    // axios.post('https://flask-production-0341.up.railway.app/sendaudio', formData)
+    /* sending audio to backend */
+    // axios.post('http://127.0.0.1:5000/sendaudio', formData)
     // .then(function(response) {
     //   console.log('Reponse',response);
     // })
@@ -32,7 +31,7 @@ function Upload() {
     // console.log('Speech Audio File Sent To Backend')
 
     // /* getting speech scores from backend */
-    // axios.get('https://flask-production-0341.up.railway.app/getscores')
+    // axios.get('http://127.0.0.1:5000/getscores')
     // .then(function (response) {
     //   console.log("Speech scores response", response);
     //   setShowScores(true);

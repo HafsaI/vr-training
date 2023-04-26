@@ -217,3 +217,12 @@ password: hello1
   //       // });
   //   }
   //  }, [liveSession]);
+
+
+
+   // console.log("user?.uid", user?.uid)
+    // const docRef = doc(db, "users", user?.uid)
+    // getDoc(docRef)
+    // .then((d) => {
+    //   console.log("Latest Training Sess ID",d.data().currSessionId)
+    //   currSessidRef.current.currSessId = d.data().currSessionId;
