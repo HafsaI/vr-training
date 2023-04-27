@@ -1,4 +1,3 @@
-
 import React, { useCallback, useEffect, useRef, useState, useContext } from "react";
 import Webcam from "react-webcam";
 import {ref as storageRef,uploadBytes,getDownloadURL,} from "firebase/storage";
@@ -13,7 +12,7 @@ import axios from 'axios';
 export default function WebcamVideo() {
   const webcamRef = useRef(null);
   const mediaRecorderRef = useRef(null);
-  const [capturing, setCapturing] = useState(true);
+  const [capturing, setCapturing] = useState(false);
   const [recordedChunks, setRecordedChunks] = useState([]);
   const storage = getStorage(app);
   const db = getFirestore(app);
@@ -91,7 +90,7 @@ export default function WebcamVideo() {
           )
           
       });
-      // alert("[Video] Video saved to DB")
+      alert("[Video] Video saved to DB")
       
     })
 
@@ -177,6 +176,7 @@ export default function WebcamVideo() {
       )} */}
 
       {capturing ? (<><p className="bold purple">Recording is going on</p></>) : null}
+
       
     </div>
   );
