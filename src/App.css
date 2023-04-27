@@ -290,31 +290,55 @@ li {
   border: 2px solid black;
 }
 
-.menu-right-wrap {
-  position: absolute;
-  top : 5.5%;
-  right : 2%;
-  width: 200px;
-  max-height: 0px;
-  /* overflow : hidden; */
-  transition : max-height 0.5s;
-}
 
-.open-menu-right {
-  height: 1000px;
-}
+
+/* .open-menu-right {
+
+} */
 
 .menu-right {
   background-color: white;
   padding: 20px;
-  margin: 10px;
+  margin: 0px;
+  height : 1000;
   border-radius: 10%;
   border: 2px solid black;
+  text-align: left;
 }
+
+/* .menu-right {
+  position: absolute;
+} */
+
+
 
 .menu-item {
   display : block;
 }
+
+.menu-right-wrap {
+  position: relative;
+  display: flex;
+}
+
+.menu-right {
+  position: absolute;
+  top: 40px; /* adjust this value as needed */
+  right: 0;
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #ccc;
+  z-index: 10;
+  flex-direction: column;
+}
+
+.menu-icon-wrap {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 20;
+}
+
 
 .user-info {
   display : flex;

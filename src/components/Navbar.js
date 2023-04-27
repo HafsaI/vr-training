@@ -98,9 +98,6 @@ function Navbar() {
           </div> */}
           {isMobile && (
             <>
-              <div className="menu-icon">
-                <img src={profilePic} className='imgSmall menu-right-img' onClick={toggleMenuRight} />
-              </div>
               {/* <div className='menu-right-wrap'> */}
                 { showMenu && <div className='menu-right menu-right-wrap'id="menu-right">
                   {/* {console.log('in menu-right')} */}
@@ -113,7 +110,11 @@ function Navbar() {
                  */}
                 </div>}
               {/* </div> */}
+              <div className="menu-icon">
+                <img src={profilePic} className='imgSmall menu-right-img' onClick={toggleMenuRight} />
+              </div>
             </>
+            
           )}
           </div>
           
