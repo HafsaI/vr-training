@@ -17,6 +17,17 @@ function Report(){
   const db = getFirestore(app);
   const userSessions = []
 
+  const [detailed, setDetailed] = useState(false);
+  const [short, setShort] = useState(false)
+
+  const showDetailed = () => {
+    setDetailed(true)
+  }
+
+  const showShort = () => {
+    setShort(true)
+  }
+
   useEffect(() => {
     const db = getFirestore(app);
     const scoresCollectionRef = collection(db, "training_sessions");
@@ -72,12 +83,28 @@ function Report(){
           <input type="radio" name="css-tabs" id="tab-2" checked class="tab-switch"/>
           <label for="tab-2" class="tab-label">Last Session</label>
           <div class="tab-content">
-            
+            <div>
+              <p className='centerText'>For a quick but short analysis with just your speech scores, please click this</p>
+              <div  className='centerText'>
+                <button className='btnScores' style={{marginBottom:'5%'}} onClick={showShort} >Short and quick analysis</button>
+              </div>
+              {/* // Displaying directly latest session scores  */}
+              {(JSON.stringify(currSessId) !== '[]' && currSessId != false && short)?
+              lastSession?
+                liveSession === false?
+                <Scores session = {lastSession}/> : null : null 
+              : null
+              }
+              <p  className='centerText'  style={{marginTop:'5%'}} >For a detailed analysis with body language and nervousness scores, please click this: </p>
+              <div  className='centerText'>
+                <button className='btnScores' style={{marginBottom:'5%'}}  onClick={showDetailed}>Detailed analysis</button>
+              </div>
+            </div>
             {/* // Displaying directly latest session scores  */}
-            {(JSON.stringify(currSessId) !== '[]' && currSessId != false)?
+            {(JSON.stringify(currSessId) !== '[]' && currSessId != false && detailed)?
             lastSession?
               liveSession === false?
-              <Scores session = {lastSession}/> : null : null 
+              <Scores session = {lastSession} quick={false}/> : null : null 
             : null
             }
             

@@ -228,6 +228,19 @@ li {
   color:white;
 }
 
+.btnScores{
+  display: inline;
+  margin-left: 3%;
+  border-radius: 20px;
+  padding-right: 5%;
+  padding-left: 5%;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border: none;
+  background-color: #8C8FFC;
+  color:white;
+}
+
 .loginLink{
   color: white;
 }
