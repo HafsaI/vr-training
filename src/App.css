@@ -446,6 +446,15 @@ li {
 }
 
 @media only screen and (max-width: 600px) {
+  .about-content {
+    text-align: center;
+  }
+  .home-header-center {
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 600px) {
   .nab-item {
     margin-right: 10px;
   }

@@ -15,9 +15,9 @@ function Home() {
     <div className="container">
       <div className="row">
         <div className="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
-          <h1 data-aos="fade-up">(Slogan)</h1>
-          <h2 data-aos="fade-up" data-aos-delay="400">Download our public speaking guide here</h2>
-          <div data-aos="fade-up" data-aos-delay="800">
+          <h1 data-aos="fade-up" className="home-header-center">(Slogan)</h1>
+          <h2 data-aos="fade-up" data-aos-delay="400" className="home-header-center">Download our public speaking guide here</h2>
+          <div data-aos="fade-up" data-aos-delay="800" className="home-header-center">
             <a className="btn-get-started scrollto" style={{textDecoration:"none"}}>Download</a>
           </div>
         </div>
@@ -40,7 +40,7 @@ function Home() {
 
         <div className="row content">
           <div className="col-lg-12" data-aos="fade-up" data-aos-delay="150">
-            <p>
+            <p className='about-content'>
               Our aim is to make sure that in every conversation, in every conference, in every interview, in every meeting, and in every speech, you manifest what you desired to.
               <br/>We've been there so we understand your anxiety. Hence, we want to help you prepare for your speeches so that you are able to give your best when you're on stage. 
               <br/><strong>Manifest</strong> is a public speaking training app that lets <strong>you</strong> practice and analyze your speeches. We are available both as a virtual reality app and a standalone analysis solution. In the VR app, you are placed in a conference room with audience and you can give your speech there. The system provides you with a fine-grained analysis of your speech, posture and nervousness.
