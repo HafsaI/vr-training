@@ -1,6 +1,6 @@
 import React from 'react';
 import { useContext} from "react";
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Report from './Report';
 import SignIn from './SignIn';
@@ -38,7 +38,6 @@ function Navbar() {
   }, []);
 
 
-  
 
   const LoginBtn = (
     <div className="linkLogin btnLogin">
@@ -104,11 +103,14 @@ function Navbar() {
               </div>
               {/* <div className='menu-right-wrap'> */}
                 { showMenu && <div className='menu-right menu-right-wrap'id="menu-right">
-                  {console.log('in menu-right')}
-                {JSON.stringify(user) === '{}' || user == null || user === Object ? LoginBtn : null}
-                  {JSON.stringify(user) !== '{}' && user != null && <a ><Link to='/report' target='_self'>Report</Link></a>}
-                  {JSON.stringify(user) !== '{}' && user != null && <a ><Link to='/upload' target='_self'>Upload</Link></a>}
-                  {JSON.stringify(user) !== '{}' && user != null && <a ><Link to='/startsession' target='_self'>Start</Link></a>}              
+                  {/* {console.log('in menu-right')} */}
+                  {JSON.stringify(user) === '{}' || user == null || user === Object ? LoginBtn : null}
+                  {JSON.stringify(user) !== '{}' && user != null && <a className='menu-item'><Link to='/report' target='_self'>Report</Link></a>}
+                  {JSON.stringify(user) !== '{}' && user != null && <a className='menu-item'><Link to='/upload' target='_self'>Upload</Link></a>}
+                  {JSON.stringify(user) !== '{}' && user != null && <a className='menu-item'><Link to='/startsession' target='_self'>Start</Link></a>}              
+                  {/* { JSON.stringify(user) !== '{}' && user != null && <SignOut />}
+                  {JSON.stringify(user) !== '{}' && user != null && <a><Link to='/getstarted' target='_self' className='linkLogout'>Get Started<img src={arrow} className="imgSmall"/></Link></a>}
+                 */}
                 </div>}
               {/* </div> */}
             </>

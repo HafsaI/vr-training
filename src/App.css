@@ -296,12 +296,12 @@ li {
   right : 2%;
   width: 200px;
   max-height: 0px;
-  overflow : hidden;
+  /* overflow : hidden; */
   transition : max-height 0.5s;
 }
 
 .open-menu-right {
-  max-height: 400px;
+  height: 1000px;
 }
 
 .menu-right {
@@ -310,6 +310,10 @@ li {
   margin: 10px;
   border-radius: 10%;
   border: 2px solid black;
+}
+
+.menu-item {
+  display : block;
 }
 
 .user-info {
