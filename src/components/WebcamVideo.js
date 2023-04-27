@@ -8,7 +8,7 @@ import { v4 } from "uuid";
 import { LoginContext} from "../AppContext/Context";
 import { getFirestore } from "@firebase/firestore";
 import {  collection, getDocs, getDoc, updateDoc,doc, onSnapshot} from "firebase/firestore";
-// import axios from 'axios';
+import axios from 'axios';
 
 export default function WebcamVideo() {
   const webcamRef = useRef(null);
@@ -37,7 +37,7 @@ export default function WebcamVideo() {
     [setRecordedChunks]
   );
 
-  /* function to stop capturing video */
+  /* function to start capturing video */
   const handleStartCaptureClick = useCallback(() => {
     if(webcamRef.current.stream){
     setCapturing(true);
@@ -110,37 +110,14 @@ export default function WebcamVideo() {
   }, [recordedChunks]);
 
 
-  
-  // useEffect(()=>{
-  //   console.log("liveSession", liveSession)
-  //   if(liveSession==false){
-  //     // fetch("http://127.0.0.1:5001/data/")
-  //     //         .then((response) => response.json())
-  //     //         .then((data) => {
-  //     //           // Do something with the response data here
-  //     //           console.log(data);
-  //     //         });
-  //     fetch("http://127.0.0.1:5001/data/", {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json"
-  //       },
-  //       body: JSON.stringify({ value: currSessidRef.current.currSessId, user: user?.uid })
-  //     });
-  //       // .then((response) => response.json())
-  //       // .then((data) => {
-  //       //   // Do something with the response data here
-  //       //   console.log(data);
-  //       // });
-  //   }
-  //  }, [liveSession]);
 
   /* sends user and sess id to backend */
   // useEffect(()=>{
+  //   console.log("ls", liveSession)
   //   if(liveSession==false){
-  //     axios.post('http://127.0.0.1:5001/data/', {
+  //     axios.post('http://127.0.0.1:5000/data', {
   //       sessID: currSessidRef.current.currSessId,
-  //       userID: user?.uid
+  //       // userID: user?.uid
   //     })
   //     .then(function(response) {
   //       console.log('resp',response);
@@ -154,20 +131,22 @@ export default function WebcamVideo() {
   /*  Gets current user's doc - gets latest training sess id from it - 
   constantly listens for session value in that sess doc  */
   useEffect(() => {
-    console.log("user?.uid", user?.uid)
-    const docRef = doc(db, "users", user?.uid)
-    getDoc(docRef)
-    .then((d) => {
-      console.log("Latest Training Sess ID",d.data().currSessionId)
-      currSessidRef.current.currSessId = d.data().currSessionId;
+    // if sess id changes
+    if (user?.uid){
+    const unsub = onSnapshot(doc(db, "users", user.uid), (doc) => {
+      console.log("[Video ] Current Session ID Value: ", doc.data().currSessionId)
+      currSessidRef.current.currSessId = doc.data().currSessionId
+      setliveSession(doc.data().session)
+    }) 
+    }
 
-      if (JSON.stringify(currSessidRef.current.currSessId) !== '[]' && currSessidRef.current.currSessId!= false ){
-        const unsub = onSnapshot(doc(db, "training_sessions", currSessidRef.current.currSessId), (doc) => {
-          console.log("[Video ] Current Session Value: ", doc.data().session)
-          setliveSession(doc.data().session)
-        }) 
-      }
-    })
+    // if session value changes
+    if (JSON.stringify(currSessidRef.current.currSessId) !== '[]' && currSessidRef.current.currSessId!= false ){
+      const unsub = onSnapshot(doc(db, "training_sessions", currSessidRef.current.currSessId), (doc) => {
+        console.log("[Video ] Current Session Value: ", doc.data().session)
+        setliveSession(doc.data().session)
+      }) 
+    }
     }, [currSessidRef.current.currSessId, liveSession]);
 
   /* automatically starts and stops video */
@@ -176,7 +155,7 @@ export default function WebcamVideo() {
     if (liveSession && !capturing && webcamRef.current.stream) {
       handleStartCaptureClick();
     } else if (!liveSession && capturing) {
-      console.log("Calling Stop Func")
+      // console.log("Calling Stop Func")
       handleStopCaptureClick();
     }
   }, [webcamRef, liveSession]);

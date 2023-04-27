@@ -24,24 +24,24 @@ function Upload() {
    
 
     
-    /* sending audio to backend */
-    axios.post('https://flask-production-0341.up.railway.app/sendaudio', formData)
-    .then(function(response) {
-      console.log('Reponse',response);
-    })
-    .catch(function(error) {
-      console.log('Uploading error',error);
-    });
-    console.log('Speech Audio File Sent To Backend')
+    // /* sending audio to backend */
+    // axios.post('https://flask-production-0341.up.railway.app/sendaudio', formData)
+    // .then(function(response) {
+    //   console.log('Reponse',response);
+    // })
+    // .catch(function(error) {
+    //   console.log('Uploading error',error);
+    // });
+    // console.log('Speech Audio File Sent To Backend')
 
-    /* getting speech scores from backend */
-    axios.get('https://flask-production-0341.up.railway.app/getscores')
-    .then(function (response) {
-      console.log("Speech scores response", response);
-      setShowScores(true);
-      showSpeechScores(response)
+    // /* getting speech scores from backend */
+    // axios.get('https://flask-production-0341.up.railway.app/getscores')
+    // .then(function (response) {
+    //   console.log("Speech scores response", response);
+    //   setShowScores(true);
+    //   showSpeechScores(response)
 
-    })  
+    //})  
        
   }
 
