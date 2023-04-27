@@ -88,8 +88,8 @@ function Navbar() {
                         <h5>{userdoc.name}</h5>
                       </div>
                       <hr />
-                      <><SignOut /><img src={rightarrows} className="menuarrows"/></>
                       <a><Link to='/getstarted' target='_self' className='linkLogout'>Get Started<img src={rightarrows} className="menuarrows"/></Link></a>
+                      <><SignOut /><img src={rightarrows} className="menuarrows"/></>
                     </div>
                   </div>
                 </div>
@@ -110,8 +110,8 @@ function Navbar() {
                   {JSON.stringify(user) !== '{}' && user != null && <><a className='menu-item'><Link to='/report' target='_self'>Report</Link></a><hr/></>}
                   {JSON.stringify(user) !== '{}' && user != null && <><a className='menu-item'><Link to='/upload' target='_self'>Upload</Link></a><hr/></>}
                   {JSON.stringify(user) !== '{}' && user != null && <><a className='menu-item'><Link to='/startsession' target='_self'>Start</Link></a><hr/></>}              
-                  { JSON.stringify(user) !== '{}' && user != null && <><SignOut/><hr/></>}
-                  {JSON.stringify(user) !== '{}' && user != null && <><a><Link to='/getstarted' target='_self' className='linkLogout'>Get Started</Link></a></>}
+                  {JSON.stringify(user) !== '{}' && user != null && <><a><Link to='/getstarted' target='_self' className='linkLogout'>Get Started</Link></a><hr/></>}
+                  { JSON.stringify(user) !== '{}' && user != null && <><SignOut/></>}
                   <hr/>
                 </div>}
               {/* </div> */}
