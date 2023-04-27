@@ -20,6 +20,7 @@ function Navbar() {
   const { user, setUser } = useContext(LoginContext);
   const { userdoc, setUserDoc } = useContext(UserContext);
   const [isMobile, setIsMobile] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
 
 
   useEffect(() => {
@@ -35,6 +36,8 @@ function Navbar() {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+
+
   
 
   const LoginBtn = (
@@ -48,6 +51,12 @@ function Navbar() {
     subMenu.classList.toggle("open-menu");
   };
 
+  const toggleMenuRight = () => {
+    setShowMenu(!showMenu)
+    // let menu = document.getElementById('menu-right');
+    // menu.classList.toggle("open-menu-right");
+  };
+
   return (
     <div className='navbar-wrapper'>
       <BrowserRouter>
@@ -59,6 +68,7 @@ function Navbar() {
           </div>
 
           <div className='nab-right'>
+            { !isMobile &&
             <div className='nab-right-inner'  style={{ display: 'inline-flex' }}>
               <a className='nab-item'><Link to='/' target='_self'>Home</Link></a>
               {JSON.stringify(user) === '{}' || user == null || user === Object ? LoginBtn : null}
@@ -83,13 +93,25 @@ function Navbar() {
                 </div>
               }
             </div>
+            }
             {/* <div className="menu-icon">
             <img src={profilePic} className='imgSmall'/>
           </div> */}
           {isMobile && (
-            <div className="menu-icon">
-              <img src={profilePic} className='imgSmall'/>
-            </div>
+            <>
+              <div className="menu-icon">
+                <img src={profilePic} className='imgSmall menu-right-img' onClick={toggleMenuRight} />
+              </div>
+              {/* <div className='menu-right-wrap'> */}
+                { showMenu && <div className='menu-right menu-right-wrap'id="menu-right">
+                  {console.log('in menu-right')}
+                {JSON.stringify(user) === '{}' || user == null || user === Object ? LoginBtn : null}
+                  {JSON.stringify(user) !== '{}' && user != null && <a ><Link to='/report' target='_self'>Report</Link></a>}
+                  {JSON.stringify(user) !== '{}' && user != null && <a ><Link to='/upload' target='_self'>Upload</Link></a>}
+                  {JSON.stringify(user) !== '{}' && user != null && <a ><Link to='/startsession' target='_self'>Start</Link></a>}              
+                </div>}
+              {/* </div> */}
+            </>
           )}
           </div>
           

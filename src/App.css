@@ -290,6 +290,28 @@ li {
   border: 2px solid black;
 }
 
+.menu-right-wrap {
+  position: absolute;
+  top : 5.5%;
+  right : 2%;
+  width: 200px;
+  max-height: 0px;
+  overflow : hidden;
+  transition : max-height 0.5s;
+}
+
+.open-menu-right {
+  max-height: 400px;
+}
+
+.menu-right {
+  background-color: white;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 10%;
+  border: 2px solid black;
+}
+
 .user-info {
   display : flex;
   align-items : center;
