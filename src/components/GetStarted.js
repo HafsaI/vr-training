@@ -51,8 +51,8 @@ function GetStarted() {
         <h4>Do you want to get the complete experience with <span className='purple'>vr headset</span>?</h4>
         <input type="radio" id="yes-two" name="two" value="yes-two" onChange={handleRadioTwoChange}/>
         <label htmlFor="yes-two" style={{paddingRight:'10%'}}>Yes</label> <span> </span>
-        <input type="radio" id="no-two" name="two" value="no-two" onChange={handleRadioTwoChange}/>
-        <label htmlFor="no-two">No</label>
+        <input style={{marginBottom:'20%'}}type="radio" id="no-two" name="two" value="no-two" onChange={handleRadioTwoChange}/>
+        <label style={{marginBottom:'20%'}} htmlFor="no-two">No</label>
         <hr/>
 
         {showTwoSteps && (
@@ -74,7 +74,7 @@ function GetStarted() {
               <li>Congratulations! Your session has begun! Start speaking</li>
               <li>After you are done with your session, press 'Stop session' and remove your headset</li>
               <li>Open the reports tab on your pc or phone and view your session analysis</li>
-              <li>You can also view all of your session's combined analytics in the 'Analytics' tab</li>
+              <li  style={{marginBottom:'50%'}}>You can also view all of your session's combined analytics in the 'Analytics' tab</li>
             </ol>
           </div>
         )}
