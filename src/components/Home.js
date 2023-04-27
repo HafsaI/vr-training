@@ -110,9 +110,15 @@ function Home() {
             <div className='detail-info'>
               <h4  style={{textAlign:'center'}}>Body Language Analysis</h4>
               
-              <h5>Posture</h5>
-              <div className="feature-detail" style={{width:'100%'}}><h6>Our aim is to make sure that in every conversation, in every conference, in every interview, in every meeting, and in every speech, you manifest what you desired to.</h6></div>
+              <h5>Facing Audience</h5>
+              <div className="feature-detail" style={{width:'100%'}}><h6>This score indicates whether you were facing the audience while presenting or not as while public speaking, it is essential to face the audience and facing the audience is considered a metric for confidence.</h6></div>
             
+              <h5>Swaying</h5>
+              <div className="feature-detail" style={{width:'100%'}}><h6>This score indicates whether the user was swaying or rocking on one spot as swaying is discouraged in public speaking.</h6></div>
+
+              <h5>Feet Distance</h5>
+              <div className="feature-detail" style={{width:'100%'}}><h6>This scores indicates whether your were standing with your feet shoulder width apart as while public speaking, it is best practice to stand with your feet shoulder width apart.</h6></div>
+
             </div>
           </div>
         </div>`

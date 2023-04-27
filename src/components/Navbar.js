@@ -66,7 +66,7 @@ function Navbar() {
           <div className="nab-left">
             <img src={logo} alt="Logo" className="imgSmall" />
             <span>  </span>
-            <span className='navbar-heading'>Manifest</span>
+            <span className='navbar-heading orbitron'>Manifest</span>
           </div>
 
           <div className='nab-right'>
