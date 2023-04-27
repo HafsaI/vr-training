@@ -14,7 +14,7 @@ function Upload() {
   }
 
   const handleSubmit = (event) => {
-    event.preventDefault(); // prevent default form submission behavior
+    event.preventDefault(); 
 
     if (!selectedAudio) {
       return;
@@ -25,7 +25,7 @@ function Upload() {
 
     
     /* sending audio to backend */
-    axios.post('https://flask-production-0341.up.railway.app/sendaudio', formData)
+    axios.post('/sendaudio', formData)
     .then(function(response) {
       console.log('Reponse',response);
     })
@@ -35,7 +35,7 @@ function Upload() {
     console.log('Speech Audio File Sent To Backend')
 
     /* getting speech scores from backend */
-    axios.get('https://flask-production-0341.up.railway.app/getscores')
+    axios.get('/getscores')
     .then(function (response) {
       console.log("Speech scores response", response);
       setShowScores(true);
