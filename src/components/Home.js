@@ -40,10 +40,14 @@ function Home() {
         <div className="row content">
           <div className="col-lg-12" data-aos="fade-up" data-aos-delay="150">
             <p className='about-content'>
-              Our aim is to make sure that in every conversation, in every conference, in every interview, in every meeting, and in every speech, you manifest what you desired to.
+              {/* Our aim is to make sure that in every conversation, in every conference, in every interview, in every meeting, and in every speech, you manifest what you desired to.
               <br/>We've been there so we understand your anxiety. Hence, we want to help you prepare for your speeches so that you are able to give your best when you're on stage. 
               <br/><strong>Manifest</strong> is a public speaking training app that lets <strong>you</strong> practice and analyze your speeches. We are available both as a virtual reality app and a standalone analysis solution. In the VR app, you are placed in a conference room with audience and you can give your speech there. The system provides you with a fine-grained analysis of your speech, posture and nervousness.
-              <br/>Here is the <a style={{textDecoration:'underline'}}>team</a> that made this possible for you.
+              <br/>Here is the <a style={{textDecoration:'underline'}}>team</a> that made this possible for you. */}
+              You have an interview tomorrow and you know that if you mess up, you'll lose the job oppurtunity. You have a presentation tomorrow and you know that if you don't present well, you'll lose a lot of marks. You have a meeting tomorrow and you know that if you're not able to convey your message well, you'll lose potential clients. We understand you and we are here to help you. 
+              <br/>
+              <strong>Manifest</strong> is a public speaking training app that lets <strong>you</strong> practice and analyze your speeches. Manifest's aim is to make sure that in every conversation, in every conference, in every interview, in every meeting, and in every speech, you manifest what you desired to.
+              <br/>We are available both as a virtual reality app and as a standalone analysis solution. In the VR app, you are placed in a conference room with audience and you can give your speech there. The system provides you with a fine-grained analysis of your speech, posture and nervousness so that you know exactly what you have to improve upon.
             </p>
           </div>
 
