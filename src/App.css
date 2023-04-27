@@ -300,10 +300,10 @@ li {
   background-color: white;
   padding: 20px;
   margin: 0px;
-  height : 1000;
-  border-radius: 10%;
-  border: 2px solid black;
+  /* height : 100vh; */
+  height : 6200px;
   text-align: left;
+  width :60%;
 }
 
 /* .menu-right {
@@ -324,11 +324,11 @@ li {
 .menu-right {
   position: absolute;
   top: 40px; /* adjust this value as needed */
-  right: 0;
+  right: 0px;
   background-color: #fff;
   padding: 10px;
   border: 1px solid #ccc;
-  z-index: 10;
+  z-index: 3;
   flex-direction: column;
 }
 
@@ -336,7 +336,7 @@ li {
   position: absolute;
   top: 0;
   right: 0;
-  z-index: 20;
+  z-index: 4;
 }
 
 

@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 
 
 
-function SignOut(){
+function SignOut(showArrow=true){
     const auth = getAuth(app);
     const {user,setUser} = useContext(LoginContext);
     const signin = useNavigate();
@@ -24,7 +24,7 @@ function SignOut(){
 
     return (
         <>
-            <a onClick={signout} ><Link to='/login' target='_self' className="linkLogout">Logout<img src={arrow} className="imgSmall"/></Link></a> 
+            <a onClick={signout} ><Link to='/login' target='_self' className="linkLogout">Logout{showArrow && <img src={arrow} className="imgSmall"/>}</Link></a> 
         </>
     )
 }

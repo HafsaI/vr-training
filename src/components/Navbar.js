@@ -101,13 +101,14 @@ function Navbar() {
               {/* <div className='menu-right-wrap'> */}
                 { showMenu && <div className='menu-right menu-right-wrap'id="menu-right">
                   {/* {console.log('in menu-right')} */}
+                  <a className='nab-item'><Link to='/' target='_self'>Home</Link></a>
                   {JSON.stringify(user) === '{}' || user == null || user === Object ? LoginBtn : null}
                   {JSON.stringify(user) !== '{}' && user != null && <a className='menu-item'><Link to='/report' target='_self'>Report</Link></a>}
                   {JSON.stringify(user) !== '{}' && user != null && <a className='menu-item'><Link to='/upload' target='_self'>Upload</Link></a>}
                   {JSON.stringify(user) !== '{}' && user != null && <a className='menu-item'><Link to='/startsession' target='_self'>Start</Link></a>}              
-                  {/* { JSON.stringify(user) !== '{}' && user != null && <SignOut />}
-                  {JSON.stringify(user) !== '{}' && user != null && <a><Link to='/getstarted' target='_self' className='linkLogout'>Get Started<img src={arrow} className="imgSmall"/></Link></a>}
-                 */}
+                  { JSON.stringify(user) !== '{}' && user != null && <SignOut showArrow = {false}/>}
+                  {JSON.stringify(user) !== '{}' && user != null && <a><Link to='/getstarted' target='_self' className='linkLogout'>Get Started</Link></a>}
+                
                 </div>}
               {/* </div> */}
               <div className="menu-icon">
