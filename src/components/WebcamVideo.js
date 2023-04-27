@@ -16,6 +16,9 @@ export default function WebcamVideo() {
   const [recordedChunks, setRecordedChunks] = useState([]);
   const storage = getStorage(app);
   const db = getFirestore(app);
+
+  const [sessionEnded, setSessionEnded] = useState(0);
+
   const videoConstraints = {
     width: 600,
     height: 300,
@@ -38,6 +41,7 @@ export default function WebcamVideo() {
 
   /* function to start capturing video */
   const handleStartCaptureClick = useCallback(() => {
+    setSessionEnded(0)
     if(webcamRef.current.stream){
     setCapturing(true);
     console.log('Recording Started');
@@ -57,6 +61,7 @@ export default function WebcamVideo() {
     mediaRecorderRef.current.stop();
     setCapturing(false); 
     console.log('Recording Stopped');
+    setSessionEnded(1);
     console.log('recordedChunks:', recordedChunks);
 
   }, [mediaRecorderRef, setCapturing, recordedChunks]);
@@ -90,7 +95,7 @@ export default function WebcamVideo() {
           )
           
       });
-      alert("[Video] Video saved to DB")
+      // alert("[Video] Video saved to DB")
       
     })
 
@@ -162,6 +167,9 @@ export default function WebcamVideo() {
 
   return (
     <div className="Container centerText">
+      {(capturing && !sessionEnded) ? (<><p className="bold purple">Recording has started</p></>) : null}
+      {/* {true ? (<><p className="bold purple">Recording is going on</p></>) : null} */}
+      {(!capturing && sessionEnded) ? (<><p className="bold purple">Recording has stopped</p></>) : null}
       <Webcam
         audio={false}
         mirrored={true}
@@ -174,9 +182,6 @@ export default function WebcamVideo() {
       ) : (
         <button onClick={handleStartCaptureClick}>Start Capture</button>
       )} */}
-
-      {capturing ? (<><p className="bold purple">Recording is going on</p></>) : null}
-
       
     </div>
   );
