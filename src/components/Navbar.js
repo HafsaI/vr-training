@@ -11,6 +11,7 @@ import SignOut from './SignOut';
 import profilePic from '../../src/images/profile_default.png';
 import menu from '../../src/images/menu.png'
 import darrow from '../../src/images/down-arrow.png'
+import logo from '../../src/images/logo.png'
 import arrow from '../../src/images/arrow.png';
 import GetStarted from './GetStarted';
 import StartSession from './StartSession';
@@ -62,7 +63,7 @@ function Navbar() {
       <BrowserRouter>
         <nav className="nab">
           <div className="nab-left">
-            <img src={profilePic} alt="Logo" className="imgSmall" />
+            <img src={logo} alt="Logo" className="imgSmall" />
             <span>  </span>
             <span className='navbar-heading'>Manifest</span>
           </div>
