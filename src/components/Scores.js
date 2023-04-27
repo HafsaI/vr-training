@@ -47,7 +47,7 @@ function Scores({session, quick = true}) {
 
         { (!quick && !session.posture_score) &&
           <>
-            <p className='purple bold centerText'>This may take a few minutes! Please wait.</p>
+            <p className='purple bold centerText'>This may take a few minutes! Please wait. Thank you for your patience.</p>
           </> 
         }              
     </div>
