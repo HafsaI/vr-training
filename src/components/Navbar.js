@@ -110,7 +110,7 @@ function Navbar() {
                   {JSON.stringify(user) !== '{}' && user != null && <><a className='menu-item'><Link to='/startsession' target='_self'>Start</Link></a><hr/></>}              
                   { JSON.stringify(user) !== '{}' && user != null && <><SignOut/><hr/></>}
                   {JSON.stringify(user) !== '{}' && user != null && <><a><Link to='/getstarted' target='_self' className='linkLogout'>Get Started</Link></a></>}
-                
+                  <hr/>
                 </div>}
               {/* </div> */}
               <div className="menu-icon">

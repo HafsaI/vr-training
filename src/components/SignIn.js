@@ -42,7 +42,7 @@ function SignIn(){
     return (
         <div className = "bg">
             <div className="center signinBox">
-                <h1 className="centerText">Empowered</h1>
+                <h1 className="centerText">Manifest</h1>
                 <input id ="signinField" type = "email" placeholder='Email' name="email" onChange={(e) => {setEmail(e.target.value)}}/>
                 <input id="password signinField" placeholder='Password' type = "password" name="password" onChange={(e) => {setPassword(e.target.value)}}/>
                 <button className="loginBtn" onClick={signin} > Login</button>
