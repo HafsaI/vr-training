@@ -84,7 +84,7 @@ function Report(){
           <label for="tab-2" class="tab-label">Last Session</label>
           <div class="tab-content">
             <div>
-              <p className='centerText'>For a quick but short analysis with just your speech scores, please click this</p>
+              <p className='centerText'>For a quick but short analysis with just your speech scores, please click this:</p>
               <div  className='centerText'>
                 <button className='btnScores' style={{marginBottom:'5%'}} onClick={showShort} >Short and quick analysis</button>
               </div>
