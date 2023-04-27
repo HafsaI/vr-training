@@ -11,6 +11,7 @@ import SignOut from './SignOut';
 import profilePic from '../../src/images/profile_default.png';
 import menu from '../../src/images/menu.png'
 import darrow from '../../src/images/down-arrow.png'
+import rightarrows from '../../src/images/rightarrows.svg'
 import arrow from '../../src/images/arrow.png';
 import GetStarted from './GetStarted';
 import StartSession from './StartSession';
@@ -86,8 +87,8 @@ function Navbar() {
                         <h5>{userdoc.name}</h5>
                       </div>
                       <hr />
-                      <><SignOut /><img src={arrow} className="imgSmall"/></>
-                      <a><Link to='/getstarted' target='_self' className='linkLogout'>Get Started<img src={arrow} className="imgSmall"/></Link></a>
+                      <><SignOut /><img src={rightarrows} className="menuarrows"/></>
+                      <a><Link to='/getstarted' target='_self' className='linkLogout'>Get Started<img src={rightarrows} className="menuarrows"/></Link></a>
                     </div>
                   </div>
                 </div>

@@ -267,6 +267,9 @@ li {
 .imgVvSmall {
   width : 15px;
 }
+.menuarrows{
+  width : 25px;
+}
 
 .sub-menu-wrap {
   position: absolute;
