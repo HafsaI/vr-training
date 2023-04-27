@@ -1,6 +1,6 @@
 import React from 'react';
 import { useContext} from "react";
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Report from './Report';
 import SignIn from './SignIn';
@@ -19,11 +19,23 @@ import Home from './Home';
 function Navbar() {
   const { user, setUser } = useContext(LoginContext);
   const { userdoc, setUserDoc } = useContext(UserContext);
-  const [showNavbar, setShowNavbar] = useState(false)
+  const [isMobile, setIsMobile] = useState(false);
 
-  const handleShowNavbar = () => {
-    setShowNavbar(!showNavbar)
-  }
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+  
+    handleResize();
+  
+    window.addEventListener('resize', handleResize);
+  
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+  
 
   const LoginBtn = (
     <div className="linkLogin btnLogin">
@@ -46,7 +58,7 @@ function Navbar() {
             <span className='navbar-heading'>Manifest</span>
           </div>
 
-          <div className={`nab-right  ${showNavbar && 'active'}`}>
+          <div className='nab-right'>
             <div className='nab-right-inner'  style={{ display: 'inline-flex' }}>
               <a className='nab-item'><Link to='/' target='_self'>Home</Link></a>
               {JSON.stringify(user) === '{}' || user == null || user === Object ? LoginBtn : null}
@@ -71,11 +83,17 @@ function Navbar() {
                 </div>
               }
             </div>
-          </div>
-          
-          {/* <div className="menu-icon" onClick={handleShowNavbar}>
+            {/* <div className="menu-icon">
             <img src={profilePic} className='imgSmall'/>
           </div> */}
+          {isMobile && (
+            <div className="menu-icon">
+              <img src={profilePic} className='imgSmall'/>
+            </div>
+          )}
+          </div>
+          
+  
           
         </nav>
           <Routes>
