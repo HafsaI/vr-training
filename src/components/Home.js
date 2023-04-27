@@ -1,11 +1,10 @@
 import React from 'react';
 import pic from '../images/homeTop.jpg';
 import oculus from '../images/oculus2.png'
-import diagonal from '../images/diagonal.png';
 import Feature from './Feature';
 import TeamMember from './TeamMember';
 import features from '../constants/features';
-
+import Guide from '../images/ps_guide.pdf';
 function Home() {
   return (
     <div>
@@ -18,7 +17,9 @@ function Home() {
           <h1 data-aos="fade-up" className="home-header-center">(Slogan)</h1>
           <h2 data-aos="fade-up" data-aos-delay="400" className="home-header-center">Download our public speaking guide here</h2>
           <div data-aos="fade-up" data-aos-delay="800" className="home-header-center">
-            <a className="btn-get-started scrollto" style={{textDecoration:"none"}}>Download</a>
+            <a className="btn-get-started scrollto" href={Guide} target="_blank" rel="noreferrer" style={{textDecoration:"none"}}>Download</a>
+            {/* <a  className = "nav--links resume" href={file} target="_blank" rel="noreferrer"> Guide</a> */}
+
           </div>
         </div>
         <div className="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left" data-aos-delay="200">
