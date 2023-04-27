@@ -327,7 +327,7 @@ li {
   right: 0px;
   background-color: #fff;
   padding: 10px;
-  border: 1px solid #ccc;
+  /* border: 1px solid #ccc; */
   z-index: 3;
   flex-direction: column;
 }

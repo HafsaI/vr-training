@@ -9,6 +9,7 @@ import SignUp from './SignUp';
 import { LoginContext, UserContext } from "../AppContext/Context";
 import SignOut from './SignOut';
 import profilePic from '../../src/images/profile_default.png';
+import menu from '../../src/images/menu.png'
 import darrow from '../../src/images/down-arrow.png'
 import arrow from '../../src/images/arrow.png';
 import GetStarted from './GetStarted';
@@ -85,7 +86,7 @@ function Navbar() {
                         <h5>{userdoc.name}</h5>
                       </div>
                       <hr />
-                      <SignOut />
+                      <><SignOut /><img src={arrow} className="imgSmall"/></>
                       <a><Link to='/getstarted' target='_self' className='linkLogout'>Get Started<img src={arrow} className="imgSmall"/></Link></a>
                     </div>
                   </div>
@@ -101,18 +102,19 @@ function Navbar() {
               {/* <div className='menu-right-wrap'> */}
                 { showMenu && <div className='menu-right menu-right-wrap'id="menu-right">
                   {/* {console.log('in menu-right')} */}
-                  <a className='nab-item'><Link to='/' target='_self'>Home</Link></a>
-                  {JSON.stringify(user) === '{}' || user == null || user === Object ? LoginBtn : null}
-                  {JSON.stringify(user) !== '{}' && user != null && <a className='menu-item'><Link to='/report' target='_self'>Report</Link></a>}
-                  {JSON.stringify(user) !== '{}' && user != null && <a className='menu-item'><Link to='/upload' target='_self'>Upload</Link></a>}
-                  {JSON.stringify(user) !== '{}' && user != null && <a className='menu-item'><Link to='/startsession' target='_self'>Start</Link></a>}              
-                  { JSON.stringify(user) !== '{}' && user != null && <SignOut showArrow = {false}/>}
-                  {JSON.stringify(user) !== '{}' && user != null && <a><Link to='/getstarted' target='_self' className='linkLogout'>Get Started</Link></a>}
+                  <a className='menu-item'><Link to='/' target='_self'>Home</Link></a>
+                  <hr/>
+                  {JSON.stringify(user) === '{}' || user == null || user === Object ? <a className='menu-item'><Link to='/login' target='_self'>Login</Link></a> : null}
+                  {JSON.stringify(user) !== '{}' && user != null && <><a className='menu-item'><Link to='/report' target='_self'>Report</Link></a><hr/></>}
+                  {JSON.stringify(user) !== '{}' && user != null && <><a className='menu-item'><Link to='/upload' target='_self'>Upload</Link></a><hr/></>}
+                  {JSON.stringify(user) !== '{}' && user != null && <><a className='menu-item'><Link to='/startsession' target='_self'>Start</Link></a><hr/></>}              
+                  { JSON.stringify(user) !== '{}' && user != null && <><SignOut/><hr/></>}
+                  {JSON.stringify(user) !== '{}' && user != null && <><a><Link to='/getstarted' target='_self' className='linkLogout'>Get Started</Link></a></>}
                 
                 </div>}
               {/* </div> */}
               <div className="menu-icon">
-                <img src={profilePic} className='imgSmall menu-right-img' onClick={toggleMenuRight} />
+                <img src={menu} className='imgSmall menu-right-img' onClick={toggleMenuRight} />
               </div>
             </>
             
