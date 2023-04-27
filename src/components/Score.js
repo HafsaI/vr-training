@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import darrow from '../images/down-arrow.png'
 
-function Score({ title, description, score, showArrow = true}) {
+function Score({ title, description, score, showArrow = false}) {
     const [showDescription, setShowDescription] = useState(false)
 
     const toggleDescription = () => {

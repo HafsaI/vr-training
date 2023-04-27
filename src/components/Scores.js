@@ -8,13 +8,13 @@ function Scores({session, quick = true}) {
         <>
             <h5>Speech Analysis</h5>
             <hr/>
-            <Score score={session.clarity_comment} title='Clarity'/>
+            <Score score={session.clarity_comment} title='Clarity' showArrow={true}/>
             <hr/>
             <Score score={session.pauses_score} title='No. of Pauses taken'/>
             <hr/>
             <Score score={session.pronunciation_score+'%'} title='Pronunciation'/>
             <hr/>
-            <Score score={session.speakingrate_comment} title='Speaking Rate'/>
+            <Score score={session.speakingrate_comment} title='Speaking Rate'  showArrow={true}/>
             <hr/>
             <Score score={session.listenability_score+'%'} title='Listenability'/>
         </>
