@@ -11,7 +11,7 @@ import SignOut from './SignOut';
 import profilePic from '../../src/images/profile_default.png';
 import menu from '../../src/images/menu.png'
 import darrow from '../../src/images/down-arrow.png'
-import logo from '../../src/images/logo.png'
+import logo from '../../src/images/logo2.png'
 import rightarrows from '../../src/images/rightarrows.svg'
 import arrow from '../../src/images/arrow.png';
 import GetStarted from './GetStarted';
