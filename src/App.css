@@ -2341,6 +2341,10 @@ a:hover, button:hover, .darrow:hover {
   font-weight : bold;
 }
 
+.marginPlus {
+  margin-right: 2%;
+}
+
 /* .menu-icon {
   display: none;
 }

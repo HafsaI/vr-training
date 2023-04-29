@@ -74,9 +74,9 @@ function Upload() {
       {(showScores && scores.clarity_comments) && 
       <div style={{padding : '5% 15% 20% 15%'}}>
         <h3 className='centerText'>Scores</h3>
-        <Score title ='Clarity' score={scores.clarity_comments} showArrow={false}/>
+        <Score title ='Clarity' score={scores.clarity_comments} showArrow={true}/>
         <hr/>
-        <Score title ='Speech Rate' score={scores.speechrate_comments} showArrow={false}/>
+        <Score title ='Speech Rate' score={scores.speechrate_comments} showArrow={true}/>
         <hr/>
         <Score title ='No. of Pauses taken' score={scores.pauses_score} showArrow={false}/>
         <hr/>
