@@ -2337,7 +2337,7 @@ a:hover, button:hover, .darrow:hover {
   cursor: pointer;
 }
 
-.nab-right-inner a.active, .sub-menu a.active {
+.nab-right-inner a.active, .sub-menu a.active, .menu-right a.active {
   font-weight : bold;
 }
 

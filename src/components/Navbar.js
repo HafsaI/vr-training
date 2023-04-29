@@ -72,11 +72,11 @@ function Navbar() {
           <div className='nab-right'>
             { !isMobile &&
             <div className='nab-right-inner'  style={{ display: 'inline-flex' }}>
-              <a className='nab-item'><NavLink to='/' target='_self'>Home</NavLink></a>
+              <a className='nab-item' style={{paddingTop:'2px'}}><NavLink to='/' target='_self'>Home</NavLink></a>
               {JSON.stringify(user) === '{}' || user == null || user === Object ? LoginBtn : null}
-              {JSON.stringify(user) !== '{}' && user != null && <a className='nab-item'><NavLink to='/report' target='_self'>Report</NavLink></a>}
-              {JSON.stringify(user) !== '{}' && user != null && <a className='nab-item'><NavLink to='/upload' target='_self'>Upload</NavLink></a>}
-              {JSON.stringify(user) !== '{}' && user != null && <a className='nab-item'><NavLink to='/startsession' target='_self'>Start</NavLink></a>}
+              {JSON.stringify(user) !== '{}' && user != null && <a className='nab-item' style={{paddingTop:'2px'}}><NavLink to='/report' target='_self'>Report</NavLink></a>}
+              {JSON.stringify(user) !== '{}' && user != null && <a className='nab-item' style={{paddingTop:'2px'}}><NavLink to='/upload' target='_self'>Upload</NavLink></a>}
+              {JSON.stringify(user) !== '{}' && user != null && <a className='nab-item' style={{paddingTop:'2px'}}><NavLink to='/startsession' target='_self'>Start</NavLink></a>}
               {JSON.stringify(user) === '{}' || user == null || user === Object ? null :
                 <div  classname = "profile" style={{ display: "flex", alignItems: "center" }}>
                   <img src={profilePic} alt="Profile" className='imgSmall profilePic' />
@@ -104,13 +104,13 @@ function Navbar() {
               {/* <div className='menu-right-wrap'> */}
                 { showMenu && <div className='menu-right menu-right-wrap'id="menu-right">
                   {/* {console.log('in menu-right')} */}
-                  <a className='menu-item'><Link to='/' target='_self'>Home</Link></a>
+                  <a className='menu-item'><NavLink to='/' target='_self'>Home</NavLink></a>
                   <hr/>
-                  {JSON.stringify(user) === '{}' || user == null || user === Object ? <a className='menu-item'><Link to='/login' target='_self'>Login</Link></a> : null}
-                  {JSON.stringify(user) !== '{}' && user != null && <><a className='menu-item'><Link to='/report' target='_self'>Report</Link></a><hr/></>}
-                  {JSON.stringify(user) !== '{}' && user != null && <><a className='menu-item'><Link to='/upload' target='_self'>Upload</Link></a><hr/></>}
-                  {JSON.stringify(user) !== '{}' && user != null && <><a className='menu-item'><Link to='/startsession' target='_self'>Start</Link></a><hr/></>}              
-                  {JSON.stringify(user) !== '{}' && user != null && <><a><Link to='/getstarted' target='_self' className='linkLogout'>Get Started</Link></a><hr/></>}
+                  {JSON.stringify(user) === '{}' || user == null || user === Object ? <a className='menu-item'><NavLink to='/login' target='_self'>Login</NavLink></a> : null}
+                  {JSON.stringify(user) !== '{}' && user != null && <><a className='menu-item'><NavLink to='/report' target='_self'>Report</NavLink></a><hr/></>}
+                  {JSON.stringify(user) !== '{}' && user != null && <><a className='menu-item'><NavLink to='/upload' target='_self'>Upload</NavLink></a><hr/></>}
+                  {JSON.stringify(user) !== '{}' && user != null && <><a className='menu-item'><NavLink to='/startsession' target='_self'>Start</NavLink></a><hr/></>}              
+                  {JSON.stringify(user) !== '{}' && user != null && <><a><NavLink to='/getstarted' target='_self' className='linkLogout'>Get Started</NavLink></a><hr/></>}
                   { JSON.stringify(user) !== '{}' && user != null && <><SignOut/></>}
                   <hr/>
                 </div>}
