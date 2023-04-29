@@ -34,18 +34,18 @@ function Scores({session, quick = true}) {
             <Score score={session.listenability_score+'%'} title='Listenability'/>
             <h5 className='analysisType'>Body Language Analysis</h5>
             <hr/>
-            <Score score={session.posture_score+'/10'} title='Posture'/>
+            <Score score={session.facingaud_score+'% of the distance'} title='Facing Audience'/>
             <hr/>
-            <Score score={session.gesture_score+'/10'} title='Gesture'/>
+            <Score score={session.feetdist_score+'% of the time'} title='Feet Shoulder-width apart'/>
             <hr/>
-            <Score score={session.movement_score+'/10'} title='Movement'/>
+            <Score score={session.sway_score+'% of the time'} title='Swaying' showArrow={true}/>
             <h5 className='analysisType'>Nervousness Analysis</h5>
             <hr/>
             <Score score={session.nervousness_score+'/10'} title='Nervousness'/> 
           </> 
         }   
 
-        { (!quick && !session.posture_score) &&
+        { (!quick && !session.facingaud_score) &&
           <>
             <p className='purple bold centerText'>This may take a few minutes! Please wait. Thank you for your patience.</p>
           </> 
