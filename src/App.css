@@ -2337,6 +2337,10 @@ a:hover, button:hover, .darrow:hover {
   cursor: pointer;
 }
 
+.nab-right-inner a.active, .sub-menu a.active {
+  font-weight : bold;
+}
+
 /* .menu-icon {
   display: none;
 }

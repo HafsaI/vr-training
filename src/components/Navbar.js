@@ -72,11 +72,11 @@ function Navbar() {
           <div className='nab-right'>
             { !isMobile &&
             <div className='nab-right-inner'  style={{ display: 'inline-flex' }}>
-              <a className='nab-item'><Link to='/' target='_self'>Home</Link></a>
+              <a className='nab-item'><NavLink to='/' target='_self'>Home</NavLink></a>
               {JSON.stringify(user) === '{}' || user == null || user === Object ? LoginBtn : null}
-              {JSON.stringify(user) !== '{}' && user != null && <a className='nab-item'><Link to='/report' target='_self'>Report</Link></a>}
-              {JSON.stringify(user) !== '{}' && user != null && <a className='nab-item'><Link to='/upload' target='_self'>Upload</Link></a>}
-              {JSON.stringify(user) !== '{}' && user != null && <a className='nab-item'><Link to='/startsession' target='_self'>Start</Link></a>}
+              {JSON.stringify(user) !== '{}' && user != null && <a className='nab-item'><NavLink to='/report' target='_self'>Report</NavLink></a>}
+              {JSON.stringify(user) !== '{}' && user != null && <a className='nab-item'><NavLink to='/upload' target='_self'>Upload</NavLink></a>}
+              {JSON.stringify(user) !== '{}' && user != null && <a className='nab-item'><NavLink to='/startsession' target='_self'>Start</NavLink></a>}
               {JSON.stringify(user) === '{}' || user == null || user === Object ? null :
                 <div  classname = "profile" style={{ display: "flex", alignItems: "center" }}>
                   <img src={profilePic} alt="Profile" className='imgSmall profilePic' />
@@ -88,7 +88,7 @@ function Navbar() {
                         <h5>{userdoc.name}</h5>
                       </div>
                       <hr />
-                      <a><Link to='/getstarted' target='_self' className='linkLogout'>Get Started<img src={rightarrows} className="menuarrows"/></Link></a>
+                      <a><NavLink to='/getstarted' target='_self' className='linkLogout'>Get Started<img src={rightarrows} className="menuarrows"/></NavLink></a>
                       <><SignOut /><img src={rightarrows} className="menuarrows"/></>
                     </div>
                   </div>
