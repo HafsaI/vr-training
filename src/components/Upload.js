@@ -76,7 +76,7 @@ function Upload() {
         <h3 className='centerText'>Scores</h3>
         <Score title ='Clarity' score={scores.clarity_comments} showArrow={true}/>
         <hr/>
-        <Score title ='Speech Rate' score={scores.speechrate_comments} showArrow={true}/>
+        <Score title ='Speaking Rate' score={scores.speechrate_comments} showArrow={true}/>
         <hr/>
         <Score title ='No. of Pauses taken' score={scores.pauses_score} showArrow={false}/>
         <hr/>

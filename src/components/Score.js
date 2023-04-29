@@ -20,14 +20,14 @@ function Score({ title, score, showArrow = false}) {
           setDescription('Your pronunciation and enunciation are excellent, making it easy for your listeners to follow along.')
         }
       }
-      else if (title === 'Speech Rate'){
+      else if (title === 'Speaking Rate'){
         if (score === 'Average!') {
           setDescription('Your pace is generally adequate, but there is room for improvement if you want to communicate your message more effectively.')
         }
         else if (score === 'Below Average!') {
-          setDescription('YAdjust your speaking rate to suit the situation and audience. Speak faster if you are too slow, or slower if you are too fast. This will enhance your communication effectiveness.')
+          setDescription('Adjust your speaking rate to suit the situation and audience. Speak faster if you are too slow, or slower if you are too fast. This will enhance your communication effectiveness.')
         }
-        else {
+        else if (score === 'Above Average!') {
           setDescription('Your speaking rate is very effective, allowing you to convey your message clearly and engagingly.')
         }
       }
