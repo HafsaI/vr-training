@@ -54,6 +54,31 @@ function Graphs({ history }) {
   for (var i = 0; i < history.length; i++){
     listenabilityScores.push(history[i].listenability_score)
   }
+
+  var facingAudScores = []
+
+  for (var i = 0; i < history.length; i++){
+    facingAudScores.push(history[i].facingaud_score)
+  }
+
+  var feetDistScores = []
+
+  for (var i = 0; i < history.length; i++){
+    feetDistScores.push(history[i].feetdist_score)
+  }
+
+  var swayScores = []
+
+  for (var i = 0; i < history.length; i++){
+    swayScores.push(history[i].sway_score)
+  }
+
+  var nervousScores = []
+
+  for (var i = 0; i < history.length; i++){
+    nervousScores.push(history[i].nervousness_score)
+  }
+  
   
   // var postureScores = []
 
@@ -86,8 +111,21 @@ function Graphs({ history }) {
         <h4 className='analysisType'>Body Language Analysis Scores</h4>
         <hr/>
         
-        <h5>Posture</h5>
-        {/* <LineChart x={sessionNos} y={postureScores} label='Posture Scores'/> */}
+        <h5>Facing Audience</h5>
+        <LineChart x={sessionNos} y={facingAudScores} label='Percentage of time you were facing audience'/>
+        
+        <h5>Feet Distance</h5>
+        <LineChart x={sessionNos} y={feetDistScores} label='Percentage of time your feet were shoulder-width apart'/>
+     
+        <h5>Swaying</h5>
+        <LineChart x={sessionNos} y={swayScores} label='Percentage of time you were swaying'/>
+     
+        <h4 className='analysisType'>Nervousness Score</h4>
+        <hr/>
+        
+        <h5>Nervousness Analysis</h5>
+        <LineChart x={sessionNos} y={nervousScores} label='Nervousness Score'/>
+        
     </div>
   );    
 }
