@@ -19,7 +19,7 @@ function Scores({session, quick = true}) {
             <Score score={session.listenability_score+'%'} title='Listenability'/>
         </>
       }
-        { (!quick && session.posture_score) && 
+        { (!quick && session.facingaud_score) && 
           <>
             <h5>Speech Analysis</h5>
             <hr/>
@@ -34,11 +34,11 @@ function Scores({session, quick = true}) {
             <Score score={session.listenability_score+'%'} title='Listenability'/>
             <h5 className='analysisType'>Body Language Analysis</h5>
             <hr/>
-            <Score score={session.facingaud_score+'% of the distance'} title='Facing Audience'/>
+            <Score score={session.facingaud_score+'% of the time'} title='Facing Audience'/>
             <hr/>
             <Score score={session.feetdist_score+'% of the time'} title='Feet Shoulder-width apart'/>
             <hr/>
-            <Score score={session.sway_score+'% of the time'} title='Swaying' showArrow={true}/>
+            <Score score={session.sway_score+'% of the time'} title='Swaying'/>
             <h5 className='analysisType'>Nervousness Analysis</h5>
             <hr/>
             <Score score={session.nervousness_score+'/10'} title='Nervousness'/> 
