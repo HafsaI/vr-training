@@ -12,7 +12,7 @@ function StartSession() {
       <br/>
       <br/> */}
       <div>
-        <h6>Get your equipments ready</h6>
+        <h6>Get your equipment ready</h6>
       </div>
       <br/>
       <div>
