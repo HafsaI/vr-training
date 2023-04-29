@@ -1,7 +1,7 @@
 import React from 'react';
 import { useContext} from "react";
 import { useEffect, useState, useRef } from 'react';
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link, NavLink } from "react-router-dom";
 import Report from './Report';
 import SignIn from './SignIn';
 import WebcamVideo from './WebcamVideo';

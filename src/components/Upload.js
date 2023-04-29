@@ -71,7 +71,7 @@ function Upload() {
           </div>
         </div>
       </div>} */}
-      {showScores && 
+      {(showScores && scores.clarity_comments) && 
       <div style={{padding : '5% 15% 20% 15%'}}>
         <h3 className='centerText'>Scores</h3>
         <Score title ='Clarity' score={scores.clarity_comments} showArrow={false}/>
@@ -84,7 +84,7 @@ function Upload() {
         <hr/>
       </div>
       }
-    </div>
+  </div>
   )
 }
 
