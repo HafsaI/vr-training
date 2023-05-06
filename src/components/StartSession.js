@@ -7,8 +7,8 @@ function StartSession() {
       <div>
         <label forHtml="heart-rate">Enter Arduino ID:</label> 
         <input name="heart-rate"/>
-        {/* <input name="heart-rate" readOnly/>
-        <button className='heartrateBtn'>Get Heartrate</button> */}
+        {/* <input name="heart-rate" readOnly/> */}
+        <button className='heartrateBtn'>Save Arduino ID</button>
       </div>
       <br/>
       <br/>
