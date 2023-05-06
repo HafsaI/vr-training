@@ -44,7 +44,6 @@ function Scores({session, quick = true}) {
             <Score score={session.nervousness_score+'/10'} title='Nervousness'/> 
           </> 
         }   
-        {console.log('h', !session.feetdist_score)}
         { (!quick && (!session.facingaud_score  || !session.feetdist_score || !session.sway_score || !session.nervousness_score)) && 
           <>
             <p className='purple bold centerText'>This may take a few minutes! Please wait. Thank you for your patience.</p>
