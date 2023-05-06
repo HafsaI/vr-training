@@ -64,7 +64,7 @@ function Navbar() {
       <BrowserRouter>
         <nav className="nab">
           <div className="nab-left">
-            <img src={logo} alt="Logo" className="imgSmall" />
+            <img src={logo} alt="Logo" className="imgLogo" />
             <span>  </span>
             <span className='navbar-heading orbitron'>Manifest</span>
           </div>

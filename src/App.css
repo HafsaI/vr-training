@@ -282,6 +282,9 @@ li {
 .inline {
   display: inline;
 }
+.imgLogo {
+  width : 40px;
+}
 
 .imgSmall {
   width : 35px;
