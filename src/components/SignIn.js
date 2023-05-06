@@ -13,6 +13,7 @@ function SignIn(){
     const {userdoc,setUserDoc} = useContext(UserContext);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [error, setError] = useState(null);
     const db = getFirestore(app);
     const home = useNavigate();
 
@@ -33,7 +34,12 @@ function SignIn(){
             })
         .catch((error) => {
             const errorCode = error.code;
-            // alert(errorCode)
+            if (errorCode === "auth/wrong-password") {
+                setError("Invalid password. Please try again!"); // Set custom error message
+            } else if (errorCode == "auth/user-not-found") {
+                setError("Invalid email"); // Set default error message
+            }
+           
 
         });
     }
@@ -45,6 +51,7 @@ function SignIn(){
                 <h1 className="centerText">Manifest</h1>
                 <input id ="signinField" type = "email" placeholder='Email' name="email" onChange={(e) => {setEmail(e.target.value)}}/>
                 <input id="password signinField" placeholder='Password' type = "password" name="password" onChange={(e) => {setPassword(e.target.value)}}/>
+                {error && <p className="errorText">{error}</p>} {/* render error message if error state is not null */}
                 <button className="loginBtn" onClick={signin} > Login</button>
                 <p className="centerText">Don't have an account? <Link to='/signup' target='_self' className="purple"><strong>Sign up</strong></Link></p>
                 {console.log("[SignIn] user: ", user)}

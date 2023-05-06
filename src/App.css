@@ -248,6 +248,12 @@ li {
 .purple {
   color: #8C8FFC;
 }
+.errorText {
+  color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .white {
   color:white;
