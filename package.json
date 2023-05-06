@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "homepage": "https://hafsai.github.io/vr-training",
-  "proxy": "http://127.0.0.1:5000",
+  "proxy": "https://flask-production-0341.up.railway.app",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
