@@ -45,7 +45,7 @@ function Scores({session, quick = true}) {
           </> 
         }   
 
-        { (!quick && !session.facingaud_score) &&
+        { (!quick && (!session.facingaud_score  || !session.feetdist_score || !session.sway_score || !session.nervousness_score)) && 
           <>
             <p className='purple bold centerText'>This may take a few minutes! Please wait. Thank you for your patience.</p>
           </> 
