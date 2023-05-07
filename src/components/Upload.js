@@ -47,7 +47,7 @@ function Upload() {
 
   return (
     <div className='padding-horizontal'>
-      <h2 className='padding-analyze centerText'><span className='purple'>Analyze</span> your audio</h2>
+      <h2 className='padding-analyze centerText' style={{marginTop : '5%'}}><span className='purple'>Analyze</span> your audio</h2>
       <form className='centerText' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} onSubmit={handleSubmit}>
         <div className='paddingFile' style={{ marginRight: '1rem' }}>
           <label>Upload <span className='purple bold'>Audio</span>:</label><span> </span> 
