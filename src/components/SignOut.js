@@ -24,8 +24,7 @@ function SignOut(showArrow){
 
     return (
         <>
-            <a onClick={signout} ><Link to='/login' target='_self' className="linkLogout">
-                Logout
+            <a onClick={signout} ><Link to='/login' target='_self' className="linkLogout">Logout
                 {/* {showArrow && <img src={arrow} className="imgSmall"/>} */}
             </Link></a> 
         </>

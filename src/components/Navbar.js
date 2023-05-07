@@ -62,7 +62,7 @@ function Navbar() {
   return (
     <div className='navbar-wrapper'>
       <BrowserRouter>
-        <nav className="nab" style={{zIndex:'7', boxShadow:'0 2px 4px rgba(0, 0, 0, 0.1)'}}>
+        <nav className="nab">
           <div className="nab-left">
             <img src={logo} alt="Logo" className="imgLogo" />
             <span>  </span>
@@ -88,8 +88,8 @@ function Navbar() {
                         <h5>{userdoc.name}</h5>
                       </div>
                       <hr />
-                      <a><NavLink to='/getstarted' target='_self' className='linkLogout'>Get Started<img src={rightarrows} className="menuarrows"/></NavLink></a>
-                      <><SignOut /><img src={rightarrows} className="menuarrows"/></>
+                      <a><NavLink to='/getstarted' target='_self' className='linkLogout' style={{  display:'flex' , justifyContent: 'space-between', alignItems:'center'}}>Get Started<img src={rightarrows} className="menuarrows"/></NavLink></a>
+                      <a  style={{  display:'flex' , justifyContent: 'space-between', alignItems:'center'}}><SignOut /><img src={rightarrows} className="menuarrows"/></a>
                     </div>
                   </div>
                 </div>

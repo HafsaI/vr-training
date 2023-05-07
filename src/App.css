@@ -309,7 +309,7 @@ li {
 
 .sub-menu-wrap {
   position: absolute;
-  top : 5.5%;
+  top : 51px;
   right : 2%;
   width: 180px;
   max-height: 0px;
@@ -325,7 +325,7 @@ li {
   background-color: white;
   padding: 20px;
   margin: 10px;
-  border-radius: 10%;
+  /* border-radius: 0% 0% 10% 10%; */
   /* border: 1px solid rgb(99, 98, 98); */
   box-shadow: 0px 3px 8px 0px rgba(0,0,0,0.2);
 }
@@ -543,6 +543,19 @@ li {
   width: 100%;
   text-align: center;
   z-index : 6;
+}
+
+.nab {
+  background: #fff;
+  /* padding: 24px 0; */
+  /* font-size: 14px; */
+  box-shadow: 0px 0 20px 0 rgba(0, 0, 0, 0.12);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  z-index : 9;
 }
 
 .centerText {
