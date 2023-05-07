@@ -150,11 +150,11 @@ function Home() {
         </div>
 
         <div className="row" style = {{justifyContent:'center', paddingBottom:'5%'}}>
-          <TeamMember pic = {pic} name = 'Aliza Saleem Lakhani'/>
+          <TeamMember pic = {pic} name = 'Aliza Lakhani'/>
           <TeamMember pic = {pic} name = 'Batool Ahmed'/>
           <TeamMember pic = {pic} name = 'Haania Siddiqui'/>
           <TeamMember pic = {pic} name = 'Hafsa Irfan'/>
-          <TeamMember pic = {pic} name = 'Sadaf Shaikh' major = 'ECE'/>
+          <TeamMember pic = {pic} name = 'Sadaf Shaikh' major = 'EE'/>
         </div>
 
       </div>

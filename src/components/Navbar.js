@@ -88,7 +88,7 @@ function Navbar() {
                         <h5>{userdoc.name}</h5>
                       </div>
                       <hr />
-                      <a><NavLink to='/getstarted' target='_self' className='linkLogout' style={{  display:'flex' , justifyContent: 'space-between', alignItems:'center'}}>Get Started<img src={rightarrows} className="menuarrows"/></NavLink></a>
+                      <a><NavLink to='/getstarted' target='_self' className='linkLogout' style={{  display:'flex' , justifyContent: 'space-between', alignItems:'center'}}> Get Started<img src={rightarrows} className="menuarrows"/></NavLink></a>
                       <a  style={{  display:'flex' , justifyContent: 'space-between', alignItems:'center'}}><SignOut /><img src={rightarrows} className="menuarrows"/></a>
                     </div>
                   </div>
