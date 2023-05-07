@@ -41,7 +41,7 @@ function Scores({session, quick = true}) {
             <Score score={session.sway_score+'% of the time'} title='Swaying'/>
             <h5 className='analysisType'>Nervousness Analysis</h5>
             <hr/>
-            <Score score={session.nervousness_score+'/10'} title='Nervousness'/> 
+            <Score score={session.nervousness_score+'/100'} title='Nervousness'/> 
           </> 
         }   
         { (!quick && (!session.facingaud_score  || !session.feetdist_score || !session.sway_score || !session.nervousness_score)) && 
