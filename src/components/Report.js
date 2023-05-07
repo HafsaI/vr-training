@@ -21,11 +21,11 @@ function Report(){
   const [short, setShort] = useState(false)
 
   const showDetailed = () => {
-    setDetailed(true)
+    setDetailed(!detailed)
   }
 
   const showShort = () => {
-    setShort(true)
+    setShort(!short)
   }
 
   useEffect(() => {
