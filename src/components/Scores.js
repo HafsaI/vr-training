@@ -10,7 +10,7 @@ function Scores({session, quick = true}) {
             <hr/>
             <Score score={session.clarity_comment} title='Clarity' showArrow={true}/>
             <hr/>
-            <Score score={session.pauses_score} title='No. of Pauses taken'/>
+            <Score score={session.pauses_score} title='No. of Pauses taken'  showArrow={true}/>
             <hr/>
             <Score score={session.pronunciation_score+'%'} title='Pronunciation'/>
             <hr/>

@@ -10,13 +10,13 @@ function Score({ title, score, showArrow = false}) {
 
     const setDescriptionText = () => {
       if (title === 'Clarity'){
-        if (score === 'Average!') {
+        if (score === 'Below Average!') {
           setDescription('Your speech may contain a lot of slurring or mumbling, making it challenging for your listeners to follow along.')
         }
-        else if (score === 'Below Average!') {
+        else if (score === 'Average!') {
           setDescription('Your speech is generally clear and understandable, although there may be some areas where you could improve your enunciation.')
         }
-        else {
+        else if (score === 'Above Average!') {
           setDescription('Your pronunciation and enunciation are excellent, making it easy for your listeners to follow along.')
         }
       }
@@ -30,6 +30,10 @@ function Score({ title, score, showArrow = false}) {
         else if (score === 'Above Average!') {
           setDescription('Your speaking rate is very effective, allowing you to convey your message clearly and engagingly.')
         }
+      }
+
+      else if (title === 'No. of Pauses taken'){
+        setDescription('You took '+score+ ' pauses during the entire session.' )
       }
     }
 
