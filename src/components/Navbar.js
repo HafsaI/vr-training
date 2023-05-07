@@ -62,7 +62,7 @@ function Navbar() {
   return (
     <div className='navbar-wrapper'>
       <BrowserRouter>
-        <nav className="nab">
+        <nav className="nab" style={{zIndex:'7', boxShadow:'0 2px 4px rgba(0, 0, 0, 0.1)'}}>
           <div className="nab-left">
             <img src={logo} alt="Logo" className="imgLogo" />
             <span>  </span>
