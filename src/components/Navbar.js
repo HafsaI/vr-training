@@ -74,9 +74,9 @@ function Navbar() {
             <div className='nab-right-inner'  style={{ display: 'inline-flex' }}>
               <a className='nab-item' style={{paddingTop:'2px'}}><NavLink to='/' target='_self'>Home</NavLink></a>
               {JSON.stringify(user) === '{}' || user == null || user === Object ? LoginBtn : null}
+              {JSON.stringify(user) !== '{}' && user != null && <a className='nab-item' style={{paddingTop:'2px'}}><NavLink to='/startsession' target='_self'>Start</NavLink></a>}
               {JSON.stringify(user) !== '{}' && user != null && <a className='nab-item' style={{paddingTop:'2px'}}><NavLink to='/report' target='_self'>Report</NavLink></a>}
               {JSON.stringify(user) !== '{}' && user != null && <a className='nab-item' style={{paddingTop:'2px'}}><NavLink to='/upload' target='_self'>Upload</NavLink></a>}
-              {JSON.stringify(user) !== '{}' && user != null && <a className='nab-item' style={{paddingTop:'2px'}}><NavLink to='/startsession' target='_self'>Start</NavLink></a>}
               {JSON.stringify(user) === '{}' || user == null || user === Object ? null :
                 <div  classname = "profile" style={{ display: "flex", alignItems: "center" }}>
                   <img src={profilePic} alt="Profile" className='imgSmall profilePic' />
