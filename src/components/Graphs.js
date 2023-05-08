@@ -14,25 +14,21 @@ function Graphs({ history }) {
   var clarityScores = []
 
   for (var i = 0; i < history.length; i++){
-    console.log(i, history[i].clarity_comment)
+    // console.log(i, history[i].clarity_comment)
     if (history[i].clarity_comment == undefined){
       clarityScores.push(-2)
     }
     else if (history[i].clarity_comment === 'Average!'|| history[i].clarity_comment === "Average"){
       clarityScores.push(0)
-      console.log(0)
     }
     else if (history[i].clarity_comment === "Below Average"|| history[i].clarity_comment === "Below Average!" ){
       clarityScores.push(-1)
-      console.log(-1)
     }
     else if (history[i].clarity_comment === 'Speak Clearly!' || history[i].clarity_comment === "Speak Clearly"){
       clarityScores.push(-2)
-      console.log(-2)
     }
     else if (history[i].clarity_comment === "Above Average!" || history[i].clarity_comment === "Above Average"){
       clarityScores.push(1)
-      console.log(1)
     }
   }
 
@@ -45,13 +41,17 @@ function Graphs({ history }) {
   var speakingRateScores = []
 
   for (var i = 0; i < history.length; i++){
-    if (history[i].speakingrate_comment == 'Average!'){
+    console.log(i, history[i].speakingrate_comment)
+    if (history[i].speakingrate_comment===undefined ||history[ i].speakingrate_comment==='Speak Clearly!'){
+      speakingRateScores.push(-2)
+    }
+    else if (history[i].speakingrate_comment == 'Average!' || history[i].speakingrate_comment == 'Average'){
       speakingRateScores.push(0)
     }
-    else if (history[i].speakingrate_comment == 'Below Average!'){
+    else if (history[i].speakingrate_comment == 'Below Average!' || history[i].speakingrate_comment == 'Below Average'){
       speakingRateScores.push(-1)
     }
-    else if (history[i].speakingrate_comment == 'Above Average!') {
+    else if (history[i].speakingrate_comment == 'Above Average!' || history[i].speakingrate_comment == 'Above Average') {
       speakingRateScores.push(1)
     }
   }
@@ -112,7 +112,7 @@ function Graphs({ history }) {
         <LineChart x={sessionNos} y={pausesScores} label='Pauses Scores'/> */}
         
         <h5>Speaking Rate</h5>
-        <p className="centerText">-1 = Below Average, 0 = Average, 1 = Above Average</p>
+        <p className="centerText">-2 = Unclear Voice, -1 = Below Average, 0 = Average, 1 = Above Average</p>
         <LineChart x={sessionNos} y={speakingRateScores} label='Speaking Rate Score'/>
         
         <h5>Pronunciation</h5>
