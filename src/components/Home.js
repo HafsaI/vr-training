@@ -1,33 +1,33 @@
 import React from 'react';
 import pic from '../images/homeTop.jpg';
 import oculus from '../images/oculus2.png'
+import bg from '../images/bg.png'
+import screens from '../images/screens.png'
 import app from '../images/app_2.png'
 import Feature from './Feature';
 import TeamMember from './TeamMember';
 import features from '../constants/features';
 import Guide from '../images/ps_guide.pdf';
+
 function Home() {
   return (
     <div>
-          
-  <section id="hero" className="d-flex align-items-center">
-
-    <div className="container">
-      <div className="row">
-        <div className="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
-          <h1 data-aos="fade-up" className="home-header-center">Manifest your voice</h1>
-          <h2 data-aos="fade-up" data-aos-delay="400" className="home-header-center">Download our public speaking guide here</h2>
-          <div data-aos="fade-up" data-aos-delay="800" className="home-header-center">
-            <a className="btn-get-started scrollto" href={Guide} target="_blank" rel="noreferrer" style={{textDecoration:"none"}}>Download</a>
+      <section id="hero" className="d-flex align-items-center" style={{backgroundImage: `url(${bg})`, backgroundSize: 'cover', backgroundPosition: 'center', marginTop:'0'}}>
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
+              <h1 data-aos="fade-up" className="home-header-center"  style={{color : 'white'}}>Manifest your voice</h1>
+              <h2 data-aos="fade-up" data-aos-delay="400" className="home-header-center"  style={{color : 'whitesmoke'}}>Download our public speaking guide here</h2>
+              <div data-aos="fade-up" data-aos-delay="800" className="home-header-center">
+                <a className="btn-get-started scrollto" href={Guide} target="_blank" rel="noreferrer" style={{textDecoration:"none", color: 'white'}}>Download</a>
+              </div>
+            </div>
+            <div className="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left" data-aos-delay="200" style={{marginTop : '5%'}}>
+              <img src={screens} className="img-fluid animated" alt=""/>
+            </div>
           </div>
         </div>
-        <div className="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left" data-aos-delay="200">
-          <img src={app} className="img-fluid animated" alt=""/>
-        </div>
-      </div>
-    </div>
-
-  </section>
+      </section>
 
   <main id="main">
 

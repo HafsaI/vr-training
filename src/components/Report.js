@@ -102,7 +102,7 @@ function Report(){
     }, [currSessId, liveSession]);
 
   return (
-    <div class="wrapper" style={{marginTop:'10%'}}>
+    <div class="wrapper" style={{marginTop:'7%'}}>
       <div class="tabs">
         <div class="tab" id='divTab1'>
           <input type="radio" name="css-tabs" id="tab-1" class="tab-switch"/>
