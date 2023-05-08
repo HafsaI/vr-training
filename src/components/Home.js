@@ -141,7 +141,7 @@ function Home() {
       </div>
     </section>
 
-    <section id="team" className="team section-bg">
+    <section id="team" className="team section-bg" style={{ background: 'linear-gradient(to bottom, white, #8C8FFC)'}}>
       <div className="container">
 
         <div className="section-title" data-aos="fade-up">
