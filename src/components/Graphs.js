@@ -12,13 +12,13 @@ function Graphs({ history }) {
   var clarityScores = []
 
   for (var i = 0; i < history.length; i++){
-    if (history[i].clarity_comment == 'Average!'){
+    if (history[i].clarity_comment === "Average!"){
       clarityScores.push(0)
     }
-    else if (history[i].clarity_comment == 'Below Average!'){
+    else if (history[i].clarity_comment === "Below Average!"){
       clarityScores.push(-1)
     }
-    else {
+    else if (history[i].clarity_comment === "Above Average!"){
       clarityScores.push(1)
     }
   }
@@ -38,7 +38,7 @@ function Graphs({ history }) {
     else if (history[i].speakingrate_comment == 'Below Average!'){
       speakingRateScores.push(-1)
     }
-    else {
+    else if (history[i].speakingrate_comment == 'Above Average!') {
       speakingRateScores.push(1)
     }
   }

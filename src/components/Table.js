@@ -2,7 +2,7 @@ import React from 'react'
 
 function Table() {
   return (
-    <table  cellPadding='10' style={{margin: '0 auto', boxShadow:'0px 0px 8px 0px rgba(0,0,0,0.2)'}}>
+    <table  cellPadding='10' style={{borderRadius :'20px', margin: '0 auto', boxShadow:'0px 0px 8px 0px rgba(0,0,0,0.2)'}}>
         <thead>
           <tr>
             <th>Score</th>
