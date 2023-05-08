@@ -1246,7 +1246,7 @@ section {
   content: "";
   width: 50px;
   height: 2px;
-  background: #8C8FFC;
+  /* background: #8C8FFC; */
   display: inline-block;
 }
 
