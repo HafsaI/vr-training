@@ -9,21 +9,30 @@ function Graphs({ history }) {
     sessionNos.push(i);
   }
 
+  console.log('h', history.length)
+
   var clarityScores = []
 
   for (var i = 0; i < history.length; i++){
     console.log(i, history[i].clarity_comment)
-    if (history[i].clarity_comment === "Average!" || history[i].clarity_comment === "Average"){
-      clarityScores.push(0)
+    if (history[i].clarity_comment == undefined){
+      clarityScores.push(-2)
     }
-    else if (history[i].clarity_comment === "Below Average"|| history[i].clarity_comment === "Below Average!"){
+    else if (history[i].clarity_comment === 'Average!'|| history[i].clarity_comment === "Average"){
+      clarityScores.push(0)
+      console.log(0)
+    }
+    else if (history[i].clarity_comment === "Below Average"|| history[i].clarity_comment === "Below Average!" ){
       clarityScores.push(-1)
+      console.log(-1)
     }
     else if (history[i].clarity_comment === 'Speak Clearly!' || history[i].clarity_comment === "Speak Clearly"){
       clarityScores.push(-2)
+      console.log(-2)
     }
     else if (history[i].clarity_comment === "Above Average!" || history[i].clarity_comment === "Above Average"){
       clarityScores.push(1)
+      console.log(1)
     }
   }
 
@@ -97,7 +106,7 @@ function Graphs({ history }) {
         <hr/>
         
         <h5>Clarity</h5>
-        <p className="centerText">-1 = Below Average, 0 = Average, 1 = Above Average</p>
+        <p className="centerText">-2 = Unclear Voice, -1 = Below Average, 0 = Average, 1 = Above Average</p>
         <LineChart className='lineChart' x={sessionNos} y={clarityScores} label='Clarity Score'/>
         {/* <h5>Pauses</h5>
         <LineChart x={sessionNos} y={pausesScores} label='Pauses Scores'/> */}
