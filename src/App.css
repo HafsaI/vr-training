@@ -520,9 +520,9 @@ border-top: 0;
     border-color : black !important;
     color : black !important;
   }
-  main {
-    margin-top: -70px;
-  }
+  /* main {
+    margin-top: -50px;
+  } */
 }
 
 @media only screen and (max-width: 600px) {
@@ -1247,6 +1247,15 @@ section {
   width: 50px;
   height: 2px;
   background: #8C8FFC;
+  display: inline-block;
+}
+
+.more-details h2::before,
+.more-details h2::after {
+  content: "";
+  width: 50px;
+  height: 2px;
+  background : none !important;
   display: inline-block;
 }
 

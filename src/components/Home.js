@@ -75,7 +75,7 @@ function Home() {
     <section id="team" className="team">
       <div className="container">
 
-        <div className="section-title" data-aos="fade-up">
+        <div className="section-title more-details" data-aos="fade-up">
           <h2>More Details</h2>
           <p>Here are the analysis criteria in depth</p>
         </div>
