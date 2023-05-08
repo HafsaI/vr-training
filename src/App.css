@@ -496,12 +496,32 @@ border-top: 0;
   margin-right: 20px;
 }
 
+.home-header-center {
+  color : whitesmoke !important;
+}
+
+.home-heading {
+  color : white !important;
+}
+
 @media only screen and (max-width: 600px) {
   .about-content {
     text-align: center;
   }
   .home-header-center {
     text-align: center;
+    color : black !important;
+  }
+  .hero-img {
+    margin-top: 0; 
+    transform: translateY(-30%);
+  }
+  .scrollto {
+    border-color : black !important;
+    color : black !important;
+  }
+  main {
+    margin-top: -70px;
   }
 }
 
