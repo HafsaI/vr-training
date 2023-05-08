@@ -37,6 +37,10 @@ function Score({ title, score, showArrow = false}) {
         setDescription('You took '+score+ ' pauses during the entire session.' )
       }
 
+      else if (title === 'Pronunciation'){
+        setDescription('You pronounced the words with an accuracy of '+score+'.' )
+      }
+
       else {
         setDescription(<Table/>)
       }

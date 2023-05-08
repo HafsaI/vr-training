@@ -71,17 +71,16 @@ function Upload() {
           </div>
         </div>
       </div>} */}
-      {/* {(showScores && scores.pronunciation_score) &&  */}
-      {showScores &&
+      {showScores && 
       <div style={{padding : '5% 15% 20% 15%'}}>
         <h3 className='centerText'>Scores</h3>
         <Score title ='Clarity' score={scores.clarity_comments} showArrow={true}/>
         <hr/>
         <Score title ='Speaking Rate' score={scores.speechrate_comments} showArrow={true}/>
         <hr/>
-        <Score title ='No. of Pauses taken' score={scores.pauses_score} showArrow={false}/>
+        <Score title ='No. of Pauses taken' score={scores.pauses_score} showArrow={true}/>
         <hr/>
-        <Score title='Pronunciation' score={`${scores.pronunciation_score}%`} showArrow={false} />
+        <Score title='Pronunciation' score={`${scores.pronunciation_score}%`} showArrow={true} />
         <hr/>
       </div>
       }

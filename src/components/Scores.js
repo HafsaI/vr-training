@@ -17,7 +17,7 @@ function Scores({session, quick = true}) {
             <hr/>
             <Score score={session.pauses_score} title='No. of Pauses taken'  showArrow={true}/>
             <hr/>
-            <Score score={session.pronunciation_score+'%'} title='Pronunciation'/>
+            <Score score={session.pronunciation_score+'%'} title='Pronunciation' showArrow={true}/>
             <hr/>
             <Score score={session.speakingrate_comment} title='Speaking Rate'  showArrow={true}/>
             <hr/>
@@ -30,13 +30,13 @@ function Scores({session, quick = true}) {
             <hr/>
             <Score score={session.clarity_comment} title='Clarity'  showArrow={true}/>
             <hr/>
-            <Score score={session.pauses_score} title='No. of Pauses taken'/>
+            <Score score={session.pauses_score} title='No. of Pauses taken' showArrow={true}/>
             <hr/>
-            <Score score={session.pronunciation_score+'%'} title='Pronunciation'/>
+            <Score score={session.pronunciation_score+'%'} title='Pronunciation' showArrow={true}/>
             <hr/>
             <Score score={session.speakingrate_comment} title='Speaking Rate'  showArrow={true}/>
             <hr/>
-            <Score score={session.listenability_score+'%'} title='Listenability'/>
+            <Score score={session.listenability_score+'%'} title='Listenability' showArrow={true}/>
             <h5 className='analysisType'>Body Language Analysis</h5>
             <hr/>
             <Score score={session.facingaud_score+'% of the time'} title='Facing Audience'/>
@@ -46,7 +46,7 @@ function Scores({session, quick = true}) {
             <Score score={session.sway_score+'% of the time'} title='Swaying'/>
             <h5 className='analysisType'>Nervousness Analysis</h5>
             <hr/>
-            <Score score={session.nervousness_score+'/100'} title='Nervousness'/> 
+            <Score score={session.nervousness_score+'%'} title='Nervousness'/> 
           </> 
         }   
         { (!quick && (!session.facingaud_score  || !session.feetdist_score || !session.sway_score || !session.nervousness_score)) && 
