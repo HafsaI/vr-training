@@ -21,7 +21,7 @@ function Scores({session, quick = true}) {
             <hr/>
             <Score score={session.speakingrate_comment} title='Speaking Rate'  showArrow={true}/>
             <hr/>
-            <Score score={session.listenability_score+'%'} title='Listenability'/>
+            <Score score={session.listenability_score+'%'} title='Listenability' showArrow = {true}/>
         </>
       }
         { (!quick && session.facingaud_score && session.facingaud_score   && session.feetdist_score  && session.sway_score && session.nervousness_score ) && 
