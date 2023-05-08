@@ -71,7 +71,8 @@ function Upload() {
           </div>
         </div>
       </div>} */}
-      {(showScores && scores.clarity_comments) && 
+      {/* {(showScores && scores.pronunciation_score) &&  */}
+      {showScores &&
       <div style={{padding : '5% 15% 20% 15%'}}>
         <h3 className='centerText'>Scores</h3>
         <Score title ='Clarity' score={scores.clarity_comments} showArrow={true}/>
@@ -80,10 +81,15 @@ function Upload() {
         <hr/>
         <Score title ='No. of Pauses taken' score={scores.pauses_score} showArrow={false}/>
         <hr/>
-        <Score title ='Pronunciation' score={scores.pronunciation_score+'%'} showArrow={false}/>
+        <Score title='Pronunciation' score={`${scores.pronunciation_score}%`} showArrow={false} />
         <hr/>
       </div>
       }
+      {/* { (showScores && !scores.pronunciation_score) && 
+          <>
+            <p className='purple bold centerText'>This may take a few seconds! Please wait. Thank you for your patience.</p>
+          </> 
+        }  */}
   </div>
   )
 }

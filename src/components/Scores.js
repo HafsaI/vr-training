@@ -4,7 +4,12 @@ import Score from './Score'
 function Scores({session, quick = true}) {
   return (
     <div> 
-      {quick && 
+      { (quick && (!session.clarity_comment  || !session.pauses_score)) && 
+          <>
+            <p className='purple bold centerText'>This may take a few seconds! Please wait. Thank you for your patience.</p>
+          </> 
+        }              
+      {(quick &&  (session.clarity_comment  && session.pauses_score)) &&
         <>
             <h5>Speech Analysis</h5>
             <hr/>
