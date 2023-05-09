@@ -13,6 +13,17 @@ function Upload() {
     setScores(scores.data);
   }
 
+  const showS = () => {
+     /* getting speech scores from backend */
+     axios.get('/getscores')
+     .then(function (response) {
+       setShowScores(false);
+       console.log("Speech scores response", response);
+       setShowScores(true);
+       showSpeechScores(response)
+ 
+     }) 
+  }
   const handleSubmit = (event) => {
     event.preventDefault(); 
 
@@ -33,15 +44,6 @@ function Upload() {
       console.log('Uploading error',error);
     });
     console.log('Speech Audio File Sent To Backend')
-
-    /* getting speech scores from backend */
-    axios.get('/getscores')
-    .then(function (response) {
-      console.log("Speech scores response", response);
-      setShowScores(true);
-      showSpeechScores(response)
-
-    })  
        
   }
 
@@ -59,7 +61,7 @@ function Upload() {
           <input type="file" id="video" name="video"/>
         </div> */}
         <div className='paddingFile' style={{paddingRight : '13%'}}>
-          <button className='centerText heartrateBtn analyzeBtn'>Analyze</button>
+          <button className='centerText heartrateBtn analyzeBtn' onClick= {showS}>Analyze</button>
         </div>
       </form>
 
