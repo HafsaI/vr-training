@@ -13,12 +13,13 @@ function StartSession() {
   const db = getFirestore(app);
   // const { showNervousDiv } = useContext(NervousContext);
   const [showMessage, setShowMessage] = useState(false)
+  const [showSave, setShowSave] = useState(false)
 
   const setUserArduino = () => {
     updateDoc(doc(db, "users", user.uid), {
       arduinoId: arduino_id_input,
     });
-    setShowMessage(true)
+    // setShowSave(''?false:true)
   }
 
   // const handleToggle = (e) => {
@@ -41,9 +42,17 @@ function StartSession() {
       {(
         <div className='nervous-div'>
           <label htmlFor="heart-rate">Enter Glove ID:</label> 
-          <input name="heart-rate" onChange={(e) => {setCurrentArduino(e.target.value)}}/>
-          <button className='heartrateBtn' onClick={setUserArduino} >Save ID</button>
-          {showMessage && <p>Glove ID saved</p>}
+          <input name="heart-rate" onChange={(e) => {
+              setCurrentArduino(e.target.value);
+              if (e.target.value === '1') {
+                setShowMessage(true);
+              } else if(e.target.value != '') {
+                setShowMessage(false);
+              }
+            }}/>          
+            <button className='heartrateBtn' onClick={setUserArduino} >Save ID</button>
+            {!showMessage && <p style={{color:'red'}}>Glove ID Unavailable. Please give correct ID.</p>}
+            {/* {showSave && <p style={{color:'#8C8FFC'}}>Glove ID Saved</p>} */}
         </div>
       )}
 
