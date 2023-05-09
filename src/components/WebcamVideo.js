@@ -166,7 +166,7 @@ export default function WebcamVideo() {
 
 
   return (
-    <div className="Container centerText">
+    <div className="Container centerText" style={{marginTop : '8%'}}>
       {(capturing && !sessionEnded) ? (<><p className="bold purple">Recording has started</p></>) : null}
       {/* {true ? (<><p className="bold purple">Recording is going on</p></>) : null} */}
       {(!capturing && sessionEnded) ? (<><p className="bold purple">Recording has stopped</p></>) : null}
