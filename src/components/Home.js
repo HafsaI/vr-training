@@ -8,6 +8,11 @@ import Feature from './Feature';
 import TeamMember from './TeamMember';
 import features from '../constants/features';
 import Guide from '../images/ps_guide.pdf';
+import batool from '../images/batool.png'
+import haania from '../images/haania.png'
+import aliza from '../images/aliza.png'
+import hafsa from '../images/hafsa.png'
+import sadaf from '../images/sadaf.png'
 
 function Home() {
   return (
@@ -150,11 +155,11 @@ function Home() {
         </div>
 
         <div className="row" style = {{justifyContent:'center', paddingBottom:'5%'}}>
-          <TeamMember pic = {pic} name = 'Aliza Lakhani'/>
-          <TeamMember pic = {pic} name = 'Batool Ahmed'/>
-          <TeamMember pic = {pic} name = 'Haania Siddiqui'/>
-          <TeamMember pic = {pic} name = 'Hafsa Irfan'/>
-          <TeamMember pic = {pic} name = 'Sadaf Shaikh' major = 'EE'/>
+          <TeamMember pic = {aliza} name = 'Aliza Lakhani'/>
+          <TeamMember pic = {batool} name = 'Batool Ahmed'/>
+          <TeamMember pic = {haania} name = 'Haania Siddiqui'/>
+          <TeamMember pic = {hafsa} name = 'Hafsa Irfan'/>
+          <TeamMember pic = {sadaf} name = 'Sadaf Shaikh' major = 'EE'/>
         </div>
 
       </div>

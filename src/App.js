@@ -5,6 +5,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'boxicons/css/boxicons.min.css';
 import { LoginContext } from './AppContext/Context';
 import { UserContext } from './AppContext/Context';
+// import { NervousContext } from './AppContext/NervousContext';
+
 
 import { useState } from 'react';
 
@@ -17,6 +19,7 @@ import GetStarted from './components/GetStarted';
 import StartSession from './components/StartSession';
 import Upload from './components/Upload';
 import Home from './components/Home';
+import { NervousProvider } from './AppContext/NervousContext';
 
 
 function App() {
@@ -25,8 +28,10 @@ function App() {
   return (
     <UserContext.Provider value={{userdoc,setUserDoc}}  >
       <LoginContext.Provider value={{user, setUser}}  className="App">
+      <NervousProvider>
         <Navbar />
         <Footer/>
+        </NervousProvider>
       </LoginContext.Provider>
     </UserContext.Provider>
 

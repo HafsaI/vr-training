@@ -1,7 +1,10 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import Score from './Score'
+import { NervousContext } from '../AppContext/NervousContext';
 
 function Scores({session, quick = true}) {
+  const showNervousDiv = useContext(NervousContext);
+
   return (
     <div> 
       { (quick && (!session.clarity_comment  || !session.pauses_score)) && 
@@ -24,7 +27,7 @@ function Scores({session, quick = true}) {
             <Score score={session.listenability_score+'%'} title='Listenability' showArrow = {true}/>
         </>
       }
-        { (!quick && session.facingaud_score && session.facingaud_score   && session.feetdist_score  && session.sway_score && session.nervousness_score ) && 
+        { (!quick && session.facingaud_score && session.facingaud_score   && session.feetdist_score  && session.sway_score) && 
           <>
             <h5>Speech Analysis</h5>
             <hr/>
@@ -46,7 +49,7 @@ function Scores({session, quick = true}) {
             <Score score={session.sway_score+'% of the time'} title='Swaying'/>
             <h5 className='analysisType'>Nervousness Analysis</h5>
             <hr/>
-            <Score score={session.nervousness_score+'%'} title='Nervousness'/> 
+            {showNervousDiv &&<Score score={session.nervousness_score+'%'} title='Nervousness'/> }
           </> 
         }   
         { (!quick && (!session.facingaud_score  || !session.feetdist_score || !session.sway_score || !session.nervousness_score)) && 

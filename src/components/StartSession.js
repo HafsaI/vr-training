@@ -9,44 +9,51 @@ import {  updateDoc, doc} from "firebase/firestore";
 function StartSession() {
   const {user} = useContext(LoginContext);
   const [arduino_id_input, setCurrentArduino] = useState([]);
+  // const [showNervousDiv, setShowNervousDiv] = useContext(NervousContext); // Add state variable
   const db = getFirestore(app);
+  // const { showNervousDiv } = useContext(NervousContext);
+  const [showMessage, setShowMessage] = useState(false)
 
   const setUserArduino = () => {
     updateDoc(doc(db, "users", user.uid), {
       arduinoId: arduino_id_input,
     });
+    setShowMessage(true)
   }
+
+  // const handleToggle = (e) => {
+  //   setShowNervousDiv(!(e.target.value === "yes")); // Set state based on selected value
+  // }
 
   return (
     <div className='center centerText'>
-      <div>
-        {/* 1-  Get input & save ard_id into users collection */}
-        <label forHtml="heart-rate">Enter Arduino ID:</label> 
-        <input name="heart-rate" onChange={(e) => {setCurrentArduino(e.target.value)}}/>
-        <button className='heartrateBtn' onClick={setUserArduino} >Save Arduino ID</button>
-        
-        
-      </div>
-      <br/>
-      <br/>
+
       {/* <div>
-        <h6>Get your equipment ready</h6>
+        <label htmlFor="nervous">Do you want to see your nervousness score?</label> <br/>
+        <select name="nervous" id="nervous" style={{backgroundColor:'#8C8FFC',color:'white', border:'none', padding:'2% 20% 2% 20%'}} onChange={handleToggle}>
+          <option value="yes">No</option>
+          <option value="no">Yes</option>
+        </select>
       </div>
-      <br/>
+      <br/><br/> */}
+
+      {/* Conditionally render nervous-div */}
+      {(
+        <div className='nervous-div'>
+          <label htmlFor="heart-rate">Enter Glove ID:</label> 
+          <input name="heart-rate" onChange={(e) => {setCurrentArduino(e.target.value)}}/>
+          <button className='heartrateBtn' onClick={setUserArduino} >Save ID</button>
+          {showMessage && <p>Glove ID saved</p>}
+        </div>
+      )}
+
+      <br/><br/>
+
       <div>
-        <h6>&</h6>
-      </div>
-      <br/> */}
-      <div >
         <p>Start Recording:</p>
         <button className='heartrateBtn noLine'><Link to='/record' target='_self' className=' heartrateBtn noLine'>Open Webcam</Link></button>
       </div>
-      {/* <br/>
-      <br/> */}
-      {/* <div>
-        <p>Upload Slides:</p>
-        <input type="file"/>
-      </div> */}
+
     </div>
   )
 }

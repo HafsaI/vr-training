@@ -20,8 +20,8 @@ export default function WebcamVideo() {
   const [sessionEnded, setSessionEnded] = useState(0);
 
   const videoConstraints = {
-    width: 600,
-    height: 300,
+    width: 1000,
+    height: 1000,
     facingMode: "user",
   };
 
