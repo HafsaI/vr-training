@@ -18,6 +18,7 @@ function Upload() {
      axios.get('/getscores')
      .then(function (response) {
        setShowScores(false);
+       console.log(showScores)
        console.log("Speech scores response", response);
        setShowScores(true);
        showSpeechScores(response)

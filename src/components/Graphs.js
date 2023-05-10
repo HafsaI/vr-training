@@ -118,9 +118,9 @@ function Graphs({ history }) {
         <h5>Pronunciation</h5>
         <LineChart x={sessionNos} y={pronunciationScores} label='Pronunciation Percentage'/>
 
-        <h5>Listenability</h5>
+        {/* <h5>Listenability</h5>
         <LineChart x={sessionNos} y={listenabilityScores} label='Listenability Percentage'/>
-        
+         */}
         <h4 className='analysisType'>Body Language Analysis Scores</h4>
         <hr/>
         

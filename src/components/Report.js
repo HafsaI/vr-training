@@ -15,7 +15,7 @@ function Report(){
   const [currSessId, setcurrSessId] = useState([])
   const [lastSession, setlastSession] = useState([])
   const [currArduinoId, setcurrArduinoId] = useState([])
-  const checkHeart = true
+  const checkHeart = false
   
 
   const db = getFirestore(app);
