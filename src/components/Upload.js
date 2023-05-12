@@ -15,7 +15,7 @@ function Upload() {
 
   const showS = () => {
      /* getting speech scores from backend */
-     axios.get('/getscores')
+     axios.get('https://flask-production-0341.up.railway.app/getscores')
      .then(function (response) {
        setShowScores(false);
        console.log(showScores)
@@ -37,7 +37,7 @@ function Upload() {
 
     
     /* sending audio to backend */
-    axios.post('/sendaudio', formData)
+    axios.post('https://flask-production-0341.up.railway.app/sendaudio', formData)
     .then(function(response) {
       console.log('Reponse',response);
     })
