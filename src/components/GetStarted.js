@@ -27,7 +27,7 @@ function GetStarted() {
     <div className="margin-bottom padding-horizontal centerText">
       <h2 className='padding-getstarted'><span className='purple'>Get started</span> on your experience of a lifetime!</h2>
       <form>
-        <h4>Do you just want to <span className='purple'>upload audio and/or video</span> and get feedback?</h4>
+        <h4>Do you just want to <span className='purple'>upload audio</span> and get feedback?</h4>
           <input type="radio" id="yes-one" name="one" value="yes-one" onChange={handleRadioOneChange}/>
           <label htmlFor="yes-one" style={{paddingRight:'10%'}}>Yes</label>
           <input type="radio" id="no-one" name="one" value="no-one" onChange={handleRadioOneChange}/>
@@ -37,12 +37,12 @@ function GetStarted() {
         {showOneSteps && (
           <div className='one-steps'>
             <ol className='steps'>
-                <li>Record video and/or audio</li>
+                <li>Record audio</li>
                 <li>Open website on any device</li>
                 <li>Sign up using username, name and password if you don't have an account already</li>
                 <li>Login using username and password</li>
                 <li>Open 'Upload' tab</li>
-                <li>Upload audio using the the upload buttons</li>
+                <li>Upload audio using the the upload button</li>
                 <li>Press 'Analyze' button</li>
                 <li>View the scores displayed below</li>
             </ol>
@@ -59,16 +59,17 @@ function GetStarted() {
         {showTwoSteps && (
           <div className='two-steps'>
             <ol className='steps'>
-              <li>Open website on mobile phone</li>
+              <li>Open website on any device</li>
               <li>Sign up with username, name and password if you don't have an id already</li>
               <li>Login using username and password</li>
-              <li>Click on 'Start Session' tab</li>
-              <li>Press 'Get Heart rate'</li>
-              <li>Click on 'Open Webcam'</li>
-              <li>Place your phone such that your whole body is visible</li>
+              <li>Click on 'Start' tab</li>
+              <li>Enter your glove's id</li>
+              <li>Click on 'Save ID' button</li>
+              <li>Place your device at a distance where your whole body is visible</li>
               <li>Open Headset App and open our app</li>
               <li>Type in Username and Password</li>
-              <li>Wear headset</li>
+              <li>Wear Glove and press button on glove</li>
+              <li>Wear headset and pick up the controller</li>
               <li>Turn to your left and press 'Start Session' on the menu</li>
               <li>Congratulations! Your session has begun! Start speaking</li>
               <li>After you are done with your session, press 'Stop session' and remove your headset</li>

@@ -19,9 +19,21 @@ export default function WebcamVideo() {
 
   const [sessionEnded, setSessionEnded] = useState(0);
 
+  // const videoConstraints = {
+  //   width: 1000,
+  //   height: 1000,
+  //   facingMode: "user",
+  // };
+
+  // const videoConstraints = {
+  //   width: window.innerWidth <= 600 ? 400 : 1000,
+  //   height: window.innerWidth <= 600 ? 400 : 1000,
+  //   facingMode: "user",
+  // };
+
   const videoConstraints = {
-    width: 1000,
-    height: 1000,
+    width: window.innerWidth * 0.75,
+    height: window.innerHeight * 0.75,
     facingMode: "user",
   };
 
@@ -196,12 +208,14 @@ export default function WebcamVideo() {
     }
   }, [webcamRef, liveSession]);
 
+  const padding = window.innerWidth <= 768 ? '6%' : window.innerWidth <= 1000 ? '3%' : '0%';
+
 
   return (
     <div className="Container centerText" style={{marginTop:'8%'}}>
-      {(capturing && !sessionEnded) ? (<><p className="bold purple">Recording has started</p></>) : null}
-      {/* {true ? (<><p className="bold purple">Recording is going on</p></>) : null} */}
-      {(!capturing && sessionEnded) ? (<><p className="bold purple">Recording has stopped</p></>) : null}
+      {(capturing && !sessionEnded) ? (<><p className="bold purple" style={{paddingTop:padding}}>Recording has started</p></>) : null}
+      {/* {true ? (<><p className="bold purple" style={{paddingTop:padding}}>Recording is going on</p></>) : null} */}
+      {(!capturing && sessionEnded) ? (<><p className="bold purple" style={{paddingTop:padding}}>Recording has stopped</p></>) : null}
       <Webcam
         audio={false}
         mirrored={true}
