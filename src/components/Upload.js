@@ -9,22 +9,11 @@ function Upload() {
 
   const showSpeechScores = (scores) => {
     console.log("Individual Speech Scores", scores.data);
-    console.log("clarity comment", scores.data.clarity_comments)
+    // console.log("clarity comment", scores.data.clarity_comments)
     setScores(scores.data);
   }
 
-  const showS = () => {
-     /* getting speech scores from backend */
-     axios.get('https://flask-production-0341.up.railway.app/getscores')
-     .then(function (response) {
-       setShowScores(false);
-       console.log(showScores)
-       console.log("Speech scores response", response);
-       setShowScores(true);
-       showSpeechScores(response)
- 
-     }) 
-  }
+    /* sending audio to backend */ 
   const handleSubmit = (event) => {
     event.preventDefault(); 
 
@@ -34,12 +23,19 @@ function Upload() {
     const formData = new FormData();
     formData.append('audFile', selectedAudio);
    
-
-    
-    /* sending audio to backend */
-    axios.post('https://flask-production-0341.up.railway.app/sendaudio', formData)
+    /* sending audio file to backend  */
+    axios.post('http://127.0.0.1:5001/sendaudio', formData)
     .then(function(response) {
       console.log('Reponse',response);
+      // 
+        axios.get('http://127.0.0.1:5001/getscores')
+      .then(function (response) {
+        console.log("Speech scores response", response);
+        setShowScores(true);
+        showSpeechScores(response)
+  
+      }) 
+     //
     })
     .catch(function(error) {
       console.log('Uploading error',error);
@@ -62,7 +58,7 @@ function Upload() {
           <input type="file" id="video" name="video"/>
         </div> */}
         <div className='paddingFile' style={{paddingRight : '13%'}}>
-          <button className='centerText heartrateBtn analyzeBtn' onClick= {showS}>Analyze</button>
+          <button className='centerText heartrateBtn analyzeBtn'>Analyze</button>
         </div>
       </form>
 
