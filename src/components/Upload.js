@@ -81,6 +81,8 @@ function Upload() {
         <hr/>
         <Score title='Pronunciation' score={`${scores.pronunciation_score}%`} showArrow={true} />
         <hr/>
+        <Score title='Listenability' score={`${scores.listenability_score}%`} showArrow={true} />
+        <hr/>
       </div>
       }
       {/* { (showScores && !scores.pronunciation_score) && 
