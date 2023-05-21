@@ -12,7 +12,7 @@ function Scores({session, quick = true}) {
             <p className='purple bold centerText'>This may take a few seconds! Please wait. Thank you for your patience.</p>
           </> 
         }              
-      {(quick &&  (session.clarity_comment  && session.pauses_score)) &&
+      {(quick  && (session.speakingrate_comment)) &&
         <>
             <h5>Speech Analysis</h5>
             <hr/>
