@@ -45,5 +45,3 @@ To run this project, clone the project locally:
 $ npm install
 $ npm run dev
 ```
-
-https://flask-production-0341.up.railway.app
