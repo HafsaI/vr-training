@@ -116,7 +116,7 @@ function Graphs({ history }) {
         <LineChart x={sessionNos} y={speakingRateScores} label='Speaking Rate Score'/>
         
         <h5>Pronunciation</h5>
-        <LineChart x={sessionNos} y={pronunciationScores} label='Pronunciation Percentage'/>
+        <LineChart x={sessionNos} y={pronunciationScores} label='Percentage Score'/>
 
         <h5>Listenability</h5>
         <LineChart x={sessionNos} y={listenabilityScores} label='Listenability Percentage'/>

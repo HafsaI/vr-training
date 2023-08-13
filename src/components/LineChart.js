@@ -91,20 +91,24 @@ function LineChart({ x, y, label }) {
         options={{
           scales: {
             x: {
-              beginAtZero: true, // Adjust as needed
+              beginAtZero: true, 
+              scaleLabel: {
+                display: true,
+                labelString: 'Session No.', 
+              },
             },
             y: {
-              beginAtZero: true, // Adjust as needed
+              beginAtZero: true, 
+              scaleLabel: {
+                display: true,
+                labelString: 'Pronunciation Score (%)', 
+              },
             },
           },
           plugins: {
             legend: {
               display: true,
               position: "right",
-            },
-            title: {
-              display: true,
-              text: "Bar Chart Example", // Adjust the title as needed
             },
           },
         }}
@@ -114,3 +118,4 @@ function LineChart({ x, y, label }) {
 }
 
 export default LineChart;
+
